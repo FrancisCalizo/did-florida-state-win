@@ -1,24 +1,35 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import './App.css';
 
 function App() {
+  const [schedule, setSchedule] = useState([]);
+
+  useEffect(() => {
+    fetchSchedule(2018);
+  }, []);
+
+  const fetchSchedule = async year => {
+    let res = await axios.get(
+      `https://api.collegefootballdata.com/games?year=${year}&team=Florida%20State`
+    );
+
+    setSchedule(res.data);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      {schedule.map(game => (
+        <ul>
+          <li>{game.week}</li>
+          <li>
+            {game.away_team} at {game.home_team}
+          </li>
+          <li>
+            {game.away_points} to {game.home_points}
+          </li>
+        </ul>
+      ))}
     </div>
   );
 }
