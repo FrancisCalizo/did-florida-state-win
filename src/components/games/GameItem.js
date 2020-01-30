@@ -1,15 +1,18 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const GameItem = ({ games }) => {
   return (
     <div>
       {games.map(game => {
         return (
-          <div
-            key={game.id}
-            style={{ border: '1px solid black', width: '500px' }}
-          >
+          <div key={game.id} style={{ margin: '1rem', fontSize: '1.3rem' }}>
             {game.away_team} vs. {game.home_team}
+            <button>
+              <Link exact to="/schedule/blah">
+                Game Details
+              </Link>
+            </button>
           </div>
         );
       })}
