@@ -13,7 +13,7 @@ const ScheduleState = props => {
   const [state, dispatch] = useReducer(ScheduleReducer, initialState);
 
   useEffect(() => {
-    fetchSchedule(2013);
+    fetchSchedule(2019);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
