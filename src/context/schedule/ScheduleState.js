@@ -13,34 +13,37 @@ const ScheduleState = props => {
   const [state, dispatch] = useReducer(ScheduleReducer, initialState);
 
   useEffect(() => {
-    fetchSchedule(2018);
+    fetchSchedule(2013);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const fetchSchedule = async year => {
+  const fetchSchedule = year => {
     setLoading();
 
     // Regular Season
-    let regularSeason = await axios.get(
+    let regularSeason = axios.get(
       `https://api.collegefootballdata.com/games?year=${year}&team=Florida%20State`
     );
 
     // Post-Season
-    let postSeason = await axios.get(
+    let postSeason = axios.get(
       `https://api.collegefootballdata.com/games?year=${year}&seasonType=postseason&team=Florida%20State`
     );
 
-    let fullSeason = [];
-    if (postSeason.data.length > 0) {
-      fullSeason = [...regularSeason.data, ...postSeason.data];
-    } else {
-      fullSeason = [...regularSeason.data];
-    }
-
-    dispatch({
-      type: GET_SCHEDULE,
-      payload: fullSeason
-    });
+    let result = [];
+    Promise.all([regularSeason, postSeason])
+      .then(data => {
+        data.forEach(schedule => {
+          result = [...result, ...schedule.data];
+        });
+        dispatch({
+          type: GET_SCHEDULE,
+          payload: result
+        });
+      })
+      .catch(error => {
+        console.error(error.message);
+      });
   };
 
   const setLoading = () => dispatch({ type: SET_LOADING });

@@ -1,3 +1,8 @@
+## Helpful Articles
+
+Promise.all() - https://stackoverflow.com/questions/38180080/when-to-use-promise-all
+Promise.all() vs Multiple Awaits - https://stackoverflow.com/questions/45285129/any-difference-between-await-promise-all-and-multiple-await/54291660#54291660
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
