@@ -1,23 +1,23 @@
 import React, { useReducer, useEffect } from 'react';
 import axios from 'axios';
-import ScheduleContext from './scheduleContext';
-import ScheduleReducer from './scheduleReducer';
-import { GET_SCHEDULE, SET_LOADING } from '../types';
+import GamesContext from './gamesContext';
+import GamesReducer from './gamesReducer';
+import { GET_GAMES, SET_LOADING } from '../types';
 
-const ScheduleState = props => {
+const GamesState = props => {
   const initialState = {
-    schedule: [],
+    games: [],
     loading: false
   };
 
-  const [state, dispatch] = useReducer(ScheduleReducer, initialState);
+  const [state, dispatch] = useReducer(GamesReducer, initialState);
 
   useEffect(() => {
-    fetchSchedule(2019);
+    fetchGames(2019);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const fetchSchedule = year => {
+  const fetchGames = year => {
     setLoading();
 
     // Regular Season
@@ -33,11 +33,11 @@ const ScheduleState = props => {
     let result = [];
     Promise.all([regularSeason, postSeason])
       .then(data => {
-        data.forEach(schedule => {
-          result = [...result, ...schedule.data];
+        data.forEach(game => {
+          result = [...result, ...game.data];
         });
         dispatch({
-          type: GET_SCHEDULE,
+          type: GET_GAMES,
           payload: result
         });
       })
@@ -49,15 +49,15 @@ const ScheduleState = props => {
   const setLoading = () => dispatch({ type: SET_LOADING });
 
   return (
-    <ScheduleContext.Provider
+    <GamesContext.Provider
       value={{
-        schedule: state.schedule,
+        games: state.games,
         loading: state.loading
       }}
     >
       {props.children}
-    </ScheduleContext.Provider>
+    </GamesContext.Provider>
   );
 };
 
-export default ScheduleState;
+export default GamesState;

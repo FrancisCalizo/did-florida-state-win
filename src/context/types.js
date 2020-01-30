@@ -1,2 +1,2 @@
-export const GET_SCHEDULE = 'GET_SCHEDULE';
+export const GET_GAMES = 'GET_GAMES';
 export const SET_LOADING = 'SET_LOADING';

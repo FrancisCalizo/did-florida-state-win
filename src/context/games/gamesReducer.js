@@ -1,11 +1,11 @@
-import { GET_SCHEDULE, SET_LOADING } from '../types';
+import { GET_GAMES, SET_LOADING } from '../types';
 
 export default (state, action) => {
   switch (action.type) {
-    case GET_SCHEDULE:
+    case GET_GAMES:
       return {
         ...state,
-        schedule: action.payload,
+        games: action.payload,
         loading: false
       };
     case SET_LOADING:
