@@ -9,7 +9,7 @@ const GameItem = ({ games }) => {
           <div key={game.id} style={{ margin: '1rem', fontSize: '1.3rem' }}>
             {game.away_team} vs. {game.home_team}
             <button>
-              <Link to="/schedule/blah">Game Details</Link>
+              <Link to="/schedule">Game Details</Link>
             </button>
           </div>
         );
