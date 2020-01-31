@@ -2,18 +2,23 @@ import React, { useReducer, useEffect } from 'react';
 import axios from 'axios';
 import GamesContext from './gamesContext';
 import GamesReducer from './gamesReducer';
-import { GET_GAMES, SET_LOADING } from '../types';
+import { GET_GAMES, GET_LOGOS, SET_LOADING } from '../types';
 
 const GamesState = props => {
   const initialState = {
     games: [],
+    logos: [],
     loading: false
   };
 
   const [state, dispatch] = useReducer(GamesReducer, initialState);
 
   useEffect(() => {
-    fetchGames(2019);
+    async function getData() {
+      await fetchGames(2019);
+    }
+
+    getData();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -36,6 +41,7 @@ const GamesState = props => {
         data.forEach(game => {
           result = [...result, ...game.data];
         });
+        fetchLogos(result);
         dispatch({
           type: GET_GAMES,
           payload: result
@@ -44,6 +50,10 @@ const GamesState = props => {
       .catch(error => {
         console.error(error.message);
       });
+  };
+
+  const fetchLogos = gameInfo => {
+    console.log(gameInfo);
   };
 
   const setLoading = () => dispatch({ type: SET_LOADING });
