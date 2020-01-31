@@ -3,7 +3,7 @@ import Games from '../games/Games';
 import SeasonStats from '../team-stats/SeasonStats';
 const Schedule = () => {
   return (
-    <div>
+    <div className="container">
       <h1>Schedule for the (dynamically insert year) here</h1>
       <SeasonStats />
       <Games />

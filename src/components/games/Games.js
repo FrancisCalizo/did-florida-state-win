@@ -9,7 +9,7 @@ const Games = () => {
   // Loading Gif Here
 
   return (
-    <div>
+    <div className="flex flex-wrap">
       <GameItem games={games} />
     </div>
   );
