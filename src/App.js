@@ -7,6 +7,7 @@ import Schedule from './components/pages/Schedule';
 
 import GamesState from './context/games/GamesState';
 
+import './styles/app.css';
 import './App.css';
 
 function App() {
