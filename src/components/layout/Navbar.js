@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const Navbar = () => {
   return (
     <nav className="bg-garnet-500">
-      <div className="flex items-center justify-between flex-wrap py-8">
+      <div className="max-w-container flex items-center justify-between flex-wrap py-8 px-5 mx-auto">
         <div className="flex items-center flex-shrink-0 text-white">
           <span className="font-semibold text-xl tracking-tight">
             Florida State Football
