@@ -6,6 +6,8 @@ Promise.all() vs Multiple Awaits - https://stackoverflow.com/questions/45285129/
 
 Tailwind Configuration with CRA (and Concurrently from Comments)- https://www.youtube.com/watch?v=pnDsP3BbXPg
 
+Tailwind being "Mobile First" approach | "Hide everything medium and below, show on large" - https://github.com/tailwindcss/tailwindcss/issues/841
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
