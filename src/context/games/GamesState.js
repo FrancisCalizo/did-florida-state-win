@@ -2,12 +2,12 @@ import React, { useReducer, useEffect } from 'react';
 import axios from 'axios';
 import GamesContext from './gamesContext';
 import GamesReducer from './gamesReducer';
-import { GET_GAMES, GET_LOGOS, SET_LOADING } from '../types';
+import { GET_GAMES, GET_TEAMINFO, SET_LOADING } from '../types';
 
 const GamesState = props => {
   const initialState = {
     games: [],
-    logos: [],
+    teamInfo: [],
     loading: false
   };
 
@@ -41,7 +41,7 @@ const GamesState = props => {
         data.forEach(game => {
           result = [...result, ...game.data];
         });
-        fetchLogos(result);
+        fetchTeamInfo(result);
         dispatch({
           type: GET_GAMES,
           payload: result
@@ -52,8 +52,32 @@ const GamesState = props => {
       });
   };
 
-  const fetchLogos = gameInfo => {
-    console.log(gameInfo);
+  const fetchTeamInfo = async gameInfo => {
+    // Create Array of Opposing Teams
+    let opposingTeams = gameInfo.map(team => {
+      return team.home_team === 'Florida State'
+        ? team.away_team
+        : team.home_team;
+    });
+
+    try {
+      // Get All Teams in CFB
+      let teamInfo = await axios.get(
+        `https://api.collegefootballdata.com/teams`
+      );
+
+      // Filter Team Info from Opposing Teams to Get Logos
+      let opposingTeamInfo = teamInfo.data.filter(team =>
+        opposingTeams.includes(team.school)
+      );
+
+      dispatch({
+        type: GET_TEAMINFO,
+        payload: opposingTeamInfo
+      });
+    } catch (err) {
+      console.error(err);
+    }
   };
 
   const setLoading = () => dispatch({ type: SET_LOADING });
