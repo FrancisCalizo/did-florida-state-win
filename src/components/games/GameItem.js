@@ -7,15 +7,20 @@ const GameItem = ({ games, teamInfo }) => {
       {games.map(game => {
         return (
           <div key={game.id} className="w-1/3">
-            <div className="mx-3 rounded overflow-hidden shadow-lg text-center">
+            <div className="mx-3 my-20 rounded shadow-lg text-center">
               {teamInfo.map(team =>
                 team.school === game.away_team ||
                 team.school === game.home_team ? (
                   <img
                     key={team.id}
-                    className="w-48 rounded-full border p-6 mx-auto"
+                    className={`w-48 rounded-full p-6 mx-auto z-10 -mb-20 bg-white`}
                     src={team.logos[0]}
                     alt={`${team.school}-logo`}
+                    style={{
+                      border: `4px solid ${team.alt_color}`,
+                      boxShadow: `0 0 0 4px ${team.color}`,
+                      transform: `translateY(-40%)`
+                    }}
                   />
                 ) : null
               )}
