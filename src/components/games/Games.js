@@ -4,13 +4,17 @@ import GameItem from './GameItem';
 
 const Games = () => {
   const gamesContext = useContext(GamesContext);
-  const { games, loading } = gamesContext;
+  const { games, teamInfo, loading } = gamesContext;
+
+  useEffect(() => {
+    // Load Team Logos
+  });
 
   // Loading Gif Here
 
   return (
     <div className="flex flex-wrap">
-      <GameItem games={games} />
+      <GameItem games={games} teamInfo={teamInfo} />
     </div>
   );
 };

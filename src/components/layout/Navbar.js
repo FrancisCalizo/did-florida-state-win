@@ -10,7 +10,7 @@ const Navbar = () => {
             Florida State Football
           </span>
         </div>
-        <div className="block lg:hidden">
+        <div className="block md:hidden">
           <button className="flex items-center px-4 py-2 border rounded text-white-200 border-white hover:text-white hover:border-white">
             <svg
               className="fill-current h-3 w-3"
@@ -22,28 +22,28 @@ const Navbar = () => {
             </svg>
           </button>
         </div>
-        <div className="hidden w-full lg:block lg:flex lg:items-center lg:w-auto ">
+        <div className="hidden w-full md:block md:flex md:items-center md:w-auto ">
           <Link
             to="about"
-            className="block mt-4 lg:inline-block lg:mt-0 text-white hover:text-white mr-4"
+            className="block lg:inline-block lg:mt-0 text-white hover:text-white mr-4"
           >
             About
           </Link>
           <Link
             to="/schedule"
-            className="block mt-4 lg:inline-block lg:mt-0 text-white hover:text-white mr-4"
+            className="block lg:inline-block lg:mt-0 text-white hover:text-white mr-4"
           >
             Schedule
           </Link>
           <Link
             to="/roster"
-            className="block mt-4 lg:inline-block lg:mt-0 text-white hover:text-white mr-4"
+            className="block lg:inline-block lg:mt-0 text-white hover:text-white mr-4"
           >
             Roster
           </Link>
           <Link
             to="/"
-            className="block mt-4 lg:inline-block lg:mt-0 text-white hover:text-white"
+            className="block lg:inline-block lg:mt-0 text-white hover:text-white"
           >
             Did We win?
           </Link>

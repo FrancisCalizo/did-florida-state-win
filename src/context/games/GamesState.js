@@ -35,6 +35,7 @@ const GamesState = props => {
       `https://api.collegefootballdata.com/games?year=${year}&seasonType=postseason&team=Florida%20State`
     );
 
+    // Merge All Games into Single Array
     let result = [];
     Promise.all([regularSeason, postSeason])
       .then(data => {
@@ -86,6 +87,7 @@ const GamesState = props => {
     <GamesContext.Provider
       value={{
         games: state.games,
+        teamInfo: state.teamInfo,
         loading: state.loading
       }}
     >
