@@ -7,13 +7,13 @@ const GameItem = ({ games, teamInfo }) => {
       {games.map(game => {
         return (
           <div key={game.id} className="w-1/3">
-            <div className="mx-3 my-20 rounded shadow-lg text-center">
+            <div className="mx-10 my-16 rounded border text-center border-2 border-gray-400">
               {teamInfo.map(team =>
                 team.school === game.away_team ||
                 team.school === game.home_team ? (
                   <img
                     key={team.id}
-                    className={`w-48 rounded-full p-6 mx-auto z-10 -mb-20 bg-white`}
+                    className={`w-48 rounded-full p-3 mx-auto z-10 -mb-20 bg-white`}
                     src={team.logos[0]}
                     alt={`${team.school}-logo`}
                     style={{
@@ -25,9 +25,21 @@ const GameItem = ({ games, teamInfo }) => {
                 ) : null
               )}
               <div className="px-6 py-4">
-                <h2 className="font-bold">
-                  {game.away_team} vs. {game.home_team}
+                <span className="inline-block border-2 border-black py-1 px-2 my-2">
+                  {game.home_team === 'Florida State' ? 'vs' : 'at'}
+                </span>
+                <h2 className="font-bold text-2xl">
+                  {game.home_team === 'Florida State'
+                    ? game.away_team
+                    : game.home_team}
                 </h2>
+                <div>
+                  <h2 className="text-3xl">
+                    {game.home_team === 'Florida State'
+                      ? `${game.home_points} - ${game.away_points}`
+                      : `${game.away_points} - ${game.home_points}`}
+                  </h2>
+                </div>
               </div>
               <div className="px-6 py-4">
                 <button className="inline-block bg-gold-500 rounded py-1 px-4 text-white">

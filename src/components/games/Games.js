@@ -13,7 +13,7 @@ const Games = () => {
   // Loading Gif Here
 
   return (
-    <div className="flex flex-wrap">
+    <div className="flex flex-wrap px-12">
       <GameItem games={games} teamInfo={teamInfo} />
     </div>
   );

@@ -1,11 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import logo from '../../images/logo.png';
 
 const Navbar = () => {
   return (
     <nav className="bg-garnet-500">
-      <div className="max-w-container flex items-center justify-between flex-wrap py-8 px-5 mx-auto">
+      <div className="max-w-container flex items-center justify-between flex-wrap py-4 px-5 mx-auto">
         <div className="flex items-center flex-shrink-0 text-white">
+          <img className="w-20 mr-5" src={logo} alt="fsu-logo" />
           <span className="font-semibold text-xl tracking-tight">
             Florida State Football
           </span>
