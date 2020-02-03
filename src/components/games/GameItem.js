@@ -25,6 +25,13 @@ const GameItem = ({ games, teamInfo }) => {
                 ) : null
               )}
               <div className="px-6 py-4">
+                <div>
+                  {new Date(game.start_date)
+                    .toDateString()
+                    .split(' ')
+                    .slice(1)
+                    .join(' ')}
+                </div>
                 <span className="inline-block border-2 border-black py-1 px-2 my-2">
                   {game.home_team === 'Florida State' ? 'vs' : 'at'}
                 </span>
