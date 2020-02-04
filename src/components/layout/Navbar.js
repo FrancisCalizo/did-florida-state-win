@@ -4,7 +4,10 @@ import logo from '../../images/logo.png';
 
 const Navbar = () => {
   return (
-    <nav className="bg-garnet-500">
+    <nav
+      className="bg-garnet-500 border-b-4 border-gold-500 mb-2"
+      style={{ boxShadow: '0 0 0 10px rgba(0, 0, 0, 0.8)' }}
+    >
       <div className="max-w-container flex items-center justify-between flex-wrap py-4 px-5 mx-auto">
         <div className="flex items-center flex-shrink-0 text-white">
           <img className="w-20 mr-5" src={logo} alt="fsu-logo" />

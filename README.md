@@ -8,6 +8,10 @@ Tailwind Configuration with CRA (and Concurrently from Comments)- https://www.yo
 
 Tailwind being "Mobile First" approach | "Hide everything medium and below, show on large" - https://github.com/tailwindcss/tailwindcss/issues/841
 
+Switch render "outside" of React Component JSX - https://stackoverflow.com/questions/46592833/how-to-use-switch-statement-inside-a-react-component
+
+Button Skew / diagonal Buttons - https://codepen.io/amnkhan/pen/oopyxw
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
