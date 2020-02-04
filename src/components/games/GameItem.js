@@ -25,8 +25,17 @@ const GameItem = ({ games, teamInfo }) => {
     <Fragment>
       {games.map(game => {
         return (
-          <div key={game.id} className="w-1/3">
-            <div className="mx-10 my-16 rounded border text-center border-2 border-black">
+          <div key={game.id} className="w-full sm:w-1/2 lg:w-1/3">
+            <div className="sm:mx-6 lg:mx-4 xl:mx-10 my-16 rounded text-center shadow-2xl bg-white">
+              <div
+                className="text-left text-md"
+                style={{
+                  transform:
+                    'translateX(-20%) translateY(-300%) rotate(-45deg) '
+                }}
+              >
+                {new Date(game.start_date).toDateString()}
+              </div>
               {teamInfo.map(team =>
                 team.school === game.away_team ||
                 team.school === game.home_team ? (
@@ -43,30 +52,33 @@ const GameItem = ({ games, teamInfo }) => {
                   />
                 ) : null
               )}
-              <div className="px-6 py-4">
-                <div>{new Date(game.start_date).toDateString()}</div>
-                <span className="inline-block rounded-full border border-black py-1 px-2">
+              <div className="px-6 -mt-24">
+                <span
+                  className="inline-block rounded-full border border-black py-1 px-2 bg-white
+                  "
+                  style={{ transform: `translateY(5%)` }}
+                >
                   {game.home_team === 'Florida State' ? 'vs' : 'at'}
                 </span>
-                <h2 className="font-bold text-2xl">
+                <h2 className="font-bold text-2xl xl:text-3xl">
                   {game.home_team === 'Florida State'
                     ? game.away_team
                     : game.home_team}
                 </h2>
                 <div
-                  className="bg-dark-900 w-48 mx-auto py-2"
+                  className="bg-black w-48 mx-auto py-1 my-2"
                   style={{ transform: 'skew(-10deg)' }}
                 >
                   <div>
                     <h2
-                      className="text-3xl text-white"
+                      className="text-4xl text-white"
                       style={{ transform: 'skew(10deg)' }}
                     >
                       {renderWinLoss(game)}
                     </h2>
                   </div>
                   <h2
-                    className="text-3xl text-white"
+                    className="text-4xl text-white"
                     style={{ transform: 'skew(10deg)' }}
                   >
                     {game.home_team === 'Florida State'
@@ -76,7 +88,7 @@ const GameItem = ({ games, teamInfo }) => {
                 </div>
               </div>
               <div className="px-6 py-4">
-                <button className="inline-block bg-gold-500 rounded py-1 px-4 text-white cursor-pointer">
+                <button className="inline-block bg-gold-600 border rounded py-1 px-4 text-white cursor-pointer">
                   <Link to="/schedule">Game Details</Link>
                 </button>
               </div>

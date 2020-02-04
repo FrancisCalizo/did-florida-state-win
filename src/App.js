@@ -16,7 +16,7 @@ function App() {
   return (
     <GamesState>
       <Router>
-        <div>
+        <div className="bg-gray-100">
           <Navbar />
           <Switch>
             <Route exact path="/" component={Home} />
