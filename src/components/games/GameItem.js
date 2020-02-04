@@ -2,6 +2,25 @@ import React, { Fragment } from 'react';
 import { Link } from 'react-router-dom';
 
 const GameItem = ({ games, teamInfo }) => {
+  const renderWinLoss = game => {
+    switch (true) {
+      case game.home_team === 'Florida State' &&
+        game.home_points > game.away_points:
+        return 'Win';
+      case game.home_team === 'Florida State' &&
+        game.home_points < game.away_points:
+        return 'Loss';
+      case game.away_team === 'Florida State' &&
+        game.home_points > game.away_points:
+        return 'Loss';
+      case game.away_team === 'Florida State' &&
+        game.home_points < game.away_points:
+        return 'Win';
+      default:
+        return 'Tie';
+    }
+  };
+
   return (
     <Fragment>
       {games.map(game => {
@@ -13,7 +32,7 @@ const GameItem = ({ games, teamInfo }) => {
                 team.school === game.home_team ? (
                   <img
                     key={team.id}
-                    className={`w-48 rounded-full p-3 mx-auto z-10 -mb-20 bg-white`}
+                    className={`w-48 rounded-full p-3 mx-auto z-10 -mb-20 bg-gray-700`}
                     src={team.logos[0]}
                     alt={`${team.school}-logo`}
                     style={{
@@ -25,13 +44,8 @@ const GameItem = ({ games, teamInfo }) => {
                 ) : null
               )}
               <div className="px-6 py-4">
-                <div>
-                  {new Date(game.start_date)
-                    .toDateString()
-                    .split(' ')
-                    .slice(1)
-                    .join(' ')}
-                </div>
+                <div>{new Date(game.start_date).toDateString()}</div>
+                <div>{renderWinLoss(game)}</div>
                 <span className="inline-block border-2 border-black py-1 px-2 my-2">
                   {game.home_team === 'Florida State' ? 'vs' : 'at'}
                 </span>
