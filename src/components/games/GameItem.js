@@ -26,15 +26,18 @@ const GameItem = ({ games, teamInfo }) => {
       {games.map(game => {
         return (
           <div key={game.id} className="w-full sm:w-1/2 lg:w-1/3">
-            <div className="sm:mx-6 lg:mx-4 xl:mx-10 my-16 rounded text-center shadow-2xl bg-white">
+            <div className="sm:mx-6 lg:mx-4 xl:mx-10 my-16 text-center rounded shadow-2xl bg-white">
               <div
-                className="text-left text-md"
+                className="rounded font-bold py-1 text-md bg-black text-white border w-32"
                 style={{
-                  transform:
-                    'translateX(-20%) translateY(-300%) rotate(-45deg) '
+                  transform: 'translateX(-35%) rotate(-45deg) '
                 }}
               >
-                {new Date(game.start_date).toDateString()}
+                {new Date(game.start_date)
+                  .toDateString()
+                  .split(' ')
+                  .slice(1)
+                  .join(' ')}
               </div>
               {teamInfo.map(team =>
                 team.school === game.away_team ||
