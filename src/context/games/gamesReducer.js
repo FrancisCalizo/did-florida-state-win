@@ -1,4 +1,10 @@
-import { GET_GAMES, GET_TEAMINFO, SET_LOADING } from '../types';
+import {
+  GET_GAMES,
+  GET_TEAMINFO,
+  SET_LOADING,
+  SET_OVERALLWINS,
+  SET_OVERALLLOSSES
+} from '../types';
 
 export default (state, action) => {
   switch (action.type) {
@@ -12,6 +18,16 @@ export default (state, action) => {
         ...state,
         teamInfo: action.payload,
         loading: false
+      };
+    case SET_OVERALLWINS:
+      return {
+        ...state,
+        overallWins: action.payload
+      };
+    case SET_OVERALLLOSSES:
+      return {
+        ...state,
+        overallLosses: action.payload
       };
     case SET_LOADING:
       return {

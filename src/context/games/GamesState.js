@@ -2,12 +2,20 @@ import React, { useReducer, useEffect } from 'react';
 import axios from 'axios';
 import GamesContext from './gamesContext';
 import GamesReducer from './gamesReducer';
-import { GET_GAMES, GET_TEAMINFO, SET_LOADING } from '../types';
+import {
+  GET_GAMES,
+  GET_TEAMINFO,
+  SET_LOADING,
+  SET_OVERALLWINS,
+  SET_OVERALLLOSSES
+} from '../types';
 
 const GamesState = props => {
   const initialState = {
     games: [],
     teamInfo: [],
+    overallWins: 0,
+    overallLosses: 0,
     loading: false
   };
 
@@ -81,6 +89,14 @@ const GamesState = props => {
     }
   };
 
+  const addOverallWin = wins => {
+    dispatch({ type: SET_OVERALLWINS, payload: wins });
+  };
+
+  const addOverallLoss = losses => {
+    dispatch({ type: SET_OVERALLLOSSES, payload: losses });
+  };
+
   const setLoading = () => dispatch({ type: SET_LOADING });
 
   return (
@@ -88,6 +104,10 @@ const GamesState = props => {
       value={{
         games: state.games,
         teamInfo: state.teamInfo,
+        addOverallWin: addOverallWin,
+        addOverallLoss: addOverallLoss,
+        overallWins: state.overallWins,
+        overallLosses: state.overallLosses,
         loading: state.loading
       }}
     >

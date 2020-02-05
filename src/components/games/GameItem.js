@@ -1,20 +1,33 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 
-const GameItem = ({ games, teamInfo }) => {
+const GameItem = ({ games, teamInfo, addOverallWin, addOverallLoss }) => {
+  let overallWins = useRef(0);
+  let overallLosses = useRef(0);
+
+  useEffect(() => {
+    addOverallWin(overallWins.current);
+    addOverallLoss(overallLosses.current);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   const renderWinLoss = game => {
     switch (true) {
       case game.home_team === 'Florida State' &&
         game.home_points > game.away_points:
+        overallWins.current++;
         return 'Win';
       case game.home_team === 'Florida State' &&
         game.home_points < game.away_points:
+        overallLosses.current++;
         return 'Loss';
       case game.away_team === 'Florida State' &&
         game.home_points > game.away_points:
+        overallLosses.current++;
         return 'Loss';
       case game.away_team === 'Florida State' &&
         game.home_points < game.away_points:
+        overallWins.current++;
         return 'Win';
       default:
         return 'Tie';
@@ -28,7 +41,7 @@ const GameItem = ({ games, teamInfo }) => {
           <div key={game.id} className="w-80 sm:w-1/2 lg:w-1/3">
             <div className="sm:mx-2 md:mx-6 lg:mx-4 xl:mx-10 my-16 text-center rounded shadow-2xl bg-white">
               <div
-                className="rounded font-bold py-1 text-md bg-black text-white border w-32"
+                className="rounded font-bold py-1 text-md bg-black text-white w-32 shadow-2xl"
                 style={cardDateDiagonal}
               >
                 {new Date(game.start_date)
