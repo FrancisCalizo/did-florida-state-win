@@ -6,10 +6,6 @@ const Games = () => {
   const gamesContext = useContext(GamesContext);
   const { games, teamInfo, loading } = gamesContext;
 
-  useEffect(() => {
-    // Load Team Logos
-  });
-
   // Loading Gif Here
 
   return (

@@ -29,9 +29,7 @@ const GameItem = ({ games, teamInfo }) => {
             <div className="sm:mx-6 lg:mx-4 xl:mx-10 my-16 text-center rounded shadow-2xl bg-white">
               <div
                 className="rounded font-bold py-1 text-md bg-black text-white border w-32"
-                style={{
-                  transform: 'translateX(-35%) rotate(-45deg) '
-                }}
+                style={cardDateDiagonal}
               >
                 {new Date(game.start_date)
                   .toDateString()
@@ -47,11 +45,7 @@ const GameItem = ({ games, teamInfo }) => {
                     className={`w-48 rounded-full p-3 mx-auto z-10 -mb-20 bg-gray-300`}
                     src={team.logos[0]}
                     alt={`${team.school}-logo`}
-                    style={{
-                      border: `4px solid ${team.alt_color}`,
-                      boxShadow: `0 0 0 4px ${team.color}`,
-                      transform: `translateY(-40%)`
-                    }}
+                    style={profileImgBorder(team)}
                   />
                 ) : null
               )}
@@ -59,7 +53,7 @@ const GameItem = ({ games, teamInfo }) => {
                 <span
                   className="inline-block rounded-full border border-black py-1 px-2 bg-white
                   "
-                  style={{ transform: `translateY(5%)` }}
+                  style={translate('5%')}
                 >
                   {game.home_team === 'Florida State' ? 'vs' : 'at'}
                 </span>
@@ -70,20 +64,14 @@ const GameItem = ({ games, teamInfo }) => {
                 </h2>
                 <div
                   className="bg-black w-48 mx-auto py-1 my-2"
-                  style={{ transform: 'skew(-10deg)' }}
+                  style={skew('-10deg')}
                 >
                   <div>
-                    <h2
-                      className="text-4xl text-white"
-                      style={{ transform: 'skew(10deg)' }}
-                    >
+                    <h2 className="text-4xl text-white" style={skew('10deg')}>
                       {renderWinLoss(game)}
                     </h2>
                   </div>
-                  <h2
-                    className="text-4xl text-white"
-                    style={{ transform: 'skew(10deg)' }}
-                  >
+                  <h2 className="text-4xl text-white" style={skew('10deg')}>
                     {game.home_team === 'Florida State'
                       ? `${game.home_points} - ${game.away_points}`
                       : `${game.away_points} - ${game.home_points}`}
@@ -101,6 +89,27 @@ const GameItem = ({ games, teamInfo }) => {
       })}
     </Fragment>
   );
+};
+
+// Inline Styles
+const profileImgBorder = e => {
+  return {
+    border: `4px solid ${e.alt_color}`,
+    boxShadow: `0 0 0 4px ${e.color}`,
+    transform: `translateY(-40%)`
+  };
+};
+
+const cardDateDiagonal = {
+  transform: 'translateX(-35%) rotate(-45deg) '
+};
+
+const skew = amount => {
+  return { transform: `skew(${amount})` };
+};
+
+const translate = amount => {
+  return { transform: `translate(${amount})` };
 };
 
 export default GameItem;

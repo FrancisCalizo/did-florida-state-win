@@ -233,8 +233,7 @@ module.exports = {
       none: 'none'
     },
     container: {
-      center: true,
-      padding: '0 30rem'
+      center: true
     },
     cursor: {
       auto: 'auto',
