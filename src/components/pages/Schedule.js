@@ -1,10 +1,11 @@
 import React from 'react';
 import Games from '../games/Games';
 import SeasonStats from '../team-stats/SeasonStats';
+import SeasonDropdown from '../layout/SeasonDropdown';
 const Schedule = () => {
   return (
     <div className="container">
-      <h1>Schedule for the (dynamically insert year) here</h1>
+      <SeasonDropdown />
       <SeasonStats />
       <Games />
     </div>

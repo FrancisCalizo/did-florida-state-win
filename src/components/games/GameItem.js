@@ -63,11 +63,14 @@ const GameItem = ({ games, teamInfo, addOverallWin, addOverallLoss }) => {
                     : game.home_team}
                 </h2>
                 <div
-                  className="bg-black w-48 mx-auto py-1 my-2"
+                  className="bg-black w-48 mx-auto py-2 my-2"
                   style={skew('-10deg')}
                 >
                   <div>
-                    <h2 className="text-4xl text-white" style={skew('10deg')}>
+                    <h2
+                      className="text-4xl text-white font-bold"
+                      style={skew('10deg')}
+                    >
                       {renderWinLoss(game)}
                     </h2>
                   </div>
