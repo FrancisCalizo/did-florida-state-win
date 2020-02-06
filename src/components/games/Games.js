@@ -4,24 +4,13 @@ import GameItem from './GameItem';
 
 const Games = () => {
   const gamesContext = useContext(GamesContext);
-  const {
-    games,
-    teamInfo,
-    addOverallWin,
-    addOverallLoss,
-    loading
-  } = gamesContext;
+  const { games, teamInfo } = gamesContext;
 
   // Loading Gif Here
 
   return (
     <div className="flex flex-wrap justify-center px-16 sm:px-0">
-      <GameItem
-        games={games}
-        teamInfo={teamInfo}
-        addOverallWin={addOverallWin}
-        addOverallLoss={addOverallLoss}
-      />
+      <GameItem games={games} teamInfo={teamInfo} />
     </div>
   );
 };

@@ -1,33 +1,20 @@
-import React, { Fragment, useEffect, useRef } from 'react';
+import React, { Fragment } from 'react';
 import { Link } from 'react-router-dom';
 
 const GameItem = ({ games, teamInfo, addOverallWin, addOverallLoss }) => {
-  let overallWins = useRef(0);
-  let overallLosses = useRef(0);
-
-  useEffect(() => {
-    addOverallWin(overallWins.current);
-    addOverallLoss(overallLosses.current);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
   const renderWinLoss = game => {
     switch (true) {
       case game.home_team === 'Florida State' &&
         game.home_points > game.away_points:
-        overallWins.current++;
         return 'Win';
       case game.home_team === 'Florida State' &&
         game.home_points < game.away_points:
-        overallLosses.current++;
         return 'Loss';
       case game.away_team === 'Florida State' &&
         game.home_points > game.away_points:
-        overallLosses.current++;
         return 'Loss';
       case game.away_team === 'Florida State' &&
         game.home_points < game.away_points:
-        overallWins.current++;
         return 'Win';
       default:
         return 'Tie';

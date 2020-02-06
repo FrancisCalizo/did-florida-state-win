@@ -5,28 +5,26 @@ import GamesReducer from './gamesReducer';
 import {
   GET_GAMES,
   GET_TEAMINFO,
-  SET_LOADING,
-  SET_OVERALLWINS,
-  SET_OVERALLLOSSES
+  SET_SEASONWINS,
+  SET_SEASONLOSSES,
+  SET_LOADING
 } from '../types';
 
 const GamesState = props => {
   const initialState = {
     games: [],
     teamInfo: [],
-    overallWins: 0,
-    overallLosses: 0,
+    seasonWins: 0,
+    seasonLosses: 0,
     loading: false
   };
 
   const [state, dispatch] = useReducer(GamesReducer, initialState);
 
   useEffect(() => {
-    async function getData() {
+    (async function getData() {
       await fetchGames(2019);
-    }
-
-    getData();
+    })();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -51,6 +49,8 @@ const GamesState = props => {
           result = [...result, ...game.data];
         });
         fetchTeamInfo(result);
+        fetchSeasonWins(result);
+        fetchSeasonLosses(result);
         dispatch({
           type: GET_GAMES,
           payload: result
@@ -89,12 +89,42 @@ const GamesState = props => {
     }
   };
 
-  const addOverallWin = wins => {
-    dispatch({ type: SET_OVERALLWINS, payload: wins });
+  const fetchSeasonWins = games => {
+    let wins = 0;
+    games.forEach(game => {
+      if (
+        (game.home_team === 'Florida State' &&
+          game.home_points > game.away_points) ||
+        (game.away_team === 'Florida State' &&
+          game.home_points < game.away_points)
+      ) {
+        wins++;
+      }
+    });
+
+    dispatch({
+      type: SET_SEASONWINS,
+      payload: wins
+    });
   };
 
-  const addOverallLoss = losses => {
-    dispatch({ type: SET_OVERALLLOSSES, payload: losses });
+  const fetchSeasonLosses = games => {
+    let losses = 0;
+    games.forEach(game => {
+      if (
+        (game.home_team === 'Florida State' &&
+          game.home_points < game.away_points) ||
+        (game.away_team === 'Florida State' &&
+          game.home_points > game.away_points)
+      ) {
+        losses++;
+      }
+    });
+
+    dispatch({
+      type: SET_SEASONLOSSES,
+      payload: losses
+    });
   };
 
   const setLoading = () => dispatch({ type: SET_LOADING });
@@ -104,10 +134,8 @@ const GamesState = props => {
       value={{
         games: state.games,
         teamInfo: state.teamInfo,
-        addOverallWin: addOverallWin,
-        addOverallLoss: addOverallLoss,
-        overallWins: state.overallWins,
-        overallLosses: state.overallLosses,
+        seasonWins: state.seasonWins,
+        seasonLosses: state.seasonLosses,
         loading: state.loading
       }}
     >

@@ -1,9 +1,9 @@
 import {
   GET_GAMES,
   GET_TEAMINFO,
-  SET_LOADING,
-  SET_OVERALLWINS,
-  SET_OVERALLLOSSES
+  SET_SEASONWINS,
+  SET_SEASONLOSSES,
+  SET_LOADING
 } from '../types';
 
 export default (state, action) => {
@@ -19,15 +19,17 @@ export default (state, action) => {
         teamInfo: action.payload,
         loading: false
       };
-    case SET_OVERALLWINS:
+    case SET_SEASONWINS:
       return {
         ...state,
-        overallWins: action.payload
+        seasonWins: action.payload,
+        loading: false
       };
-    case SET_OVERALLLOSSES:
+    case SET_SEASONLOSSES:
       return {
         ...state,
-        overallLosses: action.payload
+        seasonLosses: action.payload,
+        loading: false
       };
     case SET_LOADING:
       return {
