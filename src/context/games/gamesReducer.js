@@ -9,6 +9,7 @@ import {
   SET_AWAY_LOSSES,
   SET_CONFERENCE_WINS,
   SET_CONFERENCE_LOSSES,
+  SET_YEAR,
   SET_LOADING
 } from '../types';
 
@@ -71,6 +72,12 @@ export default (state, action) => {
       return {
         ...state,
         conferenceLosses: action.payload,
+        loading: false
+      };
+    case SET_YEAR:
+      return {
+        ...state,
+        year: action.payload,
         loading: false
       };
     case SET_LOADING:

@@ -13,7 +13,8 @@ import {
   SET_AWAY_LOSSES,
   SET_CONFERENCE_WINS,
   SET_CONFERENCE_LOSSES,
-  SET_LOADING
+  SET_LOADING,
+  SET_YEAR
 } from '../types';
 
 const GamesState = props => {
@@ -28,6 +29,7 @@ const GamesState = props => {
     awayLosses: 0,
     conferenceWins: 0,
     conferenceLosses: 0,
+    year: 2019,
     loading: false
   };
 
@@ -267,6 +269,13 @@ const GamesState = props => {
     });
   };
 
+  const setYear = year => {
+    dispatch({
+      type: SET_YEAR,
+      payload: Number(year)
+    });
+  };
+
   const setLoading = () => dispatch({ type: SET_LOADING });
 
   return (
@@ -282,6 +291,7 @@ const GamesState = props => {
         awayLosses: state.awayLosses,
         conferenceWins: state.conferenceWins,
         conferenceLosses: state.conferenceLosses,
+        setYear: setYear,
         loading: state.loading
       }}
     >
