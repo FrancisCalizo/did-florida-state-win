@@ -17,6 +17,9 @@ Maximum Update depth exceeed error - https://stackoverflow.com/questions/4849735
 UPDATE ERROR above lead to this post about using useRef instead of dispatching to overall wins on every render - https://stackoverflow.com/questions/53146575/storing-non-state-variables-in-functional-components
 
 and more on useRef that I use for Wins/Losses on Schedule Page - https://medium.com/trabe/react-useref-hook-b6c9d39e2022 and https://dev.to/trentyang/replace-lifecycle-with-hooks-in-react-3d4n
+
+Working with git branches and merging - https://stackabuse.com/git-merge-branch-into-master/
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
