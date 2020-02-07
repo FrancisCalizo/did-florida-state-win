@@ -22,6 +22,8 @@ Working with git branches and merging - https://stackabuse.com/git-merge-branch-
 
 Conditional Attribute in React (JSX) - https://stackoverflow.com/questions/41798027/react-inline-conditional-component-attribute/41798074`
 
+React-Spring for animations - https://www.youtube.com/watch?v=S8yn3-WpVV8 and https://www.react-spring.io/docs/hooks/examples
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

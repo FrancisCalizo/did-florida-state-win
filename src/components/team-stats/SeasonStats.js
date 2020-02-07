@@ -14,11 +14,12 @@ const SeasonStats = () => {
     conferenceWins,
     conferenceLosses
   } = gamesContext;
+
   return (
     <Spring
       from={{ opacity: 0 }}
       to={{ opacity: 1 }}
-      config={{ delay: 100, duration: 1000 }}
+      config={{ delay: 500, duration: 1000 }}
     >
       {props => (
         <div style={props}>
