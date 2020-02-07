@@ -14,7 +14,7 @@ const SeasonStats = () => {
     conferenceLosses
   } = gamesContext;
   return (
-    <div className="flex justify-center text-center mb-16 text-white">
+    <div className="flex justify-center text-center mb-16 px-8 text-white">
       <div className="border text-4xl py-2 w-1/4 bg-black">
         <h2 className="text-gold-500 text-base">Overall</h2>
         <h2 className="font-bold">

@@ -37,10 +37,10 @@ const GamesState = props => {
 
   useEffect(() => {
     (async function getData() {
-      await fetchGames(2013);
+      await fetchGames(state.year);
     })();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [state.year]);
 
   const fetchGames = year => {
     setLoading();
