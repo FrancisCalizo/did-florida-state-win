@@ -20,6 +20,8 @@ and more on useRef that I use for Wins/Losses on Schedule Page - https://medium.
 
 Working with git branches and merging - https://stackabuse.com/git-merge-branch-into-master/
 
+Conditional Attribute in React (JSX) - https://stackoverflow.com/questions/41798027/react-inline-conditional-component-attribute/41798074`
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

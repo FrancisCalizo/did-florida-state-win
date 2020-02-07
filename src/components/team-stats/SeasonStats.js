@@ -14,28 +14,32 @@ const SeasonStats = () => {
     conferenceLosses
   } = gamesContext;
   return (
-    <div className="flex justify-center text-center mb-16 px-8 text-white">
-      <div className="border text-4xl py-2 w-1/4 bg-black">
-        <h2 className="text-gold-500 text-base">Overall</h2>
-        <h2 className="font-bold">
+    <div className="flex justify-center text-center mb-16 px-8 text-black">
+      <div className="border text-5xl pb-2 w-1/4 bg-white box-border">
+        <h2 className="text-black bg-gold-500 text-base py-1 border">
+          Overall
+        </h2>
+        <h2 className="font-bold my-3">
           {seasonWins}-{seasonLosses}
         </h2>
       </div>
-      <div className="border text-4xl py-2 w-1/4 bg-black">
-        <h2 className="text-gold-500 text-base">Conference</h2>
-        <h2 className="font-bold">
+      <div className="border text-5xl pb-2 w-1/4 bg-white box-border">
+        <h2 className="text-black bg-gold-500 text-base py-1 border">
+          Conference
+        </h2>
+        <h2 className="font-bold my-3">
           {conferenceWins}-{conferenceLosses}
         </h2>
       </div>
-      <div className="border text-4xl py-2 w-1/4 bg-black">
-        <h2 className="text-gold-500 text-base">Home</h2>
-        <h2 className="font-bold">
+      <div className="border text-5xl pb-2 w-1/4 bg-white box-border">
+        <h2 className="text-black bg-gold-500 text-base py-1 border">Home</h2>
+        <h2 className="font-bold my-3">
           {homeWins}-{homeLosses}
         </h2>
       </div>
-      <div className="border text-4xl py-2 w-1/4 bg-black">
-        <h2 className="text-gold-500 text-base">Away</h2>
-        <h2 className="font-bold">
+      <div className="border text-5xl pb-2 w-1/4 bg-white box-border">
+        <h2 className="text-black bg-gold-500 text-base py-1 border">Away</h2>
+        <h2 className="font-bold my-3">
           {awayWins}-{awayLosses}
         </h2>
       </div>
