@@ -3,7 +3,7 @@ import GamesContext from '../../context/games/gamesContext';
 
 const SeasonDropdown = () => {
   const gamesContext = useContext(GamesContext);
-  const { setYear, year } = gamesContext;
+  const { setYear } = gamesContext;
 
   // Populate Years in Dropdown
   let years = [];
@@ -20,20 +20,20 @@ const SeasonDropdown = () => {
       <div className="inline-block relative w-32 text-xl mr-4">
         <select
           className="block appearance-none w-full bg-transparent border-b-4
-          text-white block border-gray-400 hover:border-gray-500 px-4 py-3 pr-8
+          text-white block border-white hover:border-gold-500 px-4 py-3 pr-8
           rounded shadow leading-tight focus:outline-none"
           onChange={handleChange}
           defaultValue="2019"
         >
           {years.map(year => {
             return (
-              <option key={year} value={year}>
+              <option key={year} value={year} className="bg-garnet-500">
                 {year}
               </option>
             );
           })}
         </select>
-        <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center  text-gray-700">
+        <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center text-gray-700">
           <svg
             className="fill-current h-8 w-8 text-white"
             xmlns="http://www.w3.org/2000/svg"

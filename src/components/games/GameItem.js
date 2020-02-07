@@ -26,7 +26,7 @@ const GameItem = ({ games, teamInfo, addOverallWin, addOverallLoss }) => {
       {games.map(game => {
         return (
           <div key={game.id} className="w-80 sm:w-1/2 lg:w-1/3">
-            <div className="sm:mx-2 md:mx-6 lg:mx-4 xl:mx-10 my-16 text-center rounded shadow-2xl bg-white">
+            <div className="sm:mx-2 md:mx-6 lg:mx-4 xl:mx-10 my-16 text-center rounded border border-dark-200 shadow-2xl bg-white">
               <div
                 className="rounded font-bold py-1 text-md bg-black text-white w-32 shadow-2xl"
                 style={cardDateDiagonal}
