@@ -30,25 +30,25 @@ const Navbar = () => {
         <div className="hidden w-full md:block md:flex md:items-center md:w-auto ">
           <Link
             to="about"
-            className="block lg:inline-block lg:mt-0 text-white hover:text-white mr-4"
+            className="block text-xl py-5 px-5 lg:inline-block lg:mt-0 text-white mr-4 hover:bg-gold-500 hover:px-6 hover:py-3"
           >
             About
           </Link>
           <Link
             to="/schedule"
-            className="block lg:inline-block lg:mt-0 text-white hover:text-white mr-4"
+            className="block text-xl py-5 px-5 lg:inline-block lg:mt-0 text-white mr-4 hover:bg-gold-500 hover:px-6 hover:py-3"
           >
             Schedule
           </Link>
           <Link
             to="/roster"
-            className="block lg:inline-block lg:mt-0 text-white hover:text-white mr-4"
+            className="block text-xl py-5 px-5 lg:inline-block lg:mt-0 text-white mr-4 hover:bg-gold-500 hover:px-6 hover:py-3"
           >
             Roster
           </Link>
           <Link
             to="/"
-            className="block lg:inline-block lg:mt-0 text-white hover:text-white"
+            className="block text-xl py-5 pl-5 lg:inline-block lg:mt-0 text-white hover:bg-gold-500 hover:px-6 hover:py-3"
           >
             Did We win?
           </Link>
