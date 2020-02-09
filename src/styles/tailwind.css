@@ -1,3 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.nav-link:hover {
+  @apply border-b border-gold-300 shadow-nav;
+}

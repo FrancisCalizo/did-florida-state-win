@@ -63,7 +63,7 @@ const GameItem = ({ games, teamInfo }) => {
                   )}
                   <div className="px-6 -mt-24">
                     <span
-                      className="inline-block rounded-full border border-black py-1 px-2 bg-white
+                      className="inline-block rounded-full border border-black py-1 px-2 bg-white z-20
                   "
                       style={translate('5%')}
                     >

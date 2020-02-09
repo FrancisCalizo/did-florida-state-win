@@ -11,7 +11,7 @@ const Navbar = () => {
       <div className="max-w-container flex items-center justify-between flex-wrap py-4 px-5 mx-auto">
         <div className="flex items-center flex-shrink-0 text-white">
           <img className="w-20 mr-5" src={logo} alt="fsu-logo" />
-          <span className="font-semibold text-xl tracking-tight">
+          <span className="font-semibold text-xl tracking-tight md:text-3xl xl:text-4xl">
             Florida State Football
           </span>
         </div>
@@ -30,25 +30,25 @@ const Navbar = () => {
         <div className="hidden w-full md:block md:flex md:items-center md:w-auto ">
           <Link
             to="about"
-            className="block text-xl py-5 px-5 lg:inline-block lg:mt-0 text-white mr-4 hover:bg-gold-500 hover:px-6 hover:py-3"
+            className="block md:text-base lg:text-xl md: mx-3 lg:mx-5 lg:inline-block lg:mt-0 text-white mr-2 nav-link hover:text-gold-300"
           >
             About
           </Link>
           <Link
             to="/schedule"
-            className="block text-xl py-5 px-5 lg:inline-block lg:mt-0 text-white mr-4 hover:bg-gold-500 hover:px-6 hover:py-3"
+            className="block md:text-base lg:text-xl md: mx-3 lg:mx-5 lg:inline-block lg:mt-0 text-white mr-2 nav-link hover:text-gold-300"
           >
             Schedule
           </Link>
           <Link
             to="/roster"
-            className="block text-xl py-5 px-5 lg:inline-block lg:mt-0 text-white mr-4 hover:bg-gold-500 hover:px-6 hover:py-3"
+            className="block md:text-base lg:text-xl md: mx-3 lg:mx-5 lg:inline-block lg:mt-0 text-white mr-2 nav-link hover:text-gold-300"
           >
             Roster
           </Link>
           <Link
             to="/"
-            className="block text-xl py-5 pl-5 lg:inline-block lg:mt-0 text-white hover:bg-gold-500 hover:px-6 hover:py-3"
+            className="block md:text-base lg:text-xl md: mx-3 lg:ml-5 lg:inline-block lg:mt-0 text-white nav-link hover:text-gold-300"
           >
             Did We win?
           </Link>
