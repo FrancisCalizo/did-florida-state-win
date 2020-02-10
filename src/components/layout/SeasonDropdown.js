@@ -3,7 +3,7 @@ import GamesContext from '../../context/games/gamesContext';
 
 const SeasonDropdown = () => {
   const gamesContext = useContext(GamesContext);
-  const { setYear, year } = gamesContext;
+  const { setYear } = gamesContext;
 
   // Populate Years in Dropdown
   let years = [];
@@ -21,7 +21,7 @@ const SeasonDropdown = () => {
         <select
           className="block appearance-none w-full bg-transparent border-b-4
           text-white block border-gray-400 hover:border-gray-500 px-4 py-3 pr-8
-          rounded shadow leading-tight focus:outline-none"
+          rounded shadow leading-tight focus:outline-none cursor-pointer"
           onChange={handleChange}
           defaultValue="2019"
         >
@@ -33,7 +33,7 @@ const SeasonDropdown = () => {
             );
           })}
         </select>
-        <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center  text-gray-700">
+        <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center text-gray-700">
           <svg
             className="fill-current h-8 w-8 text-white"
             xmlns="http://www.w3.org/2000/svg"
@@ -44,7 +44,7 @@ const SeasonDropdown = () => {
         </div>
       </div>
       <div className="mr-10">
-        <h1 className="text-xl sm:text-2xl md:text-4xl lg:text-5xl xl:text-6xl text-white font-bold ">
+        <h1 className="text-xl sm:text-2xl md:text-4xl lg:text-5xl text-white font-bold ">
           Season Schedule
         </h1>
       </div>
