@@ -5,6 +5,7 @@ import About from './components/pages/About';
 import Roster from './components/pages/Roster';
 import NotFound from './components/pages/NotFound';
 import Schedule from './components/pages/Schedule';
+import GameDetails from './components/pages/GameDetails';
 import Navbar from './components/layout/Navbar';
 
 import GamesState from './context/games/GamesState';
@@ -22,6 +23,7 @@ function App() {
             <Route exact path="/" component={Home} />
             <Route exact path="/about" component={About} />
             <Route exact path="/schedule" component={Schedule} />
+            <Route exact path="/gamedetails/:id" component={GameDetails} />
             <Route exact path="/Roster" component={Roster} />
             <Route component={NotFound} />
           </Switch>
