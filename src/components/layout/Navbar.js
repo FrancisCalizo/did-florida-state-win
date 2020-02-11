@@ -29,7 +29,7 @@ const Navbar = () => {
         </div>
         <div className="hidden w-full md:block md:flex md:items-center md:w-auto ">
           <Link
-            to="about"
+            to="/about"
             className="block md:text-base lg:text-xl md: mx-3 lg:mx-5 lg:inline-block lg:mt-0 text-white mr-2 nav-link hover:text-gold-300"
           >
             About
