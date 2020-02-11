@@ -25,7 +25,11 @@ function App() {
               <Route exact path="/" component={Home} />
               <Route exact path="/about" component={About} />
               <Route exact path="/schedule" component={Schedule} />
-              <Route exact path="/gamedetails/:id" component={GameDetails} />
+              <Route
+                exact
+                path="/gamedetails/:season/:week/:id"
+                component={GameDetails}
+              />
               <Route exact path="/Roster" component={Roster} />
               <Route component={NotFound} />
             </Switch>

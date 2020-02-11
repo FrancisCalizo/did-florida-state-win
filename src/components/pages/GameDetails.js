@@ -6,7 +6,11 @@ const GameDetails = ({ match }) => {
   const { fetchGameInformation } = gameDetailsContext;
 
   useEffect(() => {
-    fetchGameInformation(match.params.id);
+    fetchGameInformation(
+      match.params.season,
+      match.params.week,
+      match.params.id
+    );
   }, []);
 
   return (

@@ -95,7 +95,11 @@ const GameItem = ({ games, teamInfo }) => {
                   </div>
                   <div className="px-6 py-4">
                     <button className="inline-block bg-gold-600 border rounded py-1 px-4 text-white cursor-pointer">
-                      <Link to={`/gamedetails/${game.id}`}>Game Details</Link>
+                      <Link
+                        to={`/gamedetails/${game.season}/${game.week}/${game.id}`}
+                      >
+                        Game Details
+                      </Link>
                     </button>
                   </div>
                 </div>
