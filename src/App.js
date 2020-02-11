@@ -9,6 +9,7 @@ import GameDetails from './components/pages/GameDetails';
 import Navbar from './components/layout/Navbar';
 
 import GamesState from './context/games/GamesState';
+import GameDetailsState from './context/game-details/GameDetailsState';
 
 import './styles/app.css';
 import './App.css';
@@ -16,19 +17,21 @@ import './App.css';
 function App() {
   return (
     <GamesState>
-      <Router>
-        <div className="bg-gray-200">
-          <Navbar />
-          <Switch>
-            <Route exact path="/" component={Home} />
-            <Route exact path="/about" component={About} />
-            <Route exact path="/schedule" component={Schedule} />
-            <Route exact path="/gamedetails/:id" component={GameDetails} />
-            <Route exact path="/Roster" component={Roster} />
-            <Route component={NotFound} />
-          </Switch>
-        </div>
-      </Router>
+      <GameDetailsState>
+        <Router>
+          <div className="bg-gray-200">
+            <Navbar />
+            <Switch>
+              <Route exact path="/" component={Home} />
+              <Route exact path="/about" component={About} />
+              <Route exact path="/schedule" component={Schedule} />
+              <Route exact path="/gamedetails/:id" component={GameDetails} />
+              <Route exact path="/Roster" component={Roster} />
+              <Route component={NotFound} />
+            </Switch>
+          </div>
+        </Router>
+      </GameDetailsState>
     </GamesState>
   );
 }

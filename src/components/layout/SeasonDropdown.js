@@ -19,7 +19,7 @@ const SeasonDropdown = () => {
     <div className="flex justify-center items-center mt-8 mx-8 bg-garnet-500 py-3 rounded-t border-4 border-black">
       <div className="inline-block relative w-24 lg:w-32 text-base md:text-lg lg:text-xl mr-4">
         <select
-          className="block appearance-none w-full bg-transparent border-b-4
+          className="block appearance-none w-full bg-garnet-500 border-b-4
           text-white block border-gray-400 hover:border-gray-500 px-4 py-3 pr-8
           rounded shadow leading-tight focus:outline-none cursor-pointer"
           onChange={handleChange}

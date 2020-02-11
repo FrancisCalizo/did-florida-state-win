@@ -12,15 +12,20 @@ const GameDetailsState = props => {
 
   const [state, dispatch] = useReducer(GameDetailsReducer, initialState);
 
+  const fetchGameInformation = async gameId => {
+    console.log(`Game Id ${gameId}`);
+  };
+
   return (
-    <GameDetailsContext
+    <GameDetailsContext.Provider
       value={{
         gameInformation: state.gameInformation,
+        fetchGameInformation: fetchGameInformation,
         loading: state.loading
       }}
     >
       {props.children}
-    </GameDetailsContext>
+    </GameDetailsContext.Provider>
   );
 };
 
