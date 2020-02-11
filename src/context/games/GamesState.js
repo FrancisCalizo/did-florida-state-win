@@ -292,6 +292,7 @@ const GamesState = props => {
         conferenceWins: state.conferenceWins,
         conferenceLosses: state.conferenceLosses,
         setYear: setYear,
+        fetchGames: fetchGames,
         loading: state.loading
       }}
     >

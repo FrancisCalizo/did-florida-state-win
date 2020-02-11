@@ -71,7 +71,7 @@ const GameItem = ({ games, teamInfo }) => {
                     </span>
                     <h2 className="font-bold text-2xl xl:text-3xl">
                       {game.home_team === 'Florida State'
-                        ? game.away_team
+                        ? game.away_teaPm
                         : game.home_team}
                     </h2>
                     <div
@@ -95,7 +95,7 @@ const GameItem = ({ games, teamInfo }) => {
                   </div>
                   <div className="px-6 py-4">
                     <button className="inline-block bg-gold-600 border rounded py-1 px-4 text-white cursor-pointer">
-                      <Link to="/schedule">Game Details</Link>
+                      <Link to={`/gamedetails/${game.id}`}>Game Details</Link>
                     </button>
                   </div>
                 </div>
