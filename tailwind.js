@@ -287,7 +287,10 @@ module.exports = {
         '"Liberation Mono"',
         '"Courier New"',
         'monospace'
-      ]
+      ],
+      // fira: ['Fira Sans', 'sans-serif']
+      // raleway: ['Raleway', 'sans-serif']
+      lato: ['Lato', 'sans-serif']
     },
     fontSize: {
       xs: '0.75rem',

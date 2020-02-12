@@ -19,7 +19,7 @@ const SeasonStats = () => {
     <Spring
       from={{ opacity: 0 }}
       to={{ opacity: 1 }}
-      config={{ delay: 500, duration: 1000 }}
+      config={{ delay: 200, duration: 1000 }}
     >
       {props => (
         <div style={props}>
