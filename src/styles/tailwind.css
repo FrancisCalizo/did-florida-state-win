@@ -1,18 +1,19 @@
 /* @import url('https://fonts.googleapis.com/css?family=Fira+Sans:300,400,700&display=swap'); */
 /* @import url('https://fonts.googleapis.com/css?family=Raleway:300,400,700&display=swap'); */
-@import url('https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap');
-/* @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700&display=swap'); */
+/* @import url('https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap'); */
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 body {
+  /* font-family: 'Fira Sans', sans-serif; */
+  /* font-family: 'Raleway', sans-serif; */
   /* font-family: 'Lato', sans-serif; */
-  font-family: 'Lato', sans-serif;
-  /* font-family: 'Source Sans Pro', sans-serif; */
+  font-family: 'Source Sans Pro', sans-serif;
 }
 
 .nav-link:hover {
-  @apply border-b border-gold-300 shadow-nav;
+  @apply border-b-4 border-gold-500;
 }

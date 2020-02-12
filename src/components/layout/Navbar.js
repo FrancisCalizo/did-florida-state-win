@@ -30,25 +30,25 @@ const Navbar = () => {
         <div className="hidden w-full md:block md:flex md:items-center md:w-auto ">
           <Link
             to="/about"
-            className="block md:text-base lg:text-xl md: mx-3 lg:mx-5 lg:inline-block lg:mt-0 text-white mr-2 nav-link hover:text-gold-300"
+            className="block md:text-base lg:text-xl md: mx-3 lg:mx-5 lg:inline-block lg:mt-0 text-white mr-2 nav-link hover:text-gray-200"
           >
             About
           </Link>
           <Link
             to="/schedule"
-            className="block md:text-base lg:text-xl md: mx-3 lg:mx-5 lg:inline-block lg:mt-0 text-white mr-2 nav-link hover:text-gold-300"
+            className="block md:text-base lg:text-xl md: mx-3 lg:mx-5 lg:inline-block lg:mt-0 text-white mr-2 nav-link hover:text-gray-200"
           >
             Schedule
           </Link>
           <Link
             to="/roster"
-            className="block md:text-base lg:text-xl md: mx-3 lg:mx-5 lg:inline-block lg:mt-0 text-white mr-2 nav-link hover:text-gold-300"
+            className="block md:text-base lg:text-xl md: mx-3 lg:mx-5 lg:inline-block lg:mt-0 text-white mr-2 nav-link hover:text-gray-200"
           >
             Roster
           </Link>
           <Link
             to="/"
-            className="block md:text-base lg:text-xl md: mx-3 lg:ml-5 lg:inline-block lg:mt-0 text-white nav-link hover:text-gold-300"
+            className="block md:text-base lg:text-xl md: mx-3 lg:ml-5 lg:inline-block lg:mt-0 text-white nav-link hover:text-gray-200"
           >
             Did We win?
           </Link>
