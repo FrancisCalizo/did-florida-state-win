@@ -24,6 +24,8 @@ Conditional Attribute in React (JSX) - https://stackoverflow.com/questions/41798
 
 React-Spring for animations - https://www.youtube.com/watch?v=S8yn3-WpVV8 and https://www.react-spring.io/docs/hooks/examples
 
+Shake Animation (Vanilla CSS) - https://www.w3schools.com/howto/howto_css_shake_image.asp
+
 React-Router-Params (match.params) - https://learn.co/lessons/react-router-params
 
 ### This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

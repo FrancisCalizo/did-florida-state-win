@@ -48,9 +48,9 @@ const Navbar = () => {
           </Link>
           <Link
             to="/"
-            className="block md:text-base lg:text-xl md: mx-3 lg:ml-5 lg:inline-block lg:mt-0 text-white nav-link hover:text-gray-200"
+            className="block md:text-base lg:text-xl md:mx-3 lg:ml-4 lg:inline-block lg:mt-0 text-white bg-gold-500 font-semibold px-4 py-3 rounded nav-link-special border-gold-900 border hover:text-dark-700"
           >
-            Did We win?
+            Did We Win?
           </Link>
         </div>
       </div>

@@ -3,7 +3,7 @@ import GameDetailsContext from '../../context/game-details/gameDetailsContext';
 
 const GameDetails = ({ match }) => {
   const gameDetailsContext = useContext(GameDetailsContext);
-  const { fetchGameInformation, changeTab } = gameDetailsContext;
+  const { fetchGameInformation } = gameDetailsContext;
 
   const [currentTab, setCurrentTab] = useState('boxScore');
 
