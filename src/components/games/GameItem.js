@@ -94,7 +94,7 @@ const GameItem = ({ games, teamInfo }) => {
                     </div>
                   </div>
                   <div className="px-6 py-4">
-                    <button className="inline-block bg-gold-600 border rounded py-1 px-4 text-white cursor-pointer">
+                    <button className="inline-block bg-gold-600 border rounded py-1 px-4 text-white cursor-pointer hover:bg-gold-500 active:bg-gold-700">
                       <Link
                         to={`/gamedetails/${game.season}/${game.week}/${game.id}`}
                       >

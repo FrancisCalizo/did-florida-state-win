@@ -28,4 +28,8 @@ Shake Animation (Vanilla CSS) - https://www.w3schools.com/howto/howto_css_shake_
 
 React-Router-Params (match.params) - https://learn.co/lessons/react-router-params
 
+Hover, Focus, and Active Styles - https://tailwindcss.com/course/hover-focus-and-active-styles/ and https://tailwindcss.com/docs/pseudo-class-variants/#app
+
+Enabling Variants (Default Tailwind configuration changes) - https://tailwindcss.com/course/hover-focus-and-active-styles/
+
 ### This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
