@@ -23,25 +23,28 @@ const GameDetails = ({ match }) => {
   return (
     <div className="mt-10">
       <ul className="flex border-b justify-center">
-        <li className="-mb-px mr-1">
+        <li className="-mb-px mr-1 text-lg">
           <button
-            className="uppercase bg-white inline-block border-l border-t border-r rounded-t py-2 px-4 text-black"
+            className={`uppercase bg-white inline-block py-2 px-4 text-black focus:outline-none ${currentTab ===
+              'boxScore' && 'active-tab'}`}
             onClick={() => handleClick('boxScore')}
           >
             Box Score
           </button>
         </li>
-        <li className="mr-1">
+        <li className="-mb-px mr-1 text-lg">
           <button
-            className="uppercase bg-white inline-block py-2 px-4 text-black"
+            className={`uppercase bg-white inline-block py-2 px-4 text-black focus:outline-none ${currentTab ===
+              'team' && 'active-tab'}`}
             onClick={() => handleClick('team')}
           >
             Team
           </button>
         </li>
-        <li className="mr-1">
+        <li className="-mb-px mr-1 text-lg">
           <button
-            className="uppercase bg-white inline-block py-2 px-4 text-black"
+            className={`uppercase bg-white inline-block py-2 px-4 text-black focus:outline-none ${currentTab ===
+              'playByPlay' && 'active-tab'}`}
             onClick={() => handleClick('playByPlay')}
           >
             Play-By-Play

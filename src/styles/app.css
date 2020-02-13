@@ -10254,8 +10254,6 @@ body {
 
 .nav-link-special:hover {
   background-color: #dac9a4;
-  /* -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: black; */
   animation: shake 0.8s;
   animation-iteration-count: infinite;
 }
@@ -10304,6 +10302,14 @@ body {
   100% {
     transform: translate(1px, -2px) rotate(-1deg);
   }
+}
+
+.active-tab {
+  border-left-width: 1px;
+  border-top-width: 1px;
+  border-right-width: 1px;
+  border-top-left-radius: 0.25rem;
+  border-top-right-radius: 0.25rem;
 }
 
 @media (min-width: 640px){

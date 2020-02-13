@@ -32,4 +32,6 @@ Hover, Focus, and Active Styles - https://tailwindcss.com/course/hover-focus-and
 
 Enabling Variants (Default Tailwind configuration changes) - https://tailwindcss.com/course/hover-focus-and-active-styles/
 
+Conditional ClassNames in JSX - https://stackoverflow.com/questions/30533171/react-js-conditionally-applying-class-attributes
+
 ### This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
