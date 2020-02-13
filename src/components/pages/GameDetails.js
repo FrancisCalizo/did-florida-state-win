@@ -1,4 +1,8 @@
 import React, { useContext, useEffect, useState } from 'react';
+import TeamStats from '../team-stats/TeamStats';
+import BoxScore from '../games/BoxScore';
+import PlayByPlay from '../games/PlayByPlay';
+
 import GameDetailsContext from '../../context/game-details/gameDetailsContext';
 
 const GameDetails = ({ match }) => {
@@ -6,6 +10,19 @@ const GameDetails = ({ match }) => {
   const { fetchGameInformation } = gameDetailsContext;
 
   const [currentTab, setCurrentTab] = useState('boxScore');
+
+  const renderTab = () => {
+    switch (true) {
+      case currentTab === 'boxScore':
+        return <BoxScore />;
+      case currentTab === 'teamStats':
+        return <TeamStats />;
+      case currentTab === 'playByPlay':
+        return <PlayByPlay />;
+      default:
+        return <BoxScore />;
+    }
+  };
 
   useEffect(() => {
     fetchGameInformation(
@@ -25,7 +42,7 @@ const GameDetails = ({ match }) => {
       <ul className="flex border-b justify-center">
         <li className="-mb-px mr-1 text-lg">
           <button
-            className={`uppercase bg-white inline-block py-2 px-4 text-black focus:outline-none ${currentTab ===
+            className={`font-semibold uppercase bg-white inline-block py-2 px-4 text-black focus:outline-none hover:bg-gold-500 hover:text-white ${currentTab ===
               'boxScore' && 'active-tab'}`}
             onClick={() => handleClick('boxScore')}
           >
@@ -34,16 +51,16 @@ const GameDetails = ({ match }) => {
         </li>
         <li className="-mb-px mr-1 text-lg">
           <button
-            className={`uppercase bg-white inline-block py-2 px-4 text-black focus:outline-none ${currentTab ===
-              'team' && 'active-tab'}`}
-            onClick={() => handleClick('team')}
+            className={`font-semibold uppercase bg-white inline-block py-2 px-4 text-black focus:outline-none hover:bg-gold-500 hover:text-white ${currentTab ===
+              'teamStats' && 'active-tab'}`}
+            onClick={() => handleClick('teamStats')}
           >
             Team
           </button>
         </li>
         <li className="-mb-px mr-1 text-lg">
           <button
-            className={`uppercase bg-white inline-block py-2 px-4 text-black focus:outline-none ${currentTab ===
+            className={`font-semibold uppercase bg-white inline-block py-2 px-4 text-black focus:outline-none hover:bg-gold-500 hover:text-white ${currentTab ===
               'playByPlay' && 'active-tab'}`}
             onClick={() => handleClick('playByPlay')}
           >
@@ -51,6 +68,7 @@ const GameDetails = ({ match }) => {
           </button>
         </li>
       </ul>
+      <div>{renderTab()}</div>
     </div>
   );
 };

@@ -61,5 +61,5 @@ body {
 }
 
 .active-tab {
-  @apply border-l border-t border-r rounded-t;
+  @apply border-l border-t border-r rounded-t bg-gold-500 text-white;
 }
