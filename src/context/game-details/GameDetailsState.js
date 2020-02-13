@@ -1,4 +1,4 @@
-import React, { useReducer, useEffect } from 'react';
+import React, { useReducer } from 'react';
 import axios from 'axios';
 import GameDetailsContext from './gameDetailsContext';
 import GameDetailsReducer from './gameDetailsReducer';
@@ -50,7 +50,10 @@ const GameDetailsState = props => {
   return (
     <GameDetailsContext.Provider
       value={{
-        gameInformation: state.gameInformation,
+        gameInfo: state.gameInfo,
+        gameStats: state.gameStats,
+        gamePlays: state.gamePlays,
+        currentTab: state.currentTab,
         fetchGameInformation: fetchGameInformation,
         loading: state.loading
       }}
