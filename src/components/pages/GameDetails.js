@@ -26,6 +26,7 @@ const GameDetails = ({ match }) => {
 
   useEffect(() => {
     fetchGameInfo(match.params.season, match.params.week, match.params.id);
+
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 

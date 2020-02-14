@@ -1,4 +1,4 @@
-import React, { useReducer, useEffect } from 'react';
+import React, { useReducer } from 'react';
 import axios from 'axios';
 import GamesContext from './gamesContext';
 import GamesReducer from './gamesReducer';
@@ -34,13 +34,6 @@ const GamesState = props => {
   };
 
   const [state, dispatch] = useReducer(GamesReducer, initialState);
-
-  useEffect(() => {
-    (async function getData() {
-      await fetchGames(state.year);
-    })();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [state.year]);
 
   const fetchGames = year => {
     setLoading();
@@ -282,6 +275,7 @@ const GamesState = props => {
     <GamesContext.Provider
       value={{
         games: state.games,
+        year: state.year,
         teamInfo: state.teamInfo,
         seasonWins: state.seasonWins,
         seasonLosses: state.seasonLosses,

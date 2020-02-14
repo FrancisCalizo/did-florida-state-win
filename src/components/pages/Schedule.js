@@ -6,12 +6,12 @@ import GamesContext from '../../context/games/gamesContext';
 
 const Schedule = () => {
   const gamesContext = useContext(GamesContext);
-  const { fetchGames } = gamesContext;
+  const { fetchGames, year } = gamesContext;
 
   useEffect(() => {
-    fetchGames(2019);
+    fetchGames(year);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [year]);
 
   return (
     <div className="container">
