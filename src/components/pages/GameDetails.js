@@ -7,7 +7,7 @@ import GameDetailsContext from '../../context/game-details/gameDetailsContext';
 
 const GameDetails = ({ match }) => {
   const gameDetailsContext = useContext(GameDetailsContext);
-  const { fetchGameInformation } = gameDetailsContext;
+  const { fetchGameInfo } = gameDetailsContext;
 
   const [currentTab, setCurrentTab] = useState('boxScore');
 
@@ -25,11 +25,7 @@ const GameDetails = ({ match }) => {
   };
 
   useEffect(() => {
-    fetchGameInformation(
-      match.params.season,
-      match.params.week,
-      match.params.id
-    );
+    fetchGameInfo(match.params.season, match.params.week, match.params.id);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 

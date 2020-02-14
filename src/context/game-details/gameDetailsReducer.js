@@ -1,8 +1,8 @@
-import { GET_GAME_INFORMATION } from '../types';
+import { GET_GAME_INFO } from '../types';
 
 export default (state, action) => {
   switch (action.type) {
-    case GET_GAME_INFORMATION:
+    case GET_GAME_INFO:
       return {
         ...state,
         gameInfo: action.payload.gameInfo,

@@ -2,19 +2,20 @@ import React, { useReducer } from 'react';
 import axios from 'axios';
 import GameDetailsContext from './gameDetailsContext';
 import GameDetailsReducer from './gameDetailsReducer';
-import { GET_GAME_INFORMATION } from '../types';
+import { GET_GAME_INFO } from '../types';
 
 const GameDetailsState = props => {
   const initialState = {
     gameInfo: [],
     gameStats: [],
     gamePlays: [],
-    loading: false
+    loading: false,
+    opposingTeamInfo: []
   };
 
   const [state, dispatch] = useReducer(GameDetailsReducer, initialState);
 
-  const fetchGameInformation = async (season, week, id) => {
+  const fetchGameInfo = async (season, week, id) => {
     try {
       let gameInfo = axios.get(
         `https://api.collegefootballdata.com/games?year=${season}&seasonType=regular&team=Florida%20State&id=${id}`
@@ -31,15 +32,15 @@ const GameDetailsState = props => {
       Promise.all([gameInfo, gameStats, gamePlays]).then(res => {
         const [gameInfo, gameStats, gamePlays] = res;
 
-        const gameInformation = {
+        const gameData = {
           gameInfo: gameInfo['data'],
           gameStats: gameStats['data'],
           gamePlays: gamePlays['data']
         };
 
         dispatch({
-          type: GET_GAME_INFORMATION,
-          payload: gameInformation
+          type: GET_GAME_INFO,
+          payload: gameData
         });
       });
     } catch (err) {
@@ -54,7 +55,7 @@ const GameDetailsState = props => {
         gameStats: state.gameStats,
         gamePlays: state.gamePlays,
         currentTab: state.currentTab,
-        fetchGameInformation: fetchGameInformation,
+        fetchGameInfo: fetchGameInfo,
         loading: state.loading
       }}
     >

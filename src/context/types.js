@@ -1,3 +1,4 @@
+// Games Context Types
 export const GET_GAMES = 'GET_GAMES';
 export const GET_TEAM_INFO = 'GET_TEAMINFO';
 export const SET_LOADING = 'SET_LOADING';
@@ -11,4 +12,8 @@ export const SET_CONFERENCE_WINS = 'SET_CONFERENCE_WINS';
 export const SET_CONFERENCE_LOSSES = 'SET_CONFERENCE_LOSSES';
 export const SET_YEAR = 'SET_YEAR';
 
-export const GET_GAME_INFORMATION = 'GET_GAME_INFORMATION';
+// Game Details Types
+export const GET_GAME_INFO = 'GET_GAME_INFO';
+
+// FSU Team Types
+export const GET_FSU_TEAM_INFO = 'GET_FSU_TEAM_INFO';

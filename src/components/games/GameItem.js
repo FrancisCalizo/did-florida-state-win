@@ -29,7 +29,7 @@ const GameItem = ({ games, teamInfo }) => {
           <Spring
             from={{ opacity: 0 }}
             to={{ opacity: 1 }}
-            config={{ delay: 200 * idx, duration: 700 }}
+            config={{ delay: 150 * idx, duration: 700 }}
             key={game.id}
           >
             {props => (

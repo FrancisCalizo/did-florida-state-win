@@ -24,6 +24,12 @@ body {
   animation-iteration-count: infinite;
 }
 
+.nav-link-special:active {
+  @apply bg-gold-500;
+  animation: none;
+  animation-iteration-count: infinite;
+}
+
 @keyframes shake {
   0% {
     transform: translate(1px, 1px) rotate(0deg);
