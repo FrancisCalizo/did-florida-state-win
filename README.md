@@ -34,4 +34,8 @@ Enabling Variants (Default Tailwind configuration changes) - https://tailwindcss
 
 Conditional ClassNames in JSX - https://stackoverflow.com/questions/30533171/react-js-conditionally-applying-class-attributes
 
+React Page Rendering Twice (Still not fixed) and why I cant read from state - https://stackoverflow.com/questions/53991538/reactjs-typeerror-cannot-read-property-0-of-undefined and https://stackoverflow.com/questions/48846289/why-is-my-react-component-is-rendering-twice
+
+Check if Object is empty - https://stackoverflow.com/questions/679915/how-do-i-test-for-an-empty-javascript-object
+
 ### This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

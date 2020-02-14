@@ -2,21 +2,24 @@ import React, { useReducer, useEffect } from 'react';
 import axios from 'axios';
 import FsuTeamContext from './fsuTeamContext';
 import FsuTeamReducer from './fsuTeamReducer';
-import { GET_FSU_TEAM_INFO } from '../types';
+import { GET_FSU_TEAM_INFO, SET_LOADING } from '../types';
 
 const FsuTeamState = props => {
   const initialState = {
-    fsuTeamInfo: []
+    fsuTeamInfo: {},
+    loading: false
   };
 
   const [state, dispatch] = useReducer(FsuTeamReducer, initialState);
 
-  useEffect(() => {
-    fetchFsuTeamInfo();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  // useEffect(() => {
+  //   fetchFsuTeamInfo();
+  //   // eslint-disable-next-line react-hooks/exhaustive-deps
+  // }, []);
 
   const fetchFsuTeamInfo = async () => {
+    setLoading();
+
     try {
       // Get All Teams in CFB
       let teamInfo = await axios.get(
@@ -26,7 +29,7 @@ const FsuTeamState = props => {
       // Filter Team Info to get FSU
       let fsuTeamInfo = teamInfo.data.filter(
         team => team.school === 'Florida State'
-      );
+      )[0];
 
       dispatch({
         type: GET_FSU_TEAM_INFO,
@@ -37,10 +40,14 @@ const FsuTeamState = props => {
     }
   };
 
+  const setLoading = () => dispatch({ type: SET_LOADING });
+
   return (
     <FsuTeamContext.Provider
       value={{
-        fsuTeamInfo: state.fsuTeamInfo
+        fsuTeamInfo: state.fsuTeamInfo,
+        loading: state.loading,
+        fetchFsuTeamInfo: fetchFsuTeamInfo
       }}
     >
       {props.children}

@@ -4,17 +4,46 @@ import BoxScore from '../games/BoxScore';
 import PlayByPlay from '../games/PlayByPlay';
 
 import GameDetailsContext from '../../context/game-details/gameDetailsContext';
+import FsuTeamContext from '../../context/fsu-team/fsuTeamContext';
 
 const GameDetails = ({ match }) => {
   const gameDetailsContext = useContext(GameDetailsContext);
-  const { fetchGameInfo } = gameDetailsContext;
+  const {
+    fetchGameInfo,
+    gameInfo,
+    gameStats,
+    opposingTeamInfo,
+    isFsuHomeTeam
+  } = gameDetailsContext;
+
+  const fsuTeamContext = useContext(FsuTeamContext);
+  const { fsuTeamInfo, fetchFsuTeamInfo, loading } = fsuTeamContext;
 
   const [currentTab, setCurrentTab] = useState('boxScore');
+
+  useEffect(() => {
+    fetchGameInfo(match.params.season, match.params.week, match.params.id);
+    fetchFsuTeamInfo();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  const handleClick = tab => {
+    setCurrentTab(tab);
+  };
 
   const renderTab = () => {
     switch (true) {
       case currentTab === 'boxScore':
-        return <BoxScore />;
+        return (
+          <BoxScore
+            fsuTeamInfo={fsuTeamInfo}
+            gameInfo={gameInfo}
+            gameStats={gameStats}
+            opposingTeamInfo={opposingTeamInfo}
+            isFsuHomeTeam={isFsuHomeTeam}
+            loading={loading}
+          />
+        );
       case currentTab === 'teamStats':
         return <TeamStats />;
       case currentTab === 'playByPlay':
@@ -22,16 +51,6 @@ const GameDetails = ({ match }) => {
       default:
         return <BoxScore />;
     }
-  };
-
-  useEffect(() => {
-    fetchGameInfo(match.params.season, match.params.week, match.params.id);
-
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
-  const handleClick = tab => {
-    setCurrentTab(tab);
   };
 
   return (

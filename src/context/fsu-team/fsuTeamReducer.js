@@ -1,4 +1,4 @@
-import { GET_FSU_TEAM_INFO } from '../types';
+import { GET_FSU_TEAM_INFO, SET_LOADING } from '../types';
 
 export default (state, action) => {
   switch (action.type) {
@@ -7,6 +7,11 @@ export default (state, action) => {
         ...state,
         fsuTeamInfo: action.payload,
         loading: false
+      };
+    case SET_LOADING:
+      return {
+        ...state,
+        loading: true
       };
     default:
       return state;

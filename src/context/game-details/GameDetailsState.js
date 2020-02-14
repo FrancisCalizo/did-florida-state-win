@@ -9,8 +9,9 @@ const GameDetailsState = props => {
     gameInfo: [],
     gameStats: [],
     gamePlays: [],
-    loading: false,
-    opposingTeamInfo: []
+    opposingTeamInfo: [],
+    isFsuHomeTeam: false,
+    loading: false
   };
 
   const [state, dispatch] = useReducer(GameDetailsReducer, initialState);
@@ -40,12 +41,14 @@ const GameDetailsState = props => {
           gamePlays: gamePlays['data']
         };
 
-        // Get Opposing Team Info
+        // Get Opposing Team Info && Find Out Home Team
         let opposingTeamName;
         if (gameData.gameInfo[0].home_team === 'Florida State') {
           opposingTeamName = gameData.gameInfo[0].away_team;
+          gameData.isFsuHomeTeam = true;
         } else {
           opposingTeamName = gameData.gameInfo[0].home_team;
+          gameData.isFsuHomeTeam = false;
         }
 
         gameData.opposingTeam = teamInfo.data.filter(
@@ -68,7 +71,8 @@ const GameDetailsState = props => {
         gameInfo: state.gameInfo,
         gameStats: state.gameStats,
         gamePlays: state.gamePlays,
-        currentTab: state.currentTab,
+        opposingTeamInfo: state.opposingTeamInfo,
+        isFsuHomeTeam: state.isFsuHomeTeam,
         fetchGameInfo: fetchGameInfo,
         loading: state.loading
       }}

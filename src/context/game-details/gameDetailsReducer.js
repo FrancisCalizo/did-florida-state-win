@@ -9,6 +9,7 @@ export default (state, action) => {
         gameStats: action.payload.gameStats,
         gamePlays: action.payload.gamePlays,
         opposingTeamInfo: action.payload.opposingTeam,
+        isFsuHomeTeam: action.payload.isFsuHomeTeam,
         loading: false
       };
     default:
