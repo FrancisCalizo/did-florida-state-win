@@ -8,6 +8,7 @@ export default (state, action) => {
         gameInfo: action.payload.gameInfo,
         gameStats: action.payload.gameStats,
         gamePlays: action.payload.gamePlays,
+        opposingTeamInfo: action.payload.opposingTeam,
         loading: false
       };
     default:

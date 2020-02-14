@@ -29,14 +29,28 @@ const GameDetailsState = props => {
         `https://api.collegefootballdata.com/plays?year=${season}&week=${week}&team=Florida%20State`
       );
 
-      Promise.all([gameInfo, gameStats, gamePlays]).then(res => {
-        const [gameInfo, gameStats, gamePlays] = res;
+      let teamInfo = axios.get(`https://api.collegefootballdata.com/teams`);
+
+      Promise.all([gameInfo, gameStats, gamePlays, teamInfo]).then(res => {
+        const [gameInfo, gameStats, gamePlays, teamInfo] = res;
 
         const gameData = {
           gameInfo: gameInfo['data'],
           gameStats: gameStats['data'],
           gamePlays: gamePlays['data']
         };
+
+        // Get Opposing Team Info
+        let opposingTeamName;
+        if (gameData.gameInfo[0].home_team === 'Florida State') {
+          opposingTeamName = gameData.gameInfo[0].away_team;
+        } else {
+          opposingTeamName = gameData.gameInfo[0].home_team;
+        }
+
+        gameData.opposingTeam = teamInfo.data.filter(
+          team => team.school === opposingTeamName
+        )[0];
 
         dispatch({
           type: GET_GAME_INFO,

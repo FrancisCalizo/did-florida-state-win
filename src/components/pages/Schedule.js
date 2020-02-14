@@ -10,6 +10,7 @@ const Schedule = () => {
 
   useEffect(() => {
     fetchGames(year);
+
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [year]);
 
