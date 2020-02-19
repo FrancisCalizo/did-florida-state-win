@@ -3,6 +3,7 @@ import { GET_GAME_INFO } from '../types';
 export default (state, action) => {
   switch (action.type) {
     case GET_GAME_INFO:
+      console.log('Begin State change in reducer');
       return {
         ...state,
         gameInfo: action.payload.gameInfo,

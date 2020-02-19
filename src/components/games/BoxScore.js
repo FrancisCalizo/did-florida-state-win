@@ -58,18 +58,6 @@ const BoxScore = ({
                 ) : null}
               </div>
             )}
-            {/* {!isFsuHomeTeam && (
-              <div>
-                {(Object.entries(opposingTeamInfo).length !== 0 ||
-                  opposingTeamInfo.constructor !== Object) &&
-                opposingTeamInfo.logos ? (
-                  <img
-                    src={opposingTeamInfo.logos[0]}
-                    alt={opposingTeamInfo.school}
-                  />
-                ) : null}
-              </div>
-            )} */}
           </div>
         </div>
         <div className="w-1/2">

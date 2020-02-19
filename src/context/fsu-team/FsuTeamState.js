@@ -1,25 +1,18 @@
-import React, { useReducer, useEffect } from 'react';
+import React, { useReducer } from 'react';
 import axios from 'axios';
 import FsuTeamContext from './fsuTeamContext';
 import FsuTeamReducer from './fsuTeamReducer';
-import { GET_FSU_TEAM_INFO, SET_LOADING } from '../types';
+import { GET_FSU_TEAM_INFO } from '../types';
 
 const FsuTeamState = props => {
   const initialState = {
     fsuTeamInfo: {},
-    loading: false
+    loading: true
   };
 
   const [state, dispatch] = useReducer(FsuTeamReducer, initialState);
 
-  // useEffect(() => {
-  //   fetchFsuTeamInfo();
-  //   // eslint-disable-next-line react-hooks/exhaustive-deps
-  // }, []);
-
   const fetchFsuTeamInfo = async () => {
-    setLoading();
-
     try {
       // Get All Teams in CFB
       let teamInfo = await axios.get(
@@ -39,8 +32,6 @@ const FsuTeamState = props => {
       console.error(err);
     }
   };
-
-  const setLoading = () => dispatch({ type: SET_LOADING });
 
   return (
     <FsuTeamContext.Provider

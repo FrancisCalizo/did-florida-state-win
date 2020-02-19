@@ -38,4 +38,8 @@ React Page Rendering Twice (Still not fixed) and why I cant read from state - ht
 
 Check if Object is empty - https://stackoverflow.com/questions/679915/how-do-i-test-for-an-empty-javascript-object
 
+UseEffect runs AFTER render commit phase,hence after the render cycle - https://stackoverflow.com/questions/55424405/does-a-render-happen-before-function-in-react-hooks-useeffect-is-called/55424674
+
+Debugging in React - https://www.youtube.com/watch?v=PJeNReqyH88
+
 ### This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
