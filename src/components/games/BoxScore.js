@@ -12,28 +12,21 @@ const BoxScore = ({
   if (loading) {
     return <h1>Loading...</h1>;
   } else {
-    console.log(opposingTeamInfo);
     return (
       <div className="flex justify-center">
         <div className="w-1/2 flex">
           <div className="w-1/3">
             {!isFsuHomeTeam && (
               <div>
-                {Object.entries(fsuTeamInfo).length !== 0 ||
-                fsuTeamInfo.constructor !== Object ? (
-                  <img src={fsuTeamInfo.logos[0]} alt={fsuTeamInfo.school} />
-                ) : null}
+                <img src={fsuTeamInfo.logos[0]} alt={fsuTeamInfo.school} />
               </div>
             )}
             {isFsuHomeTeam && (
               <div>
-                {Object.entries(opposingTeamInfo).length !== 0 ||
-                opposingTeamInfo.constructor !== Object ? (
-                  <img
-                    src={opposingTeamInfo.logos[0]}
-                    alt={opposingTeamInfo.school}
-                  />
-                ) : null}
+                <img
+                  src={opposingTeamInfo.logos[0]}
+                  alt={opposingTeamInfo.school}
+                />
               </div>
             )}
           </div>
@@ -41,21 +34,15 @@ const BoxScore = ({
           <div className="w-1/3">
             {isFsuHomeTeam && (
               <div>
-                {Object.entries(fsuTeamInfo).length !== 0 ||
-                fsuTeamInfo.constructor !== Object ? (
-                  <img src={fsuTeamInfo.logos[0]} alt={fsuTeamInfo.school} />
-                ) : null}
+                <img src={fsuTeamInfo.logos[0]} alt={fsuTeamInfo.school} />
               </div>
             )}
             {!isFsuHomeTeam && (
               <div>
-                {Object.entries(opposingTeamInfo).length !== 0 ||
-                opposingTeamInfo.constructor !== Object ? (
-                  <img
-                    src={opposingTeamInfo.logos[0]}
-                    alt={opposingTeamInfo.school}
-                  />
-                ) : null}
+                <img
+                  src={opposingTeamInfo.logos[0]}
+                  alt={opposingTeamInfo.school}
+                />
               </div>
             )}
           </div>

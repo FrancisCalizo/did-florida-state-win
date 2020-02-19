@@ -30,7 +30,7 @@ const GamesState = props => {
     conferenceWins: 0,
     conferenceLosses: 0,
     year: 2019,
-    loading: false
+    loading: true
   };
 
   const [state, dispatch] = useReducer(GamesReducer, initialState);
