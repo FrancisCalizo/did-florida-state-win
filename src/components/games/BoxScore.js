@@ -16,35 +16,33 @@ const BoxScore = ({
       <div className="flex justify-center">
         <div className="w-1/2 flex">
           <div className="w-1/3">
-            {!isFsuHomeTeam && (
-              <div>
-                <img src={fsuTeamInfo.logos[0]} alt={fsuTeamInfo.school} />
-              </div>
-            )}
-            {isFsuHomeTeam && (
-              <div>
-                <img
-                  src={opposingTeamInfo.logos[0]}
-                  alt={opposingTeamInfo.school}
-                />
-              </div>
-            )}
+            <div>
+              <img
+                src={
+                  isFsuHomeTeam
+                    ? opposingTeamInfo.logos[0]
+                    : fsuTeamInfo.logos[0]
+                }
+                alt={fsuTeamInfo.school}
+              />
+            </div>
           </div>
-          <div className="w-1/3">Vs.</div>
+          <div className="w-1/3 text-center my-auto">
+            <div>
+              <span className="text-5xl">Vs.</span>
+            </div>
+          </div>
           <div className="w-1/3">
-            {isFsuHomeTeam && (
-              <div>
-                <img src={fsuTeamInfo.logos[0]} alt={fsuTeamInfo.school} />
-              </div>
-            )}
-            {!isFsuHomeTeam && (
-              <div>
-                <img
-                  src={opposingTeamInfo.logos[0]}
-                  alt={opposingTeamInfo.school}
-                />
-              </div>
-            )}
+            <div>
+              <img
+                src={
+                  isFsuHomeTeam
+                    ? fsuTeamInfo.logos[0]
+                    : opposingTeamInfo.logos[0]
+                }
+                alt={fsuTeamInfo.school}
+              />
+            </div>
           </div>
         </div>
         <div className="w-1/2">
