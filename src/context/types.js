@@ -1,7 +1,6 @@
 // Games Context Types
 export const GET_GAMES = 'GET_GAMES';
 export const GET_TEAM_INFO = 'GET_TEAMINFO';
-export const SET_LOADING = 'SET_LOADING';
 export const SET_SEASON_WINS = 'SET_SEASON_WINS';
 export const SET_SEASON_LOSSES = 'SET_SEASON_LOSSES';
 export const SET_HOME_WINS = 'SET_HOME_WINS';

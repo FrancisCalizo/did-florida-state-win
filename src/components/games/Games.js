@@ -6,8 +6,6 @@ const Games = () => {
   const gamesContext = useContext(GamesContext);
   const { games, teamInfo } = gamesContext;
 
-  // Loading Gif Here
-
   return (
     <div className="flex flex-wrap justify-center px-16 sm:px-0">
       <GameItem games={games} teamInfo={teamInfo} />

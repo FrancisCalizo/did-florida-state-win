@@ -9,8 +9,7 @@ import {
   SET_AWAY_LOSSES,
   SET_CONFERENCE_WINS,
   SET_CONFERENCE_LOSSES,
-  SET_YEAR,
-  SET_LOADING
+  SET_YEAR
 } from '../types';
 
 export default (state, action) => {
@@ -23,68 +22,54 @@ export default (state, action) => {
     case GET_TEAM_INFO:
       return {
         ...state,
-        teamInfo: action.payload,
-        loading: false
+        teamInfo: action.payload
       };
     case SET_SEASON_WINS:
       return {
         ...state,
-        seasonWins: action.payload,
-        loading: false
+        seasonWins: action.payload
       };
     case SET_SEASON_LOSSES:
       return {
         ...state,
-        seasonLosses: action.payload,
-        loading: false
+        seasonLosses: action.payload
       };
     case SET_HOME_WINS:
       return {
         ...state,
-        homeWins: action.payload,
-        loading: false
+        homeWins: action.payload
       };
     case SET_HOME_LOSSES:
       return {
         ...state,
-        homeLosses: action.payload,
-        loading: false
+        homeLosses: action.payload
       };
     case SET_AWAY_WINS:
       return {
         ...state,
-        awayWins: action.payload,
-        loading: false
+        awayWins: action.payload
       };
     case SET_AWAY_LOSSES:
       return {
         ...state,
-        awayLosses: action.payload,
-        loading: false
+        awayLosses: action.payload
       };
     case SET_CONFERENCE_WINS:
       return {
         ...state,
-        conferenceWins: action.payload,
-        loading: false
+        conferenceWins: action.payload
       };
     case SET_CONFERENCE_LOSSES:
       return {
         ...state,
-        conferenceLosses: action.payload,
-        loading: false
+        conferenceLosses: action.payload
       };
     case SET_YEAR:
       return {
         ...state,
-        year: action.payload,
-        loading: false
+        year: action.payload
       };
-    case SET_LOADING:
-      return {
-        ...state,
-        loading: true
-      };
+
     default:
       return state;
   }

@@ -13,7 +13,6 @@ import {
   SET_AWAY_LOSSES,
   SET_CONFERENCE_WINS,
   SET_CONFERENCE_LOSSES,
-  SET_LOADING,
   SET_YEAR
 } from '../types';
 
@@ -29,15 +28,12 @@ const GamesState = props => {
     awayLosses: 0,
     conferenceWins: 0,
     conferenceLosses: 0,
-    year: 2019,
-    loading: true
+    year: 2019
   };
 
   const [state, dispatch] = useReducer(GamesReducer, initialState);
 
   const fetchGames = year => {
-    setLoading();
-
     // Regular Season
     let regularSeason = axios.get(
       `https://api.collegefootballdata.com/games?year=${year}&team=Florida%20State`
@@ -269,8 +265,6 @@ const GamesState = props => {
     });
   };
 
-  const setLoading = () => dispatch({ type: SET_LOADING });
-
   return (
     <GamesContext.Provider
       value={{
@@ -286,8 +280,7 @@ const GamesState = props => {
         conferenceWins: state.conferenceWins,
         conferenceLosses: state.conferenceLosses,
         fetchGames: fetchGames,
-        setYear: setYear,
-        loading: state.loading
+        setYear: setYear
       }}
     >
       {props.children}

@@ -25,12 +25,7 @@ const GameDetails = ({ match }) => {
   useEffect(() => {
     setLoading(true);
 
-    fetchGameInfo(
-      match.params.season,
-      match.params.week,
-      match.params.id,
-      setLoading
-    );
+    fetchGameInfo(match.params.season, match.params.week, match.params.id);
 
     fetchFsuTeamInfo(setLoading);
     // eslint-disable-next-line react-hooks/exhaustive-deps
