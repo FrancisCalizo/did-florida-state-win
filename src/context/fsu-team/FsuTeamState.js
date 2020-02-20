@@ -6,13 +6,12 @@ import { GET_FSU_TEAM_INFO } from '../types';
 
 const FsuTeamState = props => {
   const initialState = {
-    fsuTeamInfo: {},
-    loading: true
+    fsuTeamInfo: {}
   };
 
   const [state, dispatch] = useReducer(FsuTeamReducer, initialState);
 
-  const fetchFsuTeamInfo = async () => {
+  const fetchFsuTeamInfo = async setLoading => {
     try {
       // Get All Teams in CFB
       let teamInfo = await axios.get(
@@ -28,6 +27,8 @@ const FsuTeamState = props => {
         type: GET_FSU_TEAM_INFO,
         payload: fsuTeamInfo
       });
+
+      setLoading(false);
     } catch (err) {
       console.error(err);
     }
@@ -37,7 +38,6 @@ const FsuTeamState = props => {
     <FsuTeamContext.Provider
       value={{
         fsuTeamInfo: state.fsuTeamInfo,
-        loading: state.loading,
         fetchFsuTeamInfo: fetchFsuTeamInfo
       }}
     >

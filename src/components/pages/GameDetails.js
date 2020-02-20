@@ -17,13 +17,22 @@ const GameDetails = ({ match }) => {
   } = gameDetailsContext;
 
   const fsuTeamContext = useContext(FsuTeamContext);
-  const { fsuTeamInfo, fetchFsuTeamInfo, loading } = fsuTeamContext;
+  const { fsuTeamInfo, fetchFsuTeamInfo } = fsuTeamContext;
 
   const [currentTab, setCurrentTab] = useState('boxScore');
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetchGameInfo(match.params.season, match.params.week, match.params.id);
-    fetchFsuTeamInfo();
+    setLoading(true);
+
+    fetchGameInfo(
+      match.params.season,
+      match.params.week,
+      match.params.id,
+      setLoading
+    );
+
+    fetchFsuTeamInfo(setLoading);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 

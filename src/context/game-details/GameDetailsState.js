@@ -2,7 +2,7 @@ import React, { useReducer } from 'react';
 import axios from 'axios';
 import GameDetailsContext from './gameDetailsContext';
 import GameDetailsReducer from './gameDetailsReducer';
-import { GET_GAME_INFO, SET_LOADING } from '../types';
+import { GET_GAME_INFO } from '../types';
 
 const GameDetailsState = props => {
   const initialState = {
@@ -10,15 +10,12 @@ const GameDetailsState = props => {
     gameStats: [],
     gamePlays: [],
     opposingTeamInfo: [],
-    isFsuHomeTeam: false,
-    loading: true
+    isFsuHomeTeam: false
   };
 
   const [state, dispatch] = useReducer(GameDetailsReducer, initialState);
 
   const fetchGameInfo = async (season, week, id) => {
-    setLoading();
-
     try {
       let gameInfo = axios.get(
         `https://api.collegefootballdata.com/games?year=${season}&seasonType=regular&team=Florida%20State&id=${id}`
@@ -67,8 +64,6 @@ const GameDetailsState = props => {
     }
   };
 
-  const setLoading = () => dispatch({ type: SET_LOADING });
-
   return (
     <GameDetailsContext.Provider
       value={{
@@ -77,8 +72,7 @@ const GameDetailsState = props => {
         gamePlays: state.gamePlays,
         opposingTeamInfo: state.opposingTeamInfo,
         isFsuHomeTeam: state.isFsuHomeTeam,
-        fetchGameInfo: fetchGameInfo,
-        loading: state.loading
+        fetchGameInfo: fetchGameInfo
       }}
     >
       {props.children}
