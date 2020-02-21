@@ -42,4 +42,6 @@ UseEffect runs AFTER render commit phase,hence after the render cycle - https://
 
 Debugging in React - https://www.youtube.com/watch?v=PJeNReqyH88
 
+TypeError - Cannot Read Property '0' of undefined - https://stackoverflow.com/questions/53991538/reactjs-typeerror-cannot-read-property-0-of-undefined
+
 ### This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

@@ -13,7 +13,8 @@ const GameDetails = ({ match }) => {
     gameInfo,
     gameStats,
     opposingTeamInfo,
-    isFsuHomeTeam
+    isFsuHomeTeam,
+    clearGameInfo
   } = gameDetailsContext;
 
   const fsuTeamContext = useContext(FsuTeamContext);
@@ -28,6 +29,10 @@ const GameDetails = ({ match }) => {
     fetchGameInfo(match.params.season, match.params.week, match.params.id);
 
     fetchFsuTeamInfo(setLoading);
+
+    return () => {
+      clearGameInfo();
+    };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 

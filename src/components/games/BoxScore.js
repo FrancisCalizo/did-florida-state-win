@@ -9,7 +9,7 @@ const BoxScore = ({
   isFsuHomeTeam,
   loading
 }) => {
-  if (loading) {
+  if (loading || !opposingTeamInfo.logos || !fsuTeamInfo.logos) {
     return <h1 className="text-3xl">Loading...</h1>;
   } else {
     return (

@@ -2,7 +2,7 @@ import React, { useReducer } from 'react';
 import axios from 'axios';
 import GameDetailsContext from './gameDetailsContext';
 import GameDetailsReducer from './gameDetailsReducer';
-import { GET_GAME_INFO } from '../types';
+import { GET_GAME_INFO, CLEAR_GAME_INFO } from '../types';
 
 const GameDetailsState = props => {
   const initialState = {
@@ -64,6 +64,12 @@ const GameDetailsState = props => {
     }
   };
 
+  const clearGameInfo = () => {
+    dispatch({
+      type: CLEAR_GAME_INFO
+    });
+  };
+
   return (
     <GameDetailsContext.Provider
       value={{
@@ -72,7 +78,8 @@ const GameDetailsState = props => {
         gamePlays: state.gamePlays,
         opposingTeamInfo: state.opposingTeamInfo,
         isFsuHomeTeam: state.isFsuHomeTeam,
-        fetchGameInfo: fetchGameInfo
+        fetchGameInfo: fetchGameInfo,
+        clearGameInfo: clearGameInfo
       }}
     >
       {props.children}
