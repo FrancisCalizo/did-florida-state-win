@@ -14,8 +14,8 @@ export default (state, action) => {
     case CLEAR_GAME_INFO:
       return {
         ...state,
-        gameInfo: [],
-        gameStats: [],
+        gameInfo: {},
+        gameStats: {},
         gamePlays: [],
         opposingTeamInfo: [],
         isFsuHomeTeam: false

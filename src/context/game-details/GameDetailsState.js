@@ -6,8 +6,8 @@ import { GET_GAME_INFO, CLEAR_GAME_INFO } from '../types';
 
 const GameDetailsState = props => {
   const initialState = {
-    gameInfo: [],
-    gameStats: [],
+    gameInfo: {},
+    gameStats: {},
     gamePlays: [],
     opposingTeamInfo: [],
     isFsuHomeTeam: false
@@ -35,18 +35,18 @@ const GameDetailsState = props => {
         const [gameInfo, gameStats, gamePlays, teamInfo] = res;
 
         const gameData = {
-          gameInfo: gameInfo['data'],
-          gameStats: gameStats['data'],
+          gameInfo: gameInfo['data'][0],
+          gameStats: gameStats['data'][0],
           gamePlays: gamePlays['data']
         };
 
         // Get Opposing Team Info && Find Out Home Team
         let opposingTeamName;
-        if (gameData.gameInfo[0].home_team === 'Florida State') {
-          opposingTeamName = gameData.gameInfo[0].away_team;
+        if (gameData.gameInfo.home_team === 'Florida State') {
+          opposingTeamName = gameData.gameInfo.away_team;
           gameData.isFsuHomeTeam = true;
         } else {
-          opposingTeamName = gameData.gameInfo[0].home_team;
+          opposingTeamName = gameData.gameInfo.home_team;
           gameData.isFsuHomeTeam = false;
         }
 
