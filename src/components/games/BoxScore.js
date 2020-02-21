@@ -14,10 +14,11 @@ const BoxScore = ({
   } else {
     return (
       <div className="flex justify-center">
-        <div className="w-1/2 flex">
+        <div className="w-1/2 flex justify-center">
           <div className="w-1/3">
             <div>
               <img
+                className="w-40 mx-auto"
                 src={
                   isFsuHomeTeam
                     ? opposingTeamInfo.logos[0]
@@ -27,14 +28,17 @@ const BoxScore = ({
               />
             </div>
           </div>
-          <div className="w-1/3 text-center my-auto">
+          <div className="w-30 text-center my-auto">
             <div>
-              <span className="text-5xl">Vs.</span>
+              <span className="text-2xl border-2 px-3 py-2 rounded-full bg-white">
+                vs
+              </span>
             </div>
           </div>
           <div className="w-1/3">
             <div>
               <img
+                className="w-40 mx-auto"
                 src={
                   isFsuHomeTeam
                     ? fsuTeamInfo.logos[0]
