@@ -39,10 +39,10 @@ const GameDetailsState = props => {
           gameInfo: gameInfo['data'][0],
           gameStatsHome: gameStats['data'][0].teams.filter(
             team => team.homeAway === 'home'
-          ),
+          )[0],
           gameStatsAway: gameStats['data'][0].teams.filter(
             team => team.homeAway === 'away'
-          ),
+          )[0],
           gamePlays: gamePlays['data']
         };
 

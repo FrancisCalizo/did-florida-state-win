@@ -60,9 +60,9 @@ const GameDetails = ({ match }) => {
       case currentTab === 'teamStats':
         return (
           <TeamStats
-            gameInfo={gameInfo}
             gameStatsHome={gameStatsHome}
             gameStatsAway={gameStatsAway}
+            loading={loading}
           />
         );
       case currentTab === 'playByPlay':
