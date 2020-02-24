@@ -73,7 +73,7 @@ const GameDetails = ({ match }) => {
   };
 
   return (
-    <div className="mt-10">
+    <div className="mt-10 mx-12">
       <ul className="flex border-b justify-center">
         <li className="-mb-px mr-1 text-lg">
           <button

@@ -131,7 +131,7 @@ const BoxScore = ({
             </dd>
           </dl>
         </div>
-        <div className="max-w-container my-4 mx-auto">
+        <div className="my-4 mx-auto">
           <h2 className="text-3xl font-bold border-b-4 border-gray-700 py-4">
             Scoring summary
           </h2>
