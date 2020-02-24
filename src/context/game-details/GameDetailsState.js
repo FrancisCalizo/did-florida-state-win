@@ -7,7 +7,8 @@ import { GET_GAME_INFO, CLEAR_GAME_INFO } from '../types';
 const GameDetailsState = props => {
   const initialState = {
     gameInfo: {},
-    gameStats: {},
+    gameStatsHome: {},
+    gameStatsAway: {},
     gamePlays: [],
     opposingTeamInfo: [],
     isFsuHomeTeam: false
@@ -36,7 +37,12 @@ const GameDetailsState = props => {
 
         const gameData = {
           gameInfo: gameInfo['data'][0],
-          gameStats: gameStats['data'][0],
+          gameStatsHome: gameStats['data'][0].teams.filter(
+            team => team.homeAway === 'home'
+          ),
+          gameStatsAway: gameStats['data'][0].teams.filter(
+            team => team.homeAway === 'away'
+          ),
           gamePlays: gamePlays['data']
         };
 
@@ -74,7 +80,8 @@ const GameDetailsState = props => {
     <GameDetailsContext.Provider
       value={{
         gameInfo: state.gameInfo,
-        gameStats: state.gameStats,
+        gameStatsHome: state.gameStatsHome,
+        gameStatsAway: state.gameStatsAway,
         gamePlays: state.gamePlays,
         opposingTeamInfo: state.opposingTeamInfo,
         isFsuHomeTeam: state.isFsuHomeTeam,

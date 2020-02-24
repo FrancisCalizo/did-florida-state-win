@@ -11,7 +11,9 @@ const GameDetails = ({ match }) => {
   const {
     fetchGameInfo,
     gameInfo,
-    gameStats,
+    gameStatsHome,
+    gameStatsAway,
+    gamePlays,
     opposingTeamInfo,
     isFsuHomeTeam,
     clearGameInfo
@@ -20,7 +22,7 @@ const GameDetails = ({ match }) => {
   const fsuTeamContext = useContext(FsuTeamContext);
   const { fsuTeamInfo, fetchFsuTeamInfo } = fsuTeamContext;
 
-  const [currentTab, setCurrentTab] = useState('boxScore');
+  const [currentTab, setCurrentTab] = useState('teamStats');
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -47,14 +49,22 @@ const GameDetails = ({ match }) => {
           <BoxScore
             fsuTeamInfo={fsuTeamInfo}
             gameInfo={gameInfo}
-            gameStats={gameStats}
+            gameStatsHome={gameStatsHome}
+            gameStatsAway={gameStatsAway}
+            gamePlays={gamePlays}
             opposingTeamInfo={opposingTeamInfo}
             isFsuHomeTeam={isFsuHomeTeam}
             loading={loading}
           />
         );
       case currentTab === 'teamStats':
-        return <TeamStats />;
+        return (
+          <TeamStats
+            gameInfo={gameInfo}
+            gameStatsHome={gameStatsHome}
+            gameStatsAway={gameStatsAway}
+          />
+        );
       case currentTab === 'playByPlay':
         return <PlayByPlay />;
       default:

@@ -4,7 +4,9 @@ import PropTypes from 'prop-types';
 const BoxScore = ({
   fsuTeamInfo,
   gameInfo,
-  gameStats,
+  gameStatsHome,
+  gameStatsAway,
+  gamePlays,
   opposingTeamInfo,
   isFsuHomeTeam,
   loading
@@ -14,8 +16,8 @@ const BoxScore = ({
   } else {
     return (
       <div>
-        <div className="flex justify-center my-4 max-w-container mx-auto">
-          <div className="w-1/2 flex justify-center">
+        <div className="flex flex-wrap justify-center my-4 max-w-container mx-auto">
+          <div className="w-full md:w-1/2 flex justify-center">
             <div className="w-1/3">
               <div>
                 <img
@@ -56,11 +58,11 @@ const BoxScore = ({
               </div>
             </div>
           </div>
-          <div className="w-1/2">
+          <div className="w-full md:w-1/2">
             <h2 className="font-bold text-center text-3xl">
               {gameInfo.away_team} - vs - {gameInfo.home_team}
             </h2>
-            <table className="table-auto my-4 mx-auto">
+            <table className="table-auto my-4 mx-auto ">
               <thead>
                 <tr>
                   <th className="w-1/3 px-4 py-2"></th>
@@ -108,20 +110,31 @@ const BoxScore = ({
         </div>
         <div className="border-t border-b border-gray-500 text-center py-4">
           <dl>
-            <dt className="inline-block mr-1 ml-3">Date: </dt>
+            <dt className="inline-block mr-1 ml-3 font-bold">Date: </dt>
             <dd className="inline-block">
               {' '}
               {new Date(gameInfo.start_date).toLocaleDateString('en-US')}
             </dd>
-            <dt className="inline-block mr-1 ml-3">Week:</dt>
+            <dt className="inline-block mr-1 ml-3 font-bold">Week:</dt>
             <dd className="inline-block">{gameInfo.week}</dd>
-            <dt className="inline-block mr-1 ml-3">Stadium:</dt>
+            <dt className="inline-block mr-1 ml-3 font-bold">Stadium:</dt>
             <dd className="inline-block">{gameInfo.venue}</dd>
-            <dt className="inline-block mr-1 ml-3">Attendance:</dt>
+            <dt className="inline-block mr-1 ml-3 font-bold">Attendance:</dt>
             <dd className="inline-block">
               {gameInfo.attendance ? gameInfo.attendance : 'Unavailable'}
             </dd>
+            <dt className="inline-block mr-1 ml-3 font-bold">
+              Conference Game:
+            </dt>
+            <dd className="inline-block">
+              {gameInfo.conference_game ? 'Yes' : 'No'}
+            </dd>
           </dl>
+        </div>
+        <div className="max-w-container my-4 mx-auto">
+          <h2 className="text-3xl font-bold border-b-4 border-gray-700 py-4">
+            Scoring summary
+          </h2>
         </div>
       </div>
     );
@@ -131,7 +144,8 @@ const BoxScore = ({
 BoxScore.propTypes = {
   fsuTeamInfo: PropTypes.object.isRequired,
   gameInfo: PropTypes.object.isRequired,
-  gameStats: PropTypes.object.isRequired,
+  gameStatsHome: PropTypes.object.isRequired,
+  gameStatsAway: PropTypes.object.isRequired,
   isFsuHomeTeam: PropTypes.bool.isRequired,
   loading: PropTypes.bool.isRequired
 };

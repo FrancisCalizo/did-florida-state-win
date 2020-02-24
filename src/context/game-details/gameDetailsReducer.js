@@ -6,7 +6,8 @@ export default (state, action) => {
       return {
         ...state,
         gameInfo: action.payload.gameInfo,
-        gameStats: action.payload.gameStats,
+        gameStatsHome: action.payload.gameStatsHome,
+        gameStatsAway: action.payload.gameStatsAway,
         gamePlays: action.payload.gamePlays,
         opposingTeamInfo: action.payload.opposingTeam,
         isFsuHomeTeam: action.payload.isFsuHomeTeam
@@ -15,7 +16,8 @@ export default (state, action) => {
       return {
         ...state,
         gameInfo: {},
-        gameStats: {},
+        gameStatsHome: {},
+        gameStatsAway: {},
         gamePlays: [],
         opposingTeamInfo: [],
         isFsuHomeTeam: false
