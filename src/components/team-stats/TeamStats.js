@@ -28,103 +28,127 @@ const TeamStats = ({ gameStatsHome, gameStatsAway, loading }) => {
               <tr>
                 <td className="border px-8 py-2">Total Yards</td>
                 <td className="border px-8 py-2 text-center">
-                  {
-                    gameStatsAway.stats.filter(
-                      stat => stat.category === 'totalYards'
-                    )[0].stat
-                  }
+                  {gameStatsAway.stats.filter(
+                    stat => stat.category === 'totalYards'
+                  )[0]
+                    ? gameStatsAway.stats.filter(
+                        stat => stat.category === 'totalYards'
+                      )[0].stat
+                    : 'N/A'}
                 </td>
                 <td className="border px-8 py-2 text-center">
-                  {
-                    gameStatsHome.stats.filter(
-                      stat => stat.category === 'totalYards'
-                    )[0].stat
-                  }
+                  {gameStatsHome.stats.filter(
+                    stat => stat.category === 'totalYards'
+                  )[0]
+                    ? gameStatsHome.stats.filter(
+                        stat => stat.category === 'totalYards'
+                      )[0].stat
+                    : 'N/A'}
                 </td>
               </tr>
               <tr>
                 <td className="border px-8 py-2">Posession Time</td>
                 <td className="border px-8 py-2 text-center">
-                  {
-                    gameStatsAway.stats.filter(
-                      stat => stat.category === 'possessionTime'
-                    )[0].stat
-                  }
+                  {gameStatsAway.stats.filter(
+                    stat => stat.category === 'possessionTime'
+                  )[0]
+                    ? gameStatsAway.stats.filter(
+                        stat => stat.category === 'possessionTime'
+                      )[0].stat
+                    : 'N/A'}
                 </td>
                 <td className="border px-8 py-2 text-center">
-                  {
-                    gameStatsHome.stats.filter(
-                      stat => stat.category === 'possessionTime'
-                    )[0].stat
-                  }
+                  {gameStatsHome.stats.filter(
+                    stat => stat.category === 'possessionTime'
+                  )[0]
+                    ? gameStatsHome.stats.filter(
+                        stat => stat.category === 'possessionTime'
+                      )[0].stat
+                    : 'N/A'}
                 </td>
               </tr>
               <tr>
                 <td className="border px-8 py-2">First Downs</td>
                 <td className="border px-8 py-2 text-center">
-                  {
-                    gameStatsAway.stats.filter(
-                      stat => stat.category === 'firstDowns'
-                    )[0].stat
-                  }
+                  {gameStatsAway.stats.filter(
+                    stat => stat.category === 'firstDowns'
+                  )[0]
+                    ? gameStatsAway.stats.filter(
+                        stat => stat.category === 'firstDowns'
+                      )[0].stat
+                    : 'N/A'}
                 </td>
                 <td className="border px-8 py-2 text-center">
-                  {
-                    gameStatsHome.stats.filter(
-                      stat => stat.category === 'firstDowns'
-                    )[0].stat
-                  }
+                  {gameStatsHome.stats.filter(
+                    stat => stat.category === 'firstDowns'
+                  )[0]
+                    ? gameStatsHome.stats.filter(
+                        stat => stat.category === 'firstDowns'
+                      )[0].stat
+                    : 'N/A'}
                 </td>
               </tr>
               <tr>
                 <td className="border px-8 py-2">Turnovers</td>
                 <td className="border px-8 py-2 text-center">
-                  {
-                    gameStatsAway.stats.filter(
-                      stat => stat.category === 'turnovers'
-                    )[0].stat
-                  }
+                  {gameStatsAway.stats.filter(
+                    stat => stat.category === 'turnovers'
+                  )[0]
+                    ? gameStatsAway.stats.filter(
+                        stat => stat.category === 'turnovers'
+                      )[0].stat
+                    : 'N/A'}
                 </td>
                 <td className="border px-8 py-2 text-center">
-                  {
-                    gameStatsHome.stats.filter(
-                      stat => stat.category === 'turnovers'
-                    )[0].stat
-                  }
+                  {gameStatsHome.stats.filter(
+                    stat => stat.category === 'turnovers'
+                  )[0]
+                    ? gameStatsHome.stats.filter(
+                        stat => stat.category === 'turnovers'
+                      )[0].stat
+                    : 'N/A'}
                 </td>
               </tr>
               <tr>
                 <td className="border px-8 py-2">Total Penalties - Yards</td>
                 <td className="border px-8 py-2 text-center">
-                  {
-                    gameStatsAway.stats.filter(
-                      stat => stat.category === 'totalPenaltiesYards'
-                    )[0].stat
-                  }
+                  {gameStatsAway.stats.filter(
+                    stat => stat.category === 'totalPenaltiesYards'
+                  )[0]
+                    ? gameStatsAway.stats.filter(
+                        stat => stat.category === 'totalPenaltiesYards'
+                      )[0].stat
+                    : 'N/A'}
                 </td>
                 <td className="border px-8 py-2 text-center">
-                  {
-                    gameStatsHome.stats.filter(
-                      stat => stat.category === 'totalPenaltiesYards'
-                    )[0].stat
-                  }
+                  {gameStatsHome.stats.filter(
+                    stat => stat.category === 'totalPenaltiesYards'
+                  )[0]
+                    ? gameStatsHome.stats.filter(
+                        stat => stat.category === 'totalPenaltiesYards'
+                      )[0].stat
+                    : 'N/A'}
                 </td>
               </tr>
               <tr>
                 <td className="border px-8 py-2">Fumbles (lost)</td>
                 <td className="border px-8 py-2 text-center">
-                  {
-                    gameStatsAway.stats.filter(
-                      stat => stat.category === 'fumblesLost'
-                    )[0].stat
-                  }
+                  {gameStatsAway.stats.filter(
+                    stat => stat.category === 'fumblesLost'
+                  )[0]
+                    ? gameStatsAway.stats.filter(
+                        stat => stat.category === 'fumblesLost'
+                      )[0].stat
+                    : 'N/A'}
                 </td>
                 <td className="border px-8 py-2 text-center">
-                  {
-                    gameStatsHome.stats.filter(
-                      stat => stat.category === 'fumblesLost'
-                    )[0].stat
-                  }
+                  {gameStatsHome.stats.filter(
+                    stat => stat.category === 'fumblesLost'
+                  )[0]
+                    ? gameStatsHome.stats.filter(
+                        stat => stat.category === 'fumblesLost'
+                      )[0].stat
+                    : 'N/A'}
                 </td>
               </tr>
             </tbody>
@@ -151,69 +175,85 @@ const TeamStats = ({ gameStatsHome, gameStatsAway, loading }) => {
               <tr>
                 <td className="border px-8 py-2">Rushing Yards</td>
                 <td className="border px-8 py-2 text-center">
-                  {
-                    gameStatsAway.stats.filter(
-                      stat => stat.category === 'rushingYards'
-                    )[0].stat
-                  }
+                  {gameStatsAway.stats.filter(
+                    stat => stat.category === 'rushingYards'
+                  )[0]
+                    ? gameStatsAway.stats.filter(
+                        stat => stat.category === 'rushingYards'
+                      )[0].stat
+                    : 'N/A'}
                 </td>
                 <td className="border px-8 py-2 text-center">
-                  {
-                    gameStatsHome.stats.filter(
-                      stat => stat.category === 'rushingYards'
-                    )[0].stat
-                  }
+                  {gameStatsHome.stats.filter(
+                    stat => stat.category === 'rushingYards'
+                  )[0]
+                    ? gameStatsHome.stats.filter(
+                        stat => stat.category === 'rushingYards'
+                      )[0].stat
+                    : 'N/A'}
                 </td>
               </tr>
               <tr>
                 <td className="border px-8 py-2">Rushing Attempts</td>
                 <td className="border px-8 py-2 text-center">
-                  {
-                    gameStatsAway.stats.filter(
-                      stat => stat.category === 'rushingAttempts'
-                    )[0].stat
-                  }
+                  {gameStatsAway.stats.filter(
+                    stat => stat.category === 'rushingAttempts'
+                  )[0]
+                    ? gameStatsAway.stats.filter(
+                        stat => stat.category === 'rushingAttempts'
+                      )[0].stat
+                    : 'N/A'}
                 </td>
                 <td className="border px-8 py-2 text-center">
-                  {
-                    gameStatsHome.stats.filter(
-                      stat => stat.category === 'rushingAttempts'
-                    )[0].stat
-                  }
+                  {gameStatsHome.stats.filter(
+                    stat => stat.category === 'rushingAttempts'
+                  )[0]
+                    ? gameStatsHome.stats.filter(
+                        stat => stat.category === 'rushingAttempts'
+                      )[0].stat
+                    : 'N/A'}
                 </td>
               </tr>
               <tr>
                 <td className="border px-8 py-2">Avg. Per Attempt</td>
                 <td className="border px-8 py-2 text-center">
-                  {
-                    gameStatsAway.stats.filter(
-                      stat => stat.category === 'yardsPerRushAttempt'
-                    )[0].stat
-                  }
+                  {gameStatsAway.stats.filter(
+                    stat => stat.category === 'yardsPerRushAttempt'
+                  )[0]
+                    ? gameStatsAway.stats.filter(
+                        stat => stat.category === 'yardsPerRushAttempt'
+                      )[0].stat
+                    : 'N/A'}
                 </td>
                 <td className="border px-8 py-2 text-center">
-                  {
-                    gameStatsHome.stats.filter(
-                      stat => stat.category === 'yardsPerRushAttempt'
-                    )[0].stat
-                  }
+                  {gameStatsHome.stats.filter(
+                    stat => stat.category === 'yardsPerRushAttempt'
+                  )[0]
+                    ? gameStatsHome.stats.filter(
+                        stat => stat.category === 'yardsPerRushAttempt'
+                      )[0].stat
+                    : 'N/A'}
                 </td>
               </tr>
               <tr>
                 <td className="border px-8 py-2">Rushing TDs</td>
                 <td className="border px-8 py-2 text-center">
-                  {
-                    gameStatsAway.stats.filter(
-                      stat => stat.category === 'rushingTDs'
-                    )[0].stat
-                  }
+                  {gameStatsAway.stats.filter(
+                    stat => stat.category === 'rushingTDs'
+                  )[0]
+                    ? gameStatsAway.stats.filter(
+                        stat => stat.category === 'rushingTDs'
+                      )[0].stat
+                    : 'N/A'}
                 </td>
                 <td className="border px-8 py-2 text-center">
-                  {
-                    gameStatsHome.stats.filter(
-                      stat => stat.category === 'rushingTDs'
-                    )[0].stat
-                  }
+                  {gameStatsHome.stats.filter(
+                    stat => stat.category === 'rushingTDs'
+                  )[0]
+                    ? gameStatsHome.stats.filter(
+                        stat => stat.category === 'rushingTDs'
+                      )[0].stat
+                    : 'N/A'}
                 </td>
               </tr>
             </tbody>
@@ -240,69 +280,85 @@ const TeamStats = ({ gameStatsHome, gameStatsAway, loading }) => {
               <tr>
                 <td className="border px-8 py-2">Passing Yards</td>
                 <td className="border px-8 py-2 text-center">
-                  {
-                    gameStatsAway.stats.filter(
-                      stat => stat.category === 'netPassingYards'
-                    )[0].stat
-                  }
+                  {gameStatsAway.stats.filter(
+                    stat => stat.category === 'netPassingYards'
+                  )[0]
+                    ? gameStatsAway.stats.filter(
+                        stat => stat.category === 'netPassingYards'
+                      )[0].stat
+                    : 'N/A'}
                 </td>
                 <td className="border px-8 py-2 text-center">
-                  {
-                    gameStatsHome.stats.filter(
-                      stat => stat.category === 'netPassingYards'
-                    )[0].stat
-                  }
+                  {gameStatsHome.stats.filter(
+                    stat => stat.category === 'netPassingYards'
+                  )[0]
+                    ? gameStatsHome.stats.filter(
+                        stat => stat.category === 'netPassingYards'
+                      )[0].stat
+                    : 'N/A'}
                 </td>
               </tr>
               <tr>
                 <td className="border px-8 py-2"> Completions - Attempts</td>
                 <td className="border px-8 py-2 text-center">
-                  {
-                    gameStatsAway.stats.filter(
-                      stat => stat.category === 'completionAttempts'
-                    )[0].stat
-                  }
+                  {gameStatsAway.stats.filter(
+                    stat => stat.category === 'completionAttempts'
+                  )[0]
+                    ? gameStatsAway.stats.filter(
+                        stat => stat.category === 'completionAttempts'
+                      )[0].stat
+                    : 'N/A'}
                 </td>
                 <td className="border px-8 py-2 text-center">
-                  {
-                    gameStatsHome.stats.filter(
-                      stat => stat.category === 'completionAttempts'
-                    )[0].stat
-                  }
+                  {gameStatsHome.stats.filter(
+                    stat => stat.category === 'completionAttempts'
+                  )[0]
+                    ? gameStatsHome.stats.filter(
+                        stat => stat.category === 'completionAttempts'
+                      )[0].stat
+                    : 'N/A'}
                 </td>
               </tr>
               <tr>
                 <td className="border px-8 py-2">Yards Per Pass</td>
                 <td className="border px-8 py-2 text-center">
-                  {
-                    gameStatsAway.stats.filter(
-                      stat => stat.category === 'yardsPerPass'
-                    )[0].stat
-                  }
+                  {gameStatsAway.stats.filter(
+                    stat => stat.category === 'yardsPerPass'
+                  )[0]
+                    ? gameStatsAway.stats.filter(
+                        stat => stat.category === 'yardsPerPass'
+                      )[0].stat
+                    : 'N/A'}
                 </td>
                 <td className="border px-8 py-2 text-center">
-                  {
-                    gameStatsHome.stats.filter(
-                      stat => stat.category === 'yardsPerPass'
-                    )[0].stat
-                  }
+                  {gameStatsHome.stats.filter(
+                    stat => stat.category === 'yardsPerPass'
+                  )[0]
+                    ? gameStatsHome.stats.filter(
+                        stat => stat.category === 'yardsPerPass'
+                      )[0].stat
+                    : 'N/A'}
                 </td>
               </tr>
               <tr>
                 <td className="border px-8 py-2">Interceptions</td>
                 <td className="border px-8 py-2 text-center">
-                  {
-                    gameStatsAway.stats.filter(
-                      stat => stat.category === 'interceptions'
-                    )[0].stat
-                  }
+                  {gameStatsAway.stats.filter(
+                    stat => stat.category === 'interceptions'
+                  )[0]
+                    ? gameStatsAway.stats.filter(
+                        stat => stat.category === 'interceptions'
+                      )[0].stat
+                    : 'N/A'}
                 </td>
                 <td className="border px-8 py-2 text-center">
-                  {
-                    gameStatsHome.stats.filter(
-                      stat => stat.category === 'interceptions'
-                    )[0].stat
-                  }
+                  {gameStatsHome.stats.filter(
+                    stat => stat.category === 'interceptions'
+                  )[0]
+                    ? gameStatsHome.stats.filter(
+                        stat => stat.category === 'interceptions'
+                      )[0].stat
+                    : 'N/A'}
                 </td>
               </tr>
             </tbody>
@@ -331,17 +387,20 @@ const TeamStats = ({ gameStatsHome, gameStatsAway, loading }) => {
                 <td className="border px-8 py-2 text-center">
                   {gameStatsAway.stats.filter(
                     stat => stat.category === 'puntReturns'
-                  )[0] &&
-                    gameStatsAway.stats.filter(
-                      stat => stat.category === 'puntReturns'
-                    )[0].stat}
+                  )[0]
+                    ? gameStatsAway.stats.filter(
+                        stat => stat.category === 'puntReturns'
+                      )[0].stat
+                    : 'N/A'}
                 </td>
                 <td className="border px-8 py-2 text-center">
-                  {
-                    gameStatsHome.stats.filter(
-                      stat => stat.category === 'puntReturns'
-                    )[0].stat
-                  }
+                  {gameStatsHome.stats.filter(
+                    stat => stat.category === 'puntReturns'
+                  )[0]
+                    ? gameStatsHome.stats.filter(
+                        stat => stat.category === 'puntReturns'
+                      )[0].stat
+                    : 'N/A'}
                 </td>
               </tr>
               <tr>
@@ -349,17 +408,20 @@ const TeamStats = ({ gameStatsHome, gameStatsAway, loading }) => {
                 <td className="border px-8 py-2 text-center">
                   {gameStatsAway.stats.filter(
                     stat => stat.category === 'puntReturnYards'
-                  )[0] &&
-                    gameStatsAway.stats.filter(
-                      stat => stat.category === 'puntReturnYards'
-                    )[0].stat}
+                  )[0]
+                    ? gameStatsAway.stats.filter(
+                        stat => stat.category === 'puntReturnYards'
+                      )[0].stat
+                    : 'N/A'}
                 </td>
                 <td className="border px-8 py-2 text-center">
-                  {
-                    gameStatsHome.stats.filter(
-                      stat => stat.category === 'puntReturnYards'
-                    )[0].stat
-                  }
+                  {gameStatsHome.stats.filter(
+                    stat => stat.category === 'puntReturnYards'
+                  )[0]
+                    ? gameStatsHome.stats.filter(
+                        stat => stat.category === 'puntReturnYards'
+                      )[0].stat
+                    : 'N/A'}
                 </td>
               </tr>
               <tr>
@@ -367,17 +429,20 @@ const TeamStats = ({ gameStatsHome, gameStatsAway, loading }) => {
                 <td className="border px-8 py-2 text-center">
                   {gameStatsAway.stats.filter(
                     stat => stat.category === 'puntReturnTDs'
-                  )[0] &&
-                    gameStatsAway.stats.filter(
-                      stat => stat.category === 'puntReturnTDs'
-                    )[0].stat}
+                  )[0]
+                    ? gameStatsAway.stats.filter(
+                        stat => stat.category === 'puntReturnTDs'
+                      )[0].stat
+                    : 'N/A'}
                 </td>
                 <td className="border px-8 py-2 text-center">
-                  {
-                    gameStatsHome.stats.filter(
-                      stat => stat.category === 'puntReturnTDs'
-                    )[0].stat
-                  }
+                  {gameStatsHome.stats.filter(
+                    stat => stat.category === 'puntReturnTDs'
+                  )[0]
+                    ? gameStatsHome.stats.filter(
+                        stat => stat.category === 'puntReturnTDs'
+                      )[0].stat
+                    : 'N/A'}
                 </td>
               </tr>
             </tbody>
@@ -404,52 +469,64 @@ const TeamStats = ({ gameStatsHome, gameStatsAway, loading }) => {
               <tr>
                 <td className="border px-8 py-2">Kick Returns</td>
                 <td className="border px-8 py-2 text-center">
-                  {
-                    gameStatsAway.stats.filter(
-                      stat => stat.category === 'kickReturns'
-                    )[0].stat
-                  }
+                  {gameStatsAway.stats.filter(
+                    stat => stat.category === 'kickReturns'
+                  )[0]
+                    ? gameStatsAway.stats.filter(
+                        stat => stat.category === 'kickReturns'
+                      )[0].stat
+                    : 'N/A'}
                 </td>
                 <td className="border px-8 py-2 text-center">
-                  {
-                    gameStatsHome.stats.filter(
-                      stat => stat.category === 'kickReturns'
-                    )[0].stat
-                  }
+                  {gameStatsHome.stats.filter(
+                    stat => stat.category === 'kickReturns'
+                  )[0]
+                    ? gameStatsHome.stats.filter(
+                        stat => stat.category === 'kickReturns'
+                      )[0].stat
+                    : 'N/A'}
                 </td>
               </tr>
               <tr>
                 <td className="border px-8 py-2">Kick Return Yards</td>
                 <td className="border px-8 py-2 text-center">
-                  {
-                    gameStatsAway.stats.filter(
-                      stat => stat.category === 'kickReturnYards'
-                    )[0].stat
-                  }
+                  {gameStatsAway.stats.filter(
+                    stat => stat.category === 'kickReturnYards'
+                  )[0]
+                    ? gameStatsAway.stats.filter(
+                        stat => stat.category === 'kickReturnYards'
+                      )[0].stat
+                    : 'N/A'}
                 </td>
                 <td className="border px-8 py-2 text-center">
-                  {
-                    gameStatsHome.stats.filter(
-                      stat => stat.category === 'kickReturnYards'
-                    )[0].stat
-                  }
+                  {gameStatsHome.stats.filter(
+                    stat => stat.category === 'kickReturnYards'
+                  )[0]
+                    ? gameStatsHome.stats.filter(
+                        stat => stat.category === 'kickReturnYards'
+                      )[0].stat
+                    : 'N/A'}
                 </td>
               </tr>
               <tr>
                 <td className="border px-8 py-2">Kick Return TDs</td>
                 <td className="border px-8 py-2 text-center">
-                  {
-                    gameStatsAway.stats.filter(
-                      stat => stat.category === 'kickReturnTDs'
-                    )[0].stat
-                  }
+                  {gameStatsAway.stats.filter(
+                    stat => stat.category === 'kickReturnTDs'
+                  )[0]
+                    ? gameStatsAway.stats.filter(
+                        stat => stat.category === 'kickReturnTDs'
+                      )[0].stat
+                    : 'N/A'}
                 </td>
                 <td className="border px-8 py-2 text-center">
-                  {
-                    gameStatsHome.stats.filter(
-                      stat => stat.category === 'kickReturnTDs'
-                    )[0].stat
-                  }
+                  {gameStatsHome.stats.filter(
+                    stat => stat.category === 'kickReturnTDs'
+                  )[0]
+                    ? gameStatsHome.stats.filter(
+                        stat => stat.category === 'kickReturnTDs'
+                      )[0].stat
+                    : 'N/A'}
                 </td>
               </tr>
             </tbody>
@@ -476,120 +553,148 @@ const TeamStats = ({ gameStatsHome, gameStatsAway, loading }) => {
               <tr>
                 <td className="border px-8 py-2">Tackles</td>
                 <td className="border px-8 py-2 text-center">
-                  {
-                    gameStatsAway.stats.filter(
-                      stat => stat.category === 'tackles'
-                    )[0].stat
-                  }
+                  {gameStatsAway.stats.filter(
+                    stat => stat.category === 'tackles'
+                  )[0]
+                    ? gameStatsAway.stats.filter(
+                        stat => stat.category === 'tackles'
+                      )[0].stat
+                    : 'N/A'}
                 </td>
                 <td className="border px-8 py-2 text-center">
-                  {
-                    gameStatsHome.stats.filter(
-                      stat => stat.category === 'tackles'
-                    )[0].stat
-                  }
+                  {gameStatsHome.stats.filter(
+                    stat => stat.category === 'tackles'
+                  )[0]
+                    ? gameStatsHome.stats.filter(
+                        stat => stat.category === 'tackles'
+                      )[0].stat
+                    : 'N/A'}
                 </td>
               </tr>
               <tr>
                 <td className="border px-8 py-2">Tackles For Loss</td>
                 <td className="border px-8 py-2 text-center">
-                  {
-                    gameStatsAway.stats.filter(
-                      stat => stat.category === 'tacklesForLoss'
-                    )[0].stat
-                  }
+                  {gameStatsAway.stats.filter(
+                    stat => stat.category === 'tacklesForLoss'
+                  )[0]
+                    ? gameStatsAway.stats.filter(
+                        stat => stat.category === 'tacklesForLoss'
+                      )[0].stat
+                    : 'N/A'}
                 </td>
                 <td className="border px-8 py-2 text-center">
-                  {
-                    gameStatsHome.stats.filter(
-                      stat => stat.category === 'tacklesForLoss'
-                    )[0].stat
-                  }
+                  {gameStatsHome.stats.filter(
+                    stat => stat.category === 'tacklesForLoss'
+                  )[0]
+                    ? gameStatsHome.stats.filter(
+                        stat => stat.category === 'tacklesForLoss'
+                      )[0].stat
+                    : 'N/A'}
                 </td>
               </tr>
               <tr>
                 <td className="border px-8 py-2">Fumbles</td>
                 <td className="border px-8 py-2 text-center">
-                  {
-                    gameStatsAway.stats.filter(
-                      stat => stat.category === 'totalFumbles'
-                    )[0].stat
-                  }
+                  {gameStatsAway.stats.filter(
+                    stat => stat.category === 'totalFumbles'
+                  )[0]
+                    ? gameStatsAway.stats.filter(
+                        stat => stat.category === 'totalFumbles'
+                      )[0].stat
+                    : 'N/A'}
                 </td>
                 <td className="border px-8 py-2 text-center">
-                  {
-                    gameStatsHome.stats.filter(
-                      stat => stat.category === 'totalFumbles'
-                    )[0].stat
-                  }
+                  {gameStatsHome.stats.filter(
+                    stat => stat.category === 'totalFumbles'
+                  )[0]
+                    ? gameStatsHome.stats.filter(
+                        stat => stat.category === 'totalFumbles'
+                      )[0].stat
+                    : 'N/A'}
                 </td>
               </tr>
               <tr>
                 <td className="border px-8 py-2">Fumbles Recovered</td>
                 <td className="border px-8 py-2 text-center">
-                  {
-                    gameStatsAway.stats.filter(
-                      stat => stat.category === 'fumblesRecovered'
-                    )[0].stat
-                  }
+                  {gameStatsAway.stats.filter(
+                    stat => stat.category === 'fumblesRecovered'
+                  )[0]
+                    ? gameStatsAway.stats.filter(
+                        stat => stat.category === 'fumblesRecovered'
+                      )[0].stat
+                    : 'N/A'}
                 </td>
                 <td className="border px-8 py-2 text-center">
-                  {
-                    gameStatsHome.stats.filter(
-                      stat => stat.category === 'fumblesRecovered'
-                    )[0].stat
-                  }
+                  {gameStatsHome.stats.filter(
+                    stat => stat.category === 'fumblesRecovered'
+                  )[0]
+                    ? gameStatsHome.stats.filter(
+                        stat => stat.category === 'fumblesRecovered'
+                      )[0].stat
+                    : 'N/A'}
                 </td>
               </tr>
               <tr>
                 <td className="border px-8 py-2">Sacks</td>
                 <td className="border px-8 py-2 text-center">
-                  {
-                    gameStatsAway.stats.filter(
-                      stat => stat.category === 'sacks'
-                    )[0].stat
-                  }
+                  {gameStatsAway.stats.filter(
+                    stat => stat.category === 'sacks'
+                  )[0]
+                    ? gameStatsAway.stats.filter(
+                        stat => stat.category === 'sacks'
+                      )[0].stat
+                    : 'N/A'}
                 </td>
                 <td className="border px-8 py-2 text-center">
-                  {
-                    gameStatsHome.stats.filter(
-                      stat => stat.category === 'sacks'
-                    )[0].stat
-                  }
+                  {gameStatsHome.stats.filter(
+                    stat => stat.category === 'sacks'
+                  )[0]
+                    ? gameStatsHome.stats.filter(
+                        stat => stat.category === 'sacks'
+                      )[0].stat
+                    : 'N/A '}
                 </td>
               </tr>
               <tr>
                 <td className="border px-8 py-2">Passes Deflected</td>
                 <td className="border px-8 py-2 text-center">
-                  {
-                    gameStatsAway.stats.filter(
-                      stat => stat.category === 'passesDeflected'
-                    )[0].stat
-                  }
+                  {gameStatsAway.stats.filter(
+                    stat => stat.category === 'passesDeflected'
+                  )[0]
+                    ? gameStatsAway.stats.filter(
+                        stat => stat.category === 'passesDeflected'
+                      )[0].stat
+                    : 'N/A'}
                 </td>
                 <td className="border px-8 py-2 text-center">
-                  {
-                    gameStatsHome.stats.filter(
-                      stat => stat.category === 'passesDeflected'
-                    )[0].stat
-                  }
+                  {gameStatsHome.stats.filter(
+                    stat => stat.category === 'passesDeflected'
+                  )[0]
+                    ? gameStatsHome.stats.filter(
+                        stat => stat.category === 'passesDeflected'
+                      )[0].stat
+                    : 'N/A'}
                 </td>
               </tr>
               <tr>
                 <td className="border px-8 py-2">Defensive TDs</td>
                 <td className="border px-8 py-2 text-center">
-                  {
-                    gameStatsAway.stats.filter(
-                      stat => stat.category === 'defensiveTDs'
-                    )[0].stat
-                  }
+                  {gameStatsAway.stats.filter(
+                    stat => stat.category === 'defensiveTDs'
+                  )[0]
+                    ? gameStatsAway.stats.filter(
+                        stat => stat.category === 'defensiveTDs'
+                      )[0].stat
+                    : 'N/A'}
                 </td>
                 <td className="border px-8 py-2 text-center">
-                  {
-                    gameStatsHome.stats.filter(
-                      stat => stat.category === 'defensiveTDs'
-                    )[0].stat
-                  }
+                  {gameStatsHome.stats.filter(
+                    stat => stat.category === 'defensiveTDs'
+                  )[0]
+                    ? gameStatsHome.stats.filter(
+                        stat => stat.category === 'defensiveTDs'
+                      )[0].stat
+                    : 'N/A'}
                 </td>
               </tr>
             </tbody>
