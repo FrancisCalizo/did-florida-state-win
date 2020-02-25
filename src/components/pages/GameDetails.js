@@ -22,7 +22,7 @@ const GameDetails = ({ match }) => {
   const fsuTeamContext = useContext(FsuTeamContext);
   const { fsuTeamInfo, fetchFsuTeamInfo } = fsuTeamContext;
 
-  const [currentTab, setCurrentTab] = useState('teamStats');
+  const [currentTab, setCurrentTab] = useState('playByPlay');
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -66,7 +66,7 @@ const GameDetails = ({ match }) => {
           />
         );
       case currentTab === 'playByPlay':
-        return <PlayByPlay />;
+        return <PlayByPlay gamePlays={gamePlays} loading={loading} />;
       default:
         return <BoxScore />;
     }
