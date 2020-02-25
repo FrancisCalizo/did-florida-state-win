@@ -43,7 +43,14 @@ const GameDetailsState = props => {
           gameStatsAway: gameStats['data'][0].teams.filter(
             team => team.homeAway === 'away'
           )[0],
-          gamePlays: gamePlays['data']
+          gamePlays: gamePlays['data'].sort((a, b) => {
+            return (
+              a.period - b.period ||
+              b.clock.minutes * 60 +
+                b.clock.seconds -
+                (a.clock.minutes * 60 + a.clock.seconds)
+            );
+          })
         };
 
         // Get Opposing Team Info && Find Out Home Team

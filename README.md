@@ -44,4 +44,6 @@ Debugging in React - https://www.youtube.com/watch?v=PJeNReqyH88
 
 TypeError - Cannot Read Property '0' of undefined - https://stackoverflow.com/questions/53991538/reactjs-typeerror-cannot-read-property-0-of-undefined
 
+JavaScript Array SORT by two Fields (used to sort Game Plays by Quarter and Time Left in GameDetailsState) - https://coderwall.com/p/ebqhca/javascript-sort-by-two-fields
+
 ### This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
