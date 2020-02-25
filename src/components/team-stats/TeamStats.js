@@ -329,11 +329,12 @@ const TeamStats = ({ gameStatsHome, gameStatsAway, loading }) => {
               <tr>
                 <td className="border px-8 py-2">Punt Returns</td>
                 <td className="border px-8 py-2 text-center">
-                  {
+                  {gameStatsAway.stats.filter(
+                    stat => stat.category === 'puntReturns'
+                  )[0] &&
                     gameStatsAway.stats.filter(
                       stat => stat.category === 'puntReturns'
-                    )[0].stat
-                  }
+                    )[0].stat}
                 </td>
                 <td className="border px-8 py-2 text-center">
                   {
@@ -346,11 +347,12 @@ const TeamStats = ({ gameStatsHome, gameStatsAway, loading }) => {
               <tr>
                 <td className="border px-8 py-2"> Punt Return Yards</td>
                 <td className="border px-8 py-2 text-center">
-                  {
+                  {gameStatsAway.stats.filter(
+                    stat => stat.category === 'puntReturnYards'
+                  )[0] &&
                     gameStatsAway.stats.filter(
                       stat => stat.category === 'puntReturnYards'
-                    )[0].stat
-                  }
+                    )[0].stat}
                 </td>
                 <td className="border px-8 py-2 text-center">
                   {
@@ -363,11 +365,12 @@ const TeamStats = ({ gameStatsHome, gameStatsAway, loading }) => {
               <tr>
                 <td className="border px-8 py-2">Punt Return TDs</td>
                 <td className="border px-8 py-2 text-center">
-                  {
+                  {gameStatsAway.stats.filter(
+                    stat => stat.category === 'puntReturnTDs'
+                  )[0] &&
                     gameStatsAway.stats.filter(
                       stat => stat.category === 'puntReturnTDs'
-                    )[0].stat
-                  }
+                    )[0].stat}
                 </td>
                 <td className="border px-8 py-2 text-center">
                   {

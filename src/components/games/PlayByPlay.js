@@ -3,28 +3,48 @@ import React, { useState } from 'react';
 const PlayByPlay = ({ gamePlays, loading }) => {
   const [currentTab, setCurrentTab] = useState(1);
 
-  const renderTab = () => {
+  const renderTab = tab => {
+    return gamePlays
+      .filter(gamePlay => gamePlay.period === tab)
+      .map(gamePlay => {
+        return (
+          <tr key={gamePlay.id}>
+            <td className="border px-8 py-2 text-left">{`${
+              gamePlay.clock.minutes
+            }:${
+              gamePlay.clock.seconds < 10
+                ? '0' + gamePlay.clock.seconds
+                : gamePlay.clock.seconds
+            }`}</td>
+            <td className="border px-8 py-2 text-left">{`${
+              gamePlay.offense
+            } ball |
+                  ${getDown(gamePlay.down)} and ${gamePlay.distance}
+                  at ${
+                    gamePlay.yard_line > 50
+                      ? gamePlay.offense.replace(/\s+/g, '') +
+                        String(50 - (gamePlay.yard_line - 50))
+                      : gamePlay.defense.replace(/\s+/g, '') +
+                        gamePlay.yard_line
+                  }`}</td>
+            <td className="border px-8 py-2 text-left">{gamePlay.play_text}</td>
+          </tr>
+        );
+      });
+  };
+
+  const getDown = down => {
     switch (true) {
-      case currentTab === 1:
-        return gamePlays
-          .filter(gamePlay => gamePlay.period === 1)
-          .map(gamePlay => {
-            return (
-              <tr key={gamePlay.id}>
-                <td className="border px-8 py-2">{`${gamePlay.clock.minutes}:${gamePlay.clock.seconds}`}</td>
-                <td className="border px-8 py-2 text-center">Sample</td>
-                <td className="border px-8 py-2 text-center">Sample</td>
-              </tr>
-            );
-          });
-      case currentTab === 2:
-        return <h1 className="text-6xl">Failed to Load</h1>;
-      case currentTab === 3:
-        return <h1 className="text-6xl">Failed to Load</h1>;
-      case currentTab === 4:
-        return <h1 className="text-6xl">Failed to Load</h1>;
+      case down === 1:
+        return '1st';
+      case down === 2:
+        return '2nd';
+      case down === 3:
+        return '3rd';
+      case down === 4:
+        return '4th';
       default:
-        return <h1 className="text-6xl">Failed to Load</h1>;
+        return '1st';
     }
   };
 
@@ -32,7 +52,7 @@ const PlayByPlay = ({ gamePlays, loading }) => {
     setCurrentTab(tab);
   };
 
-  if (loading || !gamePlays) {
+  if (loading || !gamePlays || !currentTab) {
     return <h1 className="text-3xl">Loading...</h1>;
   } else {
     return (
@@ -81,12 +101,12 @@ const PlayByPlay = ({ gamePlays, loading }) => {
         <table className="table-fixed mt-4 mb-2 mx-auto w-full">
           <thead>
             <tr>
-              <th className="w-1/3 py-2 text-left">Sample</th>
-              <th className="w-1/3 px-8 text-sm"></th>
-              <th className="w-1/3 px-8 text-sm"></th>
+              <th className="w-16 py-2 text-sm text-left">Clock</th>
+              <th className="w-1/3 px-8 text-sm text-left">Possesion</th>
+              <th className="w-1/3 px-8 text-sm text-left">Play Description</th>
             </tr>
           </thead>
-          <tbody>{renderTab()}</tbody>
+          <tbody>{renderTab(currentTab)}</tbody>
         </table>
       </div>
     );
