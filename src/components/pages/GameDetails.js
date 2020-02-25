@@ -38,10 +38,6 @@ const GameDetails = ({ match }) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const handleClick = tab => {
-    setCurrentTab(tab);
-  };
-
   const renderTab = () => {
     switch (true) {
       case currentTab === 'boxScore':
@@ -72,6 +68,9 @@ const GameDetails = ({ match }) => {
     }
   };
 
+  const handleClick = tab => {
+    setCurrentTab(tab);
+  };
   return (
     <div className="mt-10 mx-12">
       <ul className="flex border-b justify-center">
