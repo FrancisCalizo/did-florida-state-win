@@ -48,4 +48,6 @@ JavaScript Array SORT by two Fields (used to sort Game Plays by Quarter and Time
 
 Simple Way to show pad with leading Zero if number is less than 10 - https://stackoverflow.com/questions/8089875/show-a-leading-zero-if-a-number-is-less-than-10
 
+Use of Display: table-cell instead of Display: Block for a Table - https://tailwindcss.com/docs/display/#app
+
 ### This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

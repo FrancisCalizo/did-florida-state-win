@@ -22,7 +22,7 @@ const GameDetails = ({ match }) => {
   const fsuTeamContext = useContext(FsuTeamContext);
   const { fsuTeamInfo, fetchFsuTeamInfo } = fsuTeamContext;
 
-  const [currentTab, setCurrentTab] = useState('teamStats');
+  const [currentTab, setCurrentTab] = useState('playByPlay');
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {

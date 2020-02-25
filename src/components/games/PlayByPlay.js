@@ -9,16 +9,16 @@ const PlayByPlay = ({ gamePlays, loading }) => {
       .map(gamePlay => {
         return (
           <tr key={gamePlay.id}>
-            <td className="border px-8 py-2 text-left">{`${
+            <td className="border pl-2 py-2 text-left hidden sm:table-cell">{`${
               gamePlay.clock.minutes
             }:${
               gamePlay.clock.seconds < 10
                 ? '0' + gamePlay.clock.seconds
                 : gamePlay.clock.seconds
             }`}</td>
-            <td className="border px-8 py-2 text-left">{`${
+            <td className="border pl-2 py-2 text-left">{`${
               gamePlay.offense
-            } ball |
+            } ball --
                   ${getDown(gamePlay.down)} and ${gamePlay.distance}
                   at ${
                     gamePlay.yard_line > 50
@@ -27,7 +27,7 @@ const PlayByPlay = ({ gamePlays, loading }) => {
                       : gamePlay.defense.replace(/\s+/g, '') +
                         gamePlay.yard_line
                   }`}</td>
-            <td className="border px-8 py-2 text-left">{gamePlay.play_text}</td>
+            <td className="border pl-2 py-2 text-left">{gamePlay.play_text}</td>
           </tr>
         );
       });
@@ -60,7 +60,7 @@ const PlayByPlay = ({ gamePlays, loading }) => {
         <h2 className="text-3xl font-bold border-b-4 border-gray-700 py-4">
           Play-By-Play
         </h2>
-        <ul className="flex border-b justify-center">
+        <ul className="flex border-b justify-center mt-4">
           <li className="-mb-px mr-1 text-lg">
             <button
               className={`font-semibold uppercase bg-white inline-block py-2 px-4 text-black focus:outline-none hover:bg-gold-500 hover:text-white ${currentTab ===
@@ -101,9 +101,13 @@ const PlayByPlay = ({ gamePlays, loading }) => {
         <table className="table-fixed mt-4 mb-2 mx-auto w-full">
           <thead>
             <tr>
-              <th className="w-16 py-2 text-sm text-left">Clock</th>
-              <th className="w-1/3 px-8 text-sm text-left">Possesion</th>
-              <th className="w-1/3 px-8 text-sm text-left">Play Description</th>
+              <th className="hidden sm:table-cell sm:w-1/12 pl-2 text-sm text-left">
+                Time
+              </th>
+              <th className="w-2/5 pl-2 text-sm text-left">Possesion</th>
+              <th className="w-auto pl-2 text-sm text-left">
+                Play Description
+              </th>
             </tr>
           </thead>
           <tbody>{renderTab(currentTab)}</tbody>
