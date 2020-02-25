@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 
 const BoxScore = ({
@@ -33,7 +33,7 @@ const BoxScore = ({
       <div>
         <div className="flex flex-wrap justify-center my-4 max-w-container mx-auto">
           <div className="w-full md:w-1/2 flex justify-center">
-            <div className="w-1/3">
+            <div className="w-1/3 my-auto">
               <div>
                 <img
                   className="w-32 mx-auto"
@@ -56,7 +56,7 @@ const BoxScore = ({
                 </span>
               </div>
             </div>
-            <div className="w-1/3">
+            <div className="w-1/3 my-auto">
               <div>
                 <img
                   className="w-32 mx-auto"
@@ -150,13 +150,19 @@ const BoxScore = ({
           <h2 className="text-3xl font-bold border-b-4 border-gray-700 py-4">
             Scoring summary
           </h2>
-          <table className="table-fixed mt-4 mb-2 mx-auto w-full">
+          <table className="hidden sm:table table-fixed mt-4 mb-2 mx-auto w-full">
             <thead>
               <tr>
-                <th className="w-1/12 pl-2 text-sm text-center">Quarter</th>
-                <th className="w-1/12 pl-2 text-sm text-center">Time</th>
-                <th className="w-auto pl-2 text-sm text-left">Description</th>
-                <th className="w-1/12 pl-2 text-sm text-center">
+                <th className="w-1/12 pl-2 text-xs md:text-sm text-center">
+                  Quarter
+                </th>
+                <th className="w-1/12 pl-2 text-xs md:text-sm text-center">
+                  Time
+                </th>
+                <th className="w-auto pl-2 text-xs md:text-sm text-left">
+                  Description
+                </th>
+                <th className="w-1/12 pl-2 text-xs md:text-sm text-center">
                   {gameInfo.away_team}
                 </th>
                 <th className="w-1/12 pl-2 text-sm text-center">
@@ -176,10 +182,10 @@ const BoxScore = ({
                 .map(gamePlay => {
                   return (
                     <tr key={gamePlay.id}>
-                      <td className="border pl-2 py-2 text-center hidden sm:table-cell">
+                      <td className="border pl-2 md:py-2 text-left md:text-center">
                         {getQuarter(gamePlay.period)}
                       </td>
-                      <td className="border pl-2 py-2 text-center">
+                      <td className="border pl-2 md:py-2 text-left md:text-center">
                         {`${gamePlay.clock.minutes}:${
                           gamePlay.clock.seconds < 10
                             ? '0' + gamePlay.clock.seconds
@@ -200,6 +206,49 @@ const BoxScore = ({
                           : gamePlay.defense_score}
                       </td>
                     </tr>
+                  );
+                })}
+            </tbody>
+          </table>
+          {/* Table Visible at XS Screen Size */}
+          <table className="sm:hidden table-auto mt-4 mb-2 mx-auto w-full">
+            <tbody>
+              {gamePlays
+                .filter(gamePlay => {
+                  return (
+                    gamePlay.play_type.includes('Touchdown') ||
+                    gamePlay.play_type.includes('Safety') ||
+                    gamePlay.play_type.includes('Good')
+                  );
+                })
+                .map(gamePlay => {
+                  return (
+                    <Fragment key={gamePlay.id}>
+                      <tr>
+                        <td className="border w-20">
+                          {gamePlay.period}Q at{' '}
+                          {`${gamePlay.clock.minutes}:${
+                            gamePlay.clock.seconds < 10
+                              ? '0' + gamePlay.clock.seconds
+                              : gamePlay.clock.seconds
+                          }`}
+                        </td>
+                        <td className="border">{gamePlay.play_text}</td>
+                      </tr>
+                      <tr>
+                        <td></td>
+                        <td className="border py-2 text-left">
+                          {gameInfo.away_team} -
+                          {gamePlay.offense === gamePlay.away
+                            ? gamePlay.offense_score
+                            : gamePlay.defense_score}
+                          {gameInfo.home_team} -
+                          {gamePlay.offense === gamePlay.home
+                            ? gamePlay.offense_score
+                            : gamePlay.defense_score}
+                        </td>
+                      </tr>
+                    </Fragment>
                   );
                 })}
             </tbody>
