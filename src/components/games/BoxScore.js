@@ -11,6 +11,21 @@ const BoxScore = ({
   isFsuHomeTeam,
   loading
 }) => {
+  const getQuarter = quarter => {
+    switch (true) {
+      case quarter === 1:
+        return '1st';
+      case quarter === 2:
+        return '2nd';
+      case quarter === 3:
+        return '3rd';
+      case quarter === 4:
+        return '4th';
+      default:
+        return 'N/A';
+    }
+  };
+
   if (loading || !opposingTeamInfo.logos || !fsuTeamInfo.logos) {
     return <h1 className="text-3xl">Loading...</h1>;
   } else {
@@ -108,7 +123,7 @@ const BoxScore = ({
             </table>
           </div>
         </div>
-        <div className="border-t border-b border-gray-500 text-center py-4">
+        <div className="max-w-container border-t border-b border-gray-500 text-center py-4 mx-auto">
           <dl>
             <dt className="inline-block mr-1 ml-3 font-bold">Date: </dt>
             <dd className="inline-block">
@@ -131,10 +146,64 @@ const BoxScore = ({
             </dd>
           </dl>
         </div>
-        <div className="my-4 mx-auto">
+        <div className="my-4 mx-auto max-w-container">
           <h2 className="text-3xl font-bold border-b-4 border-gray-700 py-4">
             Scoring summary
           </h2>
+          <table className="table-fixed mt-4 mb-2 mx-auto w-full">
+            <thead>
+              <tr>
+                <th className="w-1/12 pl-2 text-sm text-center">Quarter</th>
+                <th className="w-1/12 pl-2 text-sm text-center">Time</th>
+                <th className="w-auto pl-2 text-sm text-left">Description</th>
+                <th className="w-1/12 pl-2 text-sm text-center">
+                  {gameInfo.away_team}
+                </th>
+                <th className="w-1/12 pl-2 text-sm text-center">
+                  {gameInfo.home_team}
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              {gamePlays
+                .filter(gamePlay => {
+                  return (
+                    gamePlay.play_type.includes('Touchdown') ||
+                    gamePlay.play_type.includes('Safety') ||
+                    gamePlay.play_type.includes('Good')
+                  );
+                })
+                .map(gamePlay => {
+                  return (
+                    <tr key={gamePlay.id}>
+                      <td className="border pl-2 py-2 text-center hidden sm:table-cell">
+                        {getQuarter(gamePlay.period)}
+                      </td>
+                      <td className="border pl-2 py-2 text-center">
+                        {`${gamePlay.clock.minutes}:${
+                          gamePlay.clock.seconds < 10
+                            ? '0' + gamePlay.clock.seconds
+                            : gamePlay.clock.seconds
+                        }`}
+                      </td>
+                      <td className="border pl-2 py-2 text-left">
+                        {gamePlay.play_text}
+                      </td>
+                      <td className="border pl-2 py-2 text-center">
+                        {gamePlay.offense === gamePlay.away
+                          ? gamePlay.offense_score
+                          : gamePlay.defense_score}
+                      </td>
+                      <td className="border pl-2 py-2 text-center">
+                        {gamePlay.offense === gamePlay.home
+                          ? gamePlay.offense_score
+                          : gamePlay.defense_score}
+                      </td>
+                    </tr>
+                  );
+                })}
+            </tbody>
+          </table>
         </div>
       </div>
     );
