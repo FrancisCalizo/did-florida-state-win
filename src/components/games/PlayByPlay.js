@@ -56,7 +56,7 @@ const PlayByPlay = ({ gamePlays, loading }) => {
     return <h1 className="text-3xl">Loading...</h1>;
   } else {
     return (
-      <div className="max-w-container my-4 mx-auto">
+      <div className="max-w-container py-4 mx-auto">
         <h2 className="text-3xl font-bold border-b-4 border-gray-700 py-4">
           Play-By-Play
         </h2>

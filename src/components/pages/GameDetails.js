@@ -72,7 +72,7 @@ const GameDetails = ({ match }) => {
     setCurrentTab(tab);
   };
   return (
-    <div className="mt-10 mx-12">
+    <div className="mt-10 ">
       <ul className="flex border-b justify-center">
         <li className="-mb-px mr-1 text-lg">
           <button
@@ -102,7 +102,7 @@ const GameDetails = ({ match }) => {
           </button>
         </li>
       </ul>
-      <div>{renderTab()}</div>
+      <div className="bg-white">{renderTab()}</div>
     </div>
   );
 };
