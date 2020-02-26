@@ -45,7 +45,7 @@ const BoxScore = ({
                   alt={fsuTeamInfo.school}
                 />
                 <span className="block text-center text-5xl text-gray-700">
-                  {isFsuHomeTeam ? gameInfo.away_points : gameInfo.home_points}
+                  {gameInfo.away_points}
                 </span>
               </div>
             </div>
@@ -68,7 +68,7 @@ const BoxScore = ({
                   alt={fsuTeamInfo.school}
                 />
                 <span className="block text-center text-5xl text-gray-700">
-                  {isFsuHomeTeam ? gameInfo.home_points : gameInfo.away_points}
+                  {gameInfo.home_points}
                 </span>
               </div>
             </div>
