@@ -30,7 +30,7 @@ const BoxScore = ({
     return <h1 className="text-3xl">Loading...</h1>;
   } else {
     return (
-      <div>
+      <div className="mx-10">
         <div className="flex flex-wrap justify-center py-4 max-w-container mx-auto">
           <div className="w-full md:w-1/2 flex justify-center">
             <div className="w-1/3 my-auto">
@@ -100,7 +100,7 @@ const BoxScore = ({
                       </td>
                     );
                   })}
-                  <td className="bg-gray-400 border px-4 py-2 text-center">
+                  <td className="bg-gray-200 border px-4 py-2 text-center">
                     {gameInfo.away_line_scores.reduce((a, b) => a + b, 0)}
                   </td>
                 </tr>
@@ -115,7 +115,7 @@ const BoxScore = ({
                       </td>
                     );
                   })}
-                  <td className="bg-gray-400 border px-4 py-2 text-center">
+                  <td className="bg-gray-200 border px-4 py-2 text-center">
                     {gameInfo.home_line_scores.reduce((a, b) => a + b, 0)}
                   </td>
                 </tr>
