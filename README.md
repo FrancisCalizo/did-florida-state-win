@@ -50,4 +50,6 @@ Simple Way to show pad with leading Zero if number is less than 10 - https://sta
 
 Use of Display: table-cell instead of Display: Block for a Table - https://tailwindcss.com/docs/display/#app
 
+Loading Animation - https://codepen.io/krupenja/pen/XWbKpgb
+
 ### This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

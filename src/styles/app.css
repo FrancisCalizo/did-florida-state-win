@@ -10247,6 +10247,8 @@ body {
   font-family: 'Source Sans Pro', sans-serif;
 }
 
+/*----------------------NavBar Styling---------------------- */
+
 .nav-link:hover {
   border-bottom-width: 4px;
   border-color: #ceb888;
@@ -10318,6 +10320,40 @@ body {
   border-top-right-radius: 0.25rem;
   background-color: #ceb888;
   color: #fff;
+}
+
+/*----------------------Loading Styling---------------------- */
+
+.bounce {
+  animation: spinner-bounce 0.8s infinite ease-in-out both;
+}
+
+.spinner-dot-1 {
+  animation-delay: -0.4s;
+}
+
+.spinner-dot-2 {
+  animation-delay: -0.3s;
+}
+
+.spinner-dot-3 {
+  animation-delay: -0.2s;
+}
+
+.spinner-dot-4 {
+  animation-delay: -0.1s;
+}
+
+@keyframes spinner-bounce {
+  0%,
+  80%,
+  100% {
+    transform: scale(1);
+  }
+
+  40% {
+    transform: scale(2);
+  }
 }
 
 @media (min-width: 640px){

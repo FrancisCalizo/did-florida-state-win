@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
+import Loading from '../layout/Loading';
 
 const BoxScore = ({
   fsuTeamInfo,
@@ -27,7 +28,7 @@ const BoxScore = ({
   };
 
   if (loading || !opposingTeamInfo.logos || !fsuTeamInfo.logos) {
-    return <h1 className="text-3xl">Loading...</h1>;
+    return <Loading />;
   } else {
     return (
       <div className="mx-10">

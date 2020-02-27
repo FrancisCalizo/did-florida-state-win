@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Loading from '../layout/Loading';
 
 const PlayByPlay = ({ gamePlays, loading }) => {
   const [currentTab, setCurrentTab] = useState(1);
@@ -53,7 +54,7 @@ const PlayByPlay = ({ gamePlays, loading }) => {
   };
 
   if (loading || !gamePlays || !currentTab) {
-    return <h1 className="text-3xl">Loading...</h1>;
+    return <Loading />;
   } else {
     return (
       <div className="mx-12">

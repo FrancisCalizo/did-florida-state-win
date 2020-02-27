@@ -1,8 +1,9 @@
 import React from 'react';
+import Loading from '../layout/Loading';
 
 const TeamStats = ({ gameStatsHome, gameStatsAway, loading }) => {
   if (loading || !gameStatsHome.stats || !gameStatsAway.stats) {
-    return <h1 className="text-3xl">Loading...</h1>;
+    return <Loading />;
   } else {
     return (
       <div className="mx-12">
