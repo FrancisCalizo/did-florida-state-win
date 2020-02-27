@@ -52,4 +52,6 @@ Use of Display: table-cell instead of Display: Block for a Table - https://tailw
 
 Loading Animation - https://codepen.io/krupenja/pen/XWbKpgb
 
+Persisting State with Local Storage - https://dev.to/selbekk/persisting-your-react-state-in-9-lines-of-code-9go and
+
 ### This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

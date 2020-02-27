@@ -3,7 +3,7 @@ import GamesContext from '../../context/games/gamesContext';
 
 const SeasonDropdown = () => {
   const gamesContext = useContext(GamesContext);
-  const { setYear } = gamesContext;
+  const { setYear, year } = gamesContext;
 
   // Populate Years in Dropdown
   let years = [];
@@ -23,7 +23,7 @@ const SeasonDropdown = () => {
           text-white block border-gray-400 hover:border-gray-500 px-4 py-3 pr-8
           rounded shadow leading-tight focus:outline-none cursor-pointer"
           onChange={handleChange}
-          defaultValue="2019"
+          defaultValue={year}
         >
           {years.map(year => {
             return (
