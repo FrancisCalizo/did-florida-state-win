@@ -106,6 +106,7 @@ const GameDetailsState = props => {
         gamePlays: state.gamePlays,
         opposingTeamInfo: state.opposingTeamInfo,
         isFsuHomeTeam: state.isFsuHomeTeam,
+        noInfoAvailable: state.noInfoAvailable,
         fetchGameInfo: fetchGameInfo,
         clearGameInfo: clearGameInfo
       }}

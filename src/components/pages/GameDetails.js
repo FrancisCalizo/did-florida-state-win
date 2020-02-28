@@ -5,6 +5,7 @@ import PlayByPlay from '../games/PlayByPlay';
 
 import GameDetailsContext from '../../context/game-details/gameDetailsContext';
 import FsuTeamContext from '../../context/fsu-team/fsuTeamContext';
+import NoInfoAvailable from '../layout/NoInfoAvailable';
 
 const GameDetails = ({ match }) => {
   const gameDetailsContext = useContext(GameDetailsContext);
@@ -73,40 +74,44 @@ const GameDetails = ({ match }) => {
     setCurrentTab(tab);
   };
 
-  return (
-    <div className="mt-10 ">
-      <ul className="flex border-b justify-center">
-        <li className="-mb-px mr-1 text-lg">
-          <button
-            className={`font-semibold uppercase bg-white inline-block py-2 px-4 text-black focus:outline-none hover:bg-gold-500 hover:text-white ${currentTab ===
-              'boxScore' && 'active-tab'}`}
-            onClick={() => handleClick('boxScore')}
-          >
-            Box Score
-          </button>
-        </li>
-        <li className="-mb-px mr-1 text-lg">
-          <button
-            className={`font-semibold uppercase bg-white inline-block py-2 px-4 text-black focus:outline-none hover:bg-gold-500 hover:text-white ${currentTab ===
-              'teamStats' && 'active-tab'}`}
-            onClick={() => handleClick('teamStats')}
-          >
-            Team
-          </button>
-        </li>
-        <li className="-mb-px mr-1 text-lg">
-          <button
-            className={`font-semibold uppercase bg-white inline-block py-2 px-4 text-black focus:outline-none hover:bg-gold-500 hover:text-white ${currentTab ===
-              'playByPlay' && 'active-tab'}`}
-            onClick={() => handleClick('playByPlay')}
-          >
-            Play-By-Play
-          </button>
-        </li>
-      </ul>
-      <div className="bg-white">{renderTab()}</div>
-    </div>
-  );
+  if (noInfoAvailable) {
+    return <NoInfoAvailable />;
+  } else {
+    return (
+      <div className="mt-10 ">
+        <ul className="flex border-b justify-center">
+          <li className="-mb-px mr-1 text-lg">
+            <button
+              className={`font-semibold uppercase bg-white inline-block py-2 px-4 text-black focus:outline-none hover:bg-gold-500 hover:text-white ${currentTab ===
+                'boxScore' && 'active-tab'}`}
+              onClick={() => handleClick('boxScore')}
+            >
+              Box Score
+            </button>
+          </li>
+          <li className="-mb-px mr-1 text-lg">
+            <button
+              className={`font-semibold uppercase bg-white inline-block py-2 px-4 text-black focus:outline-none hover:bg-gold-500 hover:text-white ${currentTab ===
+                'teamStats' && 'active-tab'}`}
+              onClick={() => handleClick('teamStats')}
+            >
+              Team
+            </button>
+          </li>
+          <li className="-mb-px mr-1 text-lg">
+            <button
+              className={`font-semibold uppercase bg-white inline-block py-2 px-4 text-black focus:outline-none hover:bg-gold-500 hover:text-white ${currentTab ===
+                'playByPlay' && 'active-tab'}`}
+              onClick={() => handleClick('playByPlay')}
+            >
+              Play-By-Play
+            </button>
+          </li>
+        </ul>
+        <div className="bg-white">{renderTab()}</div>
+      </div>
+    );
+  }
 };
 
 export default GameDetails;

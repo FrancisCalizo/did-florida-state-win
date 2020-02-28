@@ -52,6 +52,10 @@ Use of Display: table-cell instead of Display: Block for a Table - https://tailw
 
 Loading Animation - https://codepen.io/krupenja/pen/XWbKpgb
 
-Persisting State with Local Storage - https://dev.to/selbekk/persisting-your-react-state-in-9-lines-of-code-9go and
+Persisting State with Local Storage - https://dev.to/selbekk/persisting-your-react-state-in-9-lines-of-code-9go
+
+Vertically align h1 - https://stackoverflow.com/questions/20562860/how-do-i-vertically-center-an-h1-in-a-div/20563075
+
+Flexbox column reverse, but start from the top instead of the end- https://stackoverflow.com/questions/54912146/flexbox-list-column-reverse-and-start-from-top
 
 ### This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
