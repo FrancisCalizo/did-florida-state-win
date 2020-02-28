@@ -28,16 +28,12 @@ const GamesState = props => {
     awayLosses: 0,
     conferenceWins: 0,
     conferenceLosses: 0,
-    year: localStorage.getItem('year') || 2019
+    year: 2019
   };
 
   const [state, dispatch] = useReducer(GamesReducer, initialState);
 
   const fetchGames = year => {
-    // Set Local Storage
-    localStorage.removeItem('year');
-    localStorage.setItem('year', year);
-
     // Regular Season
     let regularSeason = axios.get(
       `https://api.collegefootballdata.com/games?year=${year}&team=Florida%20State`
