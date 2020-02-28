@@ -16,7 +16,8 @@ const GameDetails = ({ match }) => {
     gamePlays,
     opposingTeamInfo,
     isFsuHomeTeam,
-    clearGameInfo
+    clearGameInfo,
+    noInfoAvailable
   } = gameDetailsContext;
 
   const fsuTeamContext = useContext(FsuTeamContext);
@@ -71,6 +72,7 @@ const GameDetails = ({ match }) => {
   const handleClick = tab => {
     setCurrentTab(tab);
   };
+
   return (
     <div className="mt-10 ">
       <ul className="flex border-b justify-center">

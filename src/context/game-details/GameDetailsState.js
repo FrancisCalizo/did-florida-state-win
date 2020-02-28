@@ -2,7 +2,7 @@ import React, { useReducer } from 'react';
 import axios from 'axios';
 import GameDetailsContext from './gameDetailsContext';
 import GameDetailsReducer from './gameDetailsReducer';
-import { GET_GAME_INFO, CLEAR_GAME_INFO } from '../types';
+import { GET_GAME_INFO, CLEAR_GAME_INFO, NO_INFO_AVAILABLE } from '../types';
 
 const GameDetailsState = props => {
   const initialState = {
@@ -11,7 +11,8 @@ const GameDetailsState = props => {
     gameStatsAway: {},
     gamePlays: [],
     opposingTeamInfo: [],
-    isFsuHomeTeam: false
+    isFsuHomeTeam: false,
+    noInfoAvailable: false
   };
 
   const [state, dispatch] = useReducer(GameDetailsReducer, initialState);
@@ -35,42 +36,55 @@ const GameDetailsState = props => {
       Promise.all([gameInfo, gameStats, gamePlays, teamInfo]).then(res => {
         const [gameInfo, gameStats, gamePlays, teamInfo] = res;
 
-        const gameData = {
-          gameInfo: gameInfo['data'][0],
-          gameStatsHome: gameStats['data'][0].teams.filter(
-            team => team.homeAway === 'home'
-          )[0],
-          gameStatsAway: gameStats['data'][0].teams.filter(
-            team => team.homeAway === 'away'
-          )[0],
-          gamePlays: gamePlays['data'].sort((a, b) => {
-            return (
-              a.period - b.period ||
-              b.clock.minutes * 60 +
-                b.clock.seconds -
-                (a.clock.minutes * 60 + a.clock.seconds)
-            );
-          })
-        };
-
-        // Get Opposing Team Info && Find Out Home Team
-        let opposingTeamName;
-        if (gameData.gameInfo.home_team === 'Florida State') {
-          opposingTeamName = gameData.gameInfo.away_team;
-          gameData.isFsuHomeTeam = true;
+        if (
+          gameInfo['data'] === undefined ||
+          gameInfo['data'].length === 0 ||
+          gameStats['data'] === undefined ||
+          gameStats['data'].length === 0 ||
+          gamePlays['data'] === undefined ||
+          gamePlays['data'].length === 0
+        ) {
+          dispatch({
+            type: NO_INFO_AVAILABLE
+          });
         } else {
-          opposingTeamName = gameData.gameInfo.home_team;
-          gameData.isFsuHomeTeam = false;
+          const gameData = {
+            gameInfo: gameInfo['data'][0],
+            gameStatsHome: gameStats['data'][0].teams.filter(
+              team => team.homeAway === 'home'
+            )[0],
+            gameStatsAway: gameStats['data'][0].teams.filter(
+              team => team.homeAway === 'away'
+            )[0],
+            gamePlays: gamePlays['data'].sort((a, b) => {
+              return (
+                a.period - b.period ||
+                b.clock.minutes * 60 +
+                  b.clock.seconds -
+                  (a.clock.minutes * 60 + a.clock.seconds)
+              );
+            })
+          };
+
+          // Get Opposing Team Info && Find Out Home Team
+          let opposingTeamName;
+          if (gameData.gameInfo.home_team === 'Florida State') {
+            opposingTeamName = gameData.gameInfo.away_team;
+            gameData.isFsuHomeTeam = true;
+          } else {
+            opposingTeamName = gameData.gameInfo.home_team;
+            gameData.isFsuHomeTeam = false;
+          }
+
+          gameData.opposingTeam = teamInfo.data.filter(
+            team => team.school === opposingTeamName
+          )[0];
+
+          dispatch({
+            type: GET_GAME_INFO,
+            payload: gameData
+          });
         }
-
-        gameData.opposingTeam = teamInfo.data.filter(
-          team => team.school === opposingTeamName
-        )[0];
-
-        dispatch({
-          type: GET_GAME_INFO,
-          payload: gameData
-        });
       });
     } catch (err) {
       console.error(err);

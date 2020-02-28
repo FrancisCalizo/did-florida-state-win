@@ -14,6 +14,7 @@ export const SET_YEAR = 'SET_YEAR';
 // Game Details Types
 export const GET_GAME_INFO = 'GET_GAME_INFO';
 export const CLEAR_GAME_INFO = 'CLEAR_GAME_INFO';
+export const NO_INFO_AVAILABLE = 'NO_INFO_AVAILABLE';
 
 // FSU Team Types
 export const GET_FSU_TEAM_INFO = 'GET_FSU_TEAM_INFO';
