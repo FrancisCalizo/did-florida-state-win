@@ -22,12 +22,12 @@ const RosterItem = ({ roster }) => {
   };
 
   return (
-    <div className="my-8 ">
+    <div className="flex flex-wrap my-8 mx-8">
       {roster.map(player => {
         return (
           <div
             key={player.id}
-            className="mx-8 my-1 py-2 border border-dark-200 rounded"
+            className="w-full lg:w-1/2 my-1 py-2 border border-dark-200 rounded"
           >
             <div className="flex">
               <img
@@ -35,7 +35,7 @@ const RosterItem = ({ roster }) => {
                 src={require('../../images/avatar.png')}
                 alt="avatar"
               />
-              <div className="flex items-center w-1/4 mx-2">
+              <div className="flex items-center mx-2">
                 <div>
                   <h2>
                     {player.position} /{' '}
