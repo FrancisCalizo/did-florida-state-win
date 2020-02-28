@@ -1,5 +1,6 @@
 import React, { useEffect, useContext } from 'react';
 import RosterDropdown from '../layout/RosterDropdown';
+import RosterItem from '../players/RosterItem';
 
 import RosterContext from '../../context/roster/rosterContext';
 
@@ -18,8 +19,9 @@ const Roster = () => {
   }, [year]);
 
   return (
-    <div>
+    <div className="container">
       <RosterDropdown />
+      <RosterItem roster={roster} />
     </div>
   );
 };
