@@ -2,14 +2,11 @@ import React, { useReducer } from 'react';
 import axios from 'axios';
 import RosterContext from './rosterContext';
 import RosterReducer from './rosterReducer';
-import {
-  GET_ROSTER_INFO,
-  CLEAR_ROSTER_INFO,
-  NO_ROSTER_INFO_AVAILABLE
-} from '../types';
+import { GET_ROSTER_INFO, NO_ROSTER_INFO_AVAILABLE, SET_YEAR } from '../types';
 
 const RosterState = props => {
   const initialState = {
+    year: 2019,
     roster: [],
     noRosterInfoAvailable: false
   };
@@ -25,7 +22,6 @@ const RosterState = props => {
 
       // Sort by Jersey Number
       let res = rosterInfo.data.sort((a, b) => {
-        console.log(a.jersey, b.jersey);
         return (
           (a.jersey === null) - (b.jersey === null) ||
           +(a.jersey > b.jersey) ||
@@ -48,12 +44,21 @@ const RosterState = props => {
     }
   };
 
+  const setYear = year => {
+    dispatch({
+      type: SET_YEAR,
+      payload: Number(year)
+    });
+  };
+
   return (
     <RosterContext.Provider
       value={{
+        year: state.year,
         roster: state.roster,
         noRosterInfoAvailable: state.noRosterInfoAvailable,
-        fetchRosterInfo: fetchRosterInfo
+        fetchRosterInfo: fetchRosterInfo,
+        setYear: setYear
       }}
     >
       {props.children}
