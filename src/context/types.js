@@ -18,3 +18,8 @@ export const NO_INFO_AVAILABLE = 'NO_INFO_AVAILABLE';
 
 // FSU Team Types
 export const GET_FSU_TEAM_INFO = 'GET_FSU_TEAM_INFO';
+
+// Roster Types
+export const GET_ROSTER_INFO = 'GET_ROSTER_INFO';
+export const CLEAR_ROSTER_INFO = 'CLEAR_ROSTER_INFO';
+export const NO_ROSTER_INFO_AVAILABLE = 'NO_ROSTER_INFO_AVAILABLE';
