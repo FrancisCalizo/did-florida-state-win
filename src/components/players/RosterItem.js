@@ -29,7 +29,7 @@ const RosterItem = ({ roster }) => {
           <Spring
             from={{ opacity: 0 }}
             to={{ opacity: 1 }}
-            config={{ delay: 100 * idx, duration: 200 }}
+            config={{ delay: 90 * idx, duration: 300 }}
             key={player.id}
           >
             {props => (

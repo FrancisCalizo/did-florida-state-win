@@ -20,8 +20,13 @@ const RosterState = props => {
         `https://api.collegefootballdata.com/roster?team=Florida%20State&year=${year}`
       );
 
+      // Filter out null players
+      rosterInfo = rosterInfo.data.filter(
+        player => player.first_name && player.last_name !== null
+      );
+
       // Sort by Jersey Number
-      let res = rosterInfo.data.sort((a, b) => {
+      let res = rosterInfo.sort((a, b) => {
         return (
           (a.jersey === null) - (b.jersey === null) ||
           +(a.jersey > b.jersey) ||

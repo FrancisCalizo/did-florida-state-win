@@ -1,6 +1,7 @@
 import React, { useEffect, useContext } from 'react';
 import RosterDropdown from '../layout/RosterDropdown';
 import RosterItem from '../players/RosterItem';
+import NoRosterInfoAvailable from '../layout/NoRosterAvailable';
 
 import RosterContext from '../../context/roster/rosterContext';
 
@@ -21,7 +22,11 @@ const Roster = () => {
   return (
     <div className="container">
       <RosterDropdown />
-      <RosterItem roster={roster} />
+      {noRosterInfoAvailable ? (
+        <NoRosterInfoAvailable />
+      ) : (
+        <RosterItem roster={roster} />
+      )}
     </div>
   );
 };

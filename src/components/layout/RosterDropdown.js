@@ -6,7 +6,7 @@ const RosterDropdown = () => {
   const { setYear, year } = rosterContext;
 
   let years = [];
-  for (let i = new Date().getFullYear(); i >= 2000; i--) {
+  for (let i = new Date().getFullYear(); i >= 1980; i--) {
     years.push(i);
   }
 
