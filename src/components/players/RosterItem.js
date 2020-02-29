@@ -43,16 +43,22 @@ const RosterItem = ({ roster }) => {
                     />
                     <div className="flex items-center mx-2">
                       <div>
-                        <h2>
-                          {player.position} /{' '}
-                          {`${parseInt(player.height / 12)}'${parseInt(
-                            player.height % 12
-                          )}"`}
-                          -{player.weight} |{' '}
-                          <span className="underline font-bold">
-                            {getClass(player.year)}
-                          </span>
-                        </h2>
+                        {player.position === null ||
+                        player.height === null ||
+                        player.weight === null ? (
+                          <h2>Information Unavailable</h2>
+                        ) : (
+                          <h2>
+                            {player.position} /{' '}
+                            {`${parseInt(player.height / 12)}'${parseInt(
+                              player.height % 12
+                            )}"`}
+                            -{player.weight} |{' '}
+                            <span className="underline font-bold">
+                              {getClass(player.year)}
+                            </span>
+                          </h2>
+                        )}
                         <h1 className="text-2xl my-2">
                           <span className="border-2 px-2 bg-dark-800 text-white">
                             #{player.jersey}
@@ -60,7 +66,11 @@ const RosterItem = ({ roster }) => {
                           {'  '}
                           {`${player.first_name} ${player.last_name}`}
                         </h1>
-                        <h2 className="text-sm">{`${player.home_city}, ${player.home_state}`}</h2>
+                        {player.home_city === null ? (
+                          <h2 className="text-sm">Hometown Unavailable</h2>
+                        ) : (
+                          <h2 className="text-sm">{`${player.home_city}, ${player.home_state}`}</h2>
+                        )}
                       </div>
                     </div>
                   </div>
