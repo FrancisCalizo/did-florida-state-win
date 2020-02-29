@@ -1,6 +1,8 @@
 import React, { Fragment } from 'react';
 import { Link } from 'react-router-dom';
 import { Spring } from 'react-spring/renderprops';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import 'react-lazy-load-image-component/src/effects/opacity.css';
 
 const GameItem = ({ games, teamInfo }) => {
   const renderWinLoss = game => {
@@ -52,7 +54,7 @@ const GameItem = ({ games, teamInfo }) => {
                   {teamInfo.map(team =>
                     team.school === game.away_team ||
                     team.school === game.home_team ? (
-                      <img
+                      <LazyLoadImage
                         key={team.id}
                         className={`w-48 rounded-full p-3 mx-auto z-10 -mb-20 bg-gray-300`}
                         src={team.logos[0]}
