@@ -60,4 +60,6 @@ Flexbox column reverse, but start from the top instead of the end- https://stack
 
 Sort Array ascending numbers, but put null last - https://stackoverflow.com/questions/29829205/sort-an-array-so-that-null-values-always-come-last
 
+Fixed Navbar (and creating of UnderNavbar Component) - https://www.w3schools.com/howto/howto_css_fixed_menu.asp
+
 ### This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

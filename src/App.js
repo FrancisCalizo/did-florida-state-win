@@ -7,6 +7,7 @@ import NotFound from './components/pages/NotFound';
 import Schedule from './components/pages/Schedule';
 import GameDetails from './components/pages/GameDetails';
 import Navbar from './components/layout/Navbar';
+import UnderNav from './components/layout/UnderNav';
 
 import GamesState from './context/games/GamesState';
 import GameDetailsState from './context/game-details/GameDetailsState';
@@ -25,18 +26,20 @@ function App() {
             <Router>
               <div className="bg-gray-200">
                 <Navbar />
-                <Switch>
-                  <Route exact path="/" component={Home} />
-                  <Route exact path="/about" component={About} />
-                  <Route exact path="/schedule" component={Schedule} />
-                  <Route
-                    exact
-                    path="/gamedetails/:season/:week/:id"
-                    component={GameDetails}
-                  />
-                  <Route exact path="/Roster" component={Roster} />
-                  <Route component={NotFound} />
-                </Switch>
+                <UnderNav>
+                  <Switch>
+                    <Route exact path="/" component={Home} />
+                    <Route exact path="/about" component={About} />
+                    <Route exact path="/schedule" component={Schedule} />
+                    <Route
+                      exact
+                      path="/gamedetails/:season/:week/:id"
+                      component={GameDetails}
+                    />
+                    <Route exact path="/Roster" component={Roster} />
+                    <Route component={NotFound} />
+                  </Switch>
+                </UnderNav>
               </div>
             </Router>
           </RosterState>

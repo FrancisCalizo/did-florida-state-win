@@ -5,7 +5,7 @@ import logo from '../../images/logo.png';
 const Navbar = () => {
   return (
     <nav
-      className="bg-garnet-500 border-b-4 border-gold-500 mb-2"
+      className="fixed w-full top-0 z-30 bg-garnet-500 border-b-4 border-gold-500"
       style={{ boxShadow: '0 0 0 10px rgba(0, 0, 0, 0.8)' }}
     >
       <div className="max-w-container flex items-center justify-between flex-wrap py-4 px-5 mx-auto">
