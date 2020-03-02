@@ -20,7 +20,17 @@ const GameItem = ({ games, teamInfo }) => {
         game.home_points < game.away_points:
         return 'Win';
       default:
-        return 'Tie';
+        return null;
+    }
+  };
+
+  const checkTBAGame = game => {
+    if (game.home_points === null || game.away_points === null) {
+      return <span className="font-bold">TBD</span>;
+    } else {
+      return game.home_team === 'Florida State'
+        ? `${game.home_points} - ${game.away_points}`
+        : `${game.away_points} - ${game.home_points}`;
     }
   };
 
@@ -89,9 +99,10 @@ const GameItem = ({ games, teamInfo }) => {
                         </h2>
                       </div>
                       <h2 className="text-4xl text-white" style={skew('10deg')}>
-                        {game.home_team === 'Florida State'
+                        {/* {game.home_team === 'Florida State'
                           ? `${game.home_points} - ${game.away_points}`
-                          : `${game.away_points} - ${game.home_points}`}
+                          : `${game.away_points} - ${game.home_points}`} */}
+                        {checkTBAGame(game)}
                       </h2>
                     </div>
                   </div>
