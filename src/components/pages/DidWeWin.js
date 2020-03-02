@@ -1,17 +1,21 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useEffect, useContext } from 'react';
+import moment from 'moment';
+import Countdown from '../did-we-win/Countdown';
+
+import DidWeWinContext from '../../context/did-we-win/didWeWinContext';
 
 const DidWeWin = () => {
+  const didWeWinContext = useContext(DidWeWinContext);
+  const { fetchCurrentSchedule } = didWeWinContext;
+
+  useEffect(() => {
+    fetchCurrentSchedule(moment().format('YYYY'));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   return (
     <div>
-      <h1>
-        This page should show the past game, current game, and/or next game
-      </h1>
-      <h2>You still need to find an API for this big dawg</h2>
-      <h3>
-        {/* Change 2020 to dynamic date */}
-        Check out past games <Link to="/Schedule">Here</Link>
-      </h3>
+      <Countdown />
     </div>
   );
 };
