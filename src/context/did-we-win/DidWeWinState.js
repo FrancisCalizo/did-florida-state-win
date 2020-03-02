@@ -27,11 +27,18 @@ function useInterval(callback, delay) {
 
 const DidWeWinState = props => {
   const initialState = {
-    currentDate: 0,
+    currentDate: moment().format('MMMM Do YYYY, h:mm:ss a'),
     currentSchedule: null
   };
 
   const [state, dispatch] = useReducer(DidWeWinReducer, initialState);
+
+  useInterval(() => {
+    dispatch({
+      type: SET_CURRENT_DATE,
+      payload: moment().format('MMMM Do YYYY, h:mm:ss a')
+    });
+  }, 1000);
 
   const fetchCurrentSchedule = async year => {
     try {
@@ -62,15 +69,5 @@ const DidWeWinState = props => {
     </DidWeWinContext.Provider>
   );
 };
-
-// currentDate: moment().format('MMMM Do YYYY, h:mm:ss a')
-
-// useInterval(() => {
-//   console.log('happening');
-//   dispatch({
-//     action: SET_CURRENT_DATE
-//     // payload: moment().format('MMMM Do YYYY, h:mm:ss a')
-//   });
-// }, 1000);
 
 export default DidWeWinState;
