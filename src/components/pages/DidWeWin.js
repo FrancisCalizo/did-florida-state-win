@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const Home = () => {
+const DidWeWin = () => {
   return (
     <div>
       <h1>
@@ -16,4 +16,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default DidWeWin;
