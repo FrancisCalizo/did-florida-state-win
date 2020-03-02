@@ -64,4 +64,6 @@ Fixed Navbar (and creating of UnderNavbar Component) - https://www.w3schools.com
 
 @apply on different screen sizes only - https://tailwindcss.com/docs/functions-and-directives/
 
+Hamburger Menu on click - https://github.com/justalever/tailwind-navbar/blob/master/public/index.html and https://reactjs.org/docs/forms.html and https://stackoverflow.com/questions/12133791/css-overlapping-borders
+
 ### This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
