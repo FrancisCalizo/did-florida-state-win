@@ -15,20 +15,21 @@ body {
 }
 
 /*----------------------NavBar Styling---------------------- */
-.nav-link:hover {
-  @apply border-b-4 border-gold-500;
-}
+@screen md {
+  .nav-link:hover {
+    @apply border-b-4 border-gold-500;
+  }
+  .nav-link-special:hover {
+    @apply bg-gold-400;
+    animation: shake 0.8s;
+    animation-iteration-count: infinite;
+  }
 
-.nav-link-special:hover {
-  @apply bg-gold-400;
-  animation: shake 0.8s;
-  animation-iteration-count: infinite;
-}
-
-.nav-link-special:active {
-  @apply bg-gold-500;
-  animation: none;
-  animation-iteration-count: infinite;
+  .nav-link-special:active {
+    @apply bg-gold-500;
+    animation: none;
+    animation-iteration-count: infinite;
+  }
 }
 
 @keyframes shake {

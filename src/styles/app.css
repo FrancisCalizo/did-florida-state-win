@@ -10641,21 +10641,23 @@ body {
 
 /*----------------------NavBar Styling---------------------- */
 
-.nav-link:hover {
-  border-bottom-width: 4px;
-  border-color: #ceb888;
-}
+@media (min-width: 768px) {
+  .nav-link:hover {
+    border-bottom-width: 4px;
+    border-color: #ceb888;
+  }
 
-.nav-link-special:hover {
-  background-color: #dac9a4;
-  animation: shake 0.8s;
-  animation-iteration-count: infinite;
-}
+  .nav-link-special:hover {
+    background-color: #dac9a4;
+    animation: shake 0.8s;
+    animation-iteration-count: infinite;
+  }
 
-.nav-link-special:active {
-  background-color: #ceb888;
-  animation: none;
-  animation-iteration-count: infinite;
+  .nav-link-special:active {
+    background-color: #ceb888;
+    animation: none;
+    animation-iteration-count: infinite;
+  }
 }
 
 @keyframes shake {

@@ -62,4 +62,6 @@ Sort Array ascending numbers, but put null last - https://stackoverflow.com/ques
 
 Fixed Navbar (and creating of UnderNavbar Component) - https://www.w3schools.com/howto/howto_css_fixed_menu.asp
 
+@apply on different screen sizes only - https://tailwindcss.com/docs/functions-and-directives/
+
 ### This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

@@ -1,8 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../../images/logo.png';
 
 const Navbar = () => {
+  const [hamburgerOpen, setHamburgerOpen] = useState(false);
+
+  const handleChange = e => {
+    e.target.checked ? setHamburgerOpen(true) : setHamburgerOpen(false);
+  };
+
+  const closeBurger = e => {
+    setHamburgerOpen(false);
+  };
+
   return (
     <nav
       className="fixed w-full top-0 z-30 bg-garnet-500 border-b-4 border-gold-500"
@@ -16,7 +26,8 @@ const Navbar = () => {
           </span>
         </div>
         <div className="block md:hidden">
-          <button className="flex items-center px-4 py-2 border rounded text-white-200 border-white hover:text-white hover:border-white">
+          <label className="flex items-center px-4 py-2 border rounded text-white-200 border-white hover:text-white hover:border-white">
+            <input type="checkbox" className="hidden" onChange={handleChange} />
             <svg
               className="fill-current h-3 w-3"
               viewBox="0 0 20 20"
@@ -25,33 +36,50 @@ const Navbar = () => {
               <title>Menu</title>
               <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
             </svg>
-          </button>
+          </label>
         </div>
-        <div className="hidden w-full md:block md:flex md:items-center md:w-auto ">
-          <Link
-            to="/about"
-            className="block md:text-base lg:text-xl md: mx-3 lg:mx-5 lg:inline-block lg:mt-0 text-white mr-2 nav-link hover:text-gray-200"
-          >
-            About
-          </Link>
-          <Link
-            to="/schedule"
-            className="block md:text-base lg:text-xl md: mx-3 lg:mx-5 lg:inline-block lg:mt-0 text-white mr-2 nav-link hover:text-gray-200"
-          >
-            Schedule
-          </Link>
-          <Link
-            to="/roster"
-            className="block md:text-base lg:text-xl md: mx-3 lg:mx-5 lg:inline-block lg:mt-0 text-white mr-2 nav-link hover:text-gray-200"
-          >
-            Roster
-          </Link>
-          <Link
-            to="/"
-            className="block md:text-base lg:text-xl md:mx-3 lg:ml-4 lg:inline-block lg:mt-0 text-white bg-gold-500 font-semibold px-4 py-3 rounded nav-link-special border-gold-900 border hover:text-dark-700"
-          >
-            Did We Win?
-          </Link>
+        <div
+          id="menu"
+          className={`w-full md:flex md:items-center md:w-auto ${
+            hamburgerOpen ? 'block' : 'hidden'
+          }`}
+        >
+          <div className="border-t border-garnet-700 md:border-none -mx-5 md:mx-0">
+            <Link
+              to="/about"
+              className="block md:text-base lg:text-xl md:mx-3 lg:mx-5 lg:inline-block lg:mt-0 text-white md:mr-2 nav-link hover:text-gray-200 text-center my-4 md:my-0"
+              onClick={closeBurger}
+            >
+              About
+            </Link>
+          </div>
+          <div className="border-t border-garnet-700 md:border-none -mx-5 md:mx-0">
+            <Link
+              to="/schedule"
+              className="block md:text-base lg:text-xl md:mx-3 lg:mx-5 lg:inline-block lg:mt-0 text-white md:mr-2 nav-link hover:text-gray-200 text-center my-4 md:my-0"
+              onClick={closeBurger}
+            >
+              Schedule
+            </Link>
+          </div>
+          <div className="border-t border-garnet-700 md:border-none -mx-5 md:mx-0">
+            <Link
+              to="/roster"
+              className="block md:text-base lg:text-xl md:mx-3 lg:mx-5 lg:inline-block lg:mt-0 text-white md:mr-2 nav-link hover:text-gray-200 text-center my-4 md:my-0"
+              onClick={closeBurger}
+            >
+              Roster
+            </Link>
+          </div>
+          <div className="border-t border-b border-garnet-700 md:border-none -mx-5 md:mx-0">
+            <Link
+              to="/"
+              className="block md:text-base lg:text-xl md:mx-2 lg:ml-4 lg:inline-block lg:mt-0 text-white md:bg-gold-500 font-semibold md:px-4 md:py-3 md:rounded nav-link-special md:border-gold-900 md:border md:hover:text-dark-700 text-center my-4 md:my-0"
+              onClick={closeBurger}
+            >
+              Did We Win?
+            </Link>
+          </div>
         </div>
       </div>
     </nav>
