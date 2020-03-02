@@ -8,11 +8,10 @@ export default (state, action) => {
         currentDate: action.payload
       };
     case FETCH_CURRENT_SCHEDULE:
-      // return {
-      //   ...state,
-      //   currentSchedule: action.payload
-      // };
-      return alert('blah');
+      return {
+        ...state,
+        currentSchedule: action.payload
+      };
     default:
       return state;
   }

@@ -4,7 +4,6 @@ import moment from 'moment';
 import DidWeWinContext from './didWeWinContext';
 import DidWeWinReducer from './didWeWinReducer';
 import { SET_CURRENT_DATE, FETCH_CURRENT_SCHEDULE } from '../types';
-import { cloneElement } from 'react';
 
 function useInterval(callback, delay) {
   const savedCallback = useRef();
@@ -28,20 +27,11 @@ function useInterval(callback, delay) {
 
 const DidWeWinState = props => {
   const initialState = {
-    // currentDate: moment().format('MMMM Do YYYY, h:mm:ss a')
     currentDate: 0,
     currentSchedule: null
   };
 
   const [state, dispatch] = useReducer(DidWeWinReducer, initialState);
-
-  // useInterval(() => {
-  //   console.log('happening');
-  //   dispatch({
-  //     action: SET_CURRENT_DATE
-  //     // payload: moment().format('MMMM Do YYYY, h:mm:ss a')
-  //   });
-  // }, 1000);
 
   const fetchCurrentSchedule = async year => {
     try {
@@ -50,9 +40,10 @@ const DidWeWinState = props => {
       );
 
       let currentSchedule = res.data;
+
       dispatch({
-        action: FETCH_CURRENT_SCHEDULE
-        // payload: currentSchedule
+        type: FETCH_CURRENT_SCHEDULE,
+        payload: currentSchedule
       });
     } catch (err) {
       console.error(err);
@@ -71,5 +62,15 @@ const DidWeWinState = props => {
     </DidWeWinContext.Provider>
   );
 };
+
+// currentDate: moment().format('MMMM Do YYYY, h:mm:ss a')
+
+// useInterval(() => {
+//   console.log('happening');
+//   dispatch({
+//     action: SET_CURRENT_DATE
+//     // payload: moment().format('MMMM Do YYYY, h:mm:ss a')
+//   });
+// }, 1000);
 
 export default DidWeWinState;
