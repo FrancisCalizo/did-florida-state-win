@@ -26,7 +26,7 @@ const Navbar = () => {
           </span>
         </div>
         <div className="block md:hidden">
-          <label className="flex items-center px-4 py-2 border rounded text-white-200 border-white hover:text-white hover:border-white">
+          <label className="flex items-center px-4 py-2 border rounded text-white-200 border-white hover:text-white hover:border-white hover:cursor-pointer">
             <input type="checkbox" className="hidden" onChange={handleChange} />
             <svg
               className="fill-current h-3 w-3"
@@ -44,10 +44,10 @@ const Navbar = () => {
             hamburgerOpen ? 'block' : 'hidden'
           }`}
         >
-          <div className="border-t border-garnet-700 md:border-none -mx-5 md:mx-0">
+          <div className="border-t border-garnet-700 md:border-none -mx-5 md:mx-0 ">
             <Link
               to="/about"
-              className="block md:text-base lg:text-xl md:mx-3 lg:mx-5 lg:inline-block lg:mt-0 text-white md:mr-2 nav-link hover:text-gray-200 text-center my-4 md:my-0"
+              className="block md:text-base lg:text-xl md:mx-3 lg:mx-5 lg:inline-block lg:mt-0 text-white md:mr-2 nav-link hover:text-gray-200 text-center my-0 py-4 md:my-0 hover:bg-garnet-300 md:hover:bg-garnet-500"
               onClick={closeBurger}
             >
               About
@@ -56,7 +56,7 @@ const Navbar = () => {
           <div className="border-t border-garnet-700 md:border-none -mx-5 md:mx-0">
             <Link
               to="/schedule"
-              className="block md:text-base lg:text-xl md:mx-3 lg:mx-5 lg:inline-block lg:mt-0 text-white md:mr-2 nav-link hover:text-gray-200 text-center my-4 md:my-0"
+              className="block md:text-base lg:text-xl md:mx-3 lg:mx-5 lg:inline-block lg:mt-0 text-white md:mr-2 nav-link hover:text-gray-200 text-center my-0 py-4  md:my-0 hover:bg-garnet-300 md:hover:bg-garnet-500"
               onClick={closeBurger}
             >
               Schedule
@@ -65,7 +65,7 @@ const Navbar = () => {
           <div className="border-t border-garnet-700 md:border-none -mx-5 md:mx-0">
             <Link
               to="/roster"
-              className="block md:text-base lg:text-xl md:mx-3 lg:mx-5 lg:inline-block lg:mt-0 text-white md:mr-2 nav-link hover:text-gray-200 text-center my-4 md:my-0"
+              className="block md:text-base lg:text-xl md:mx-3 lg:mx-5 lg:inline-block lg:mt-0 text-white md:mr-2 nav-link hover:text-gray-200 text-center my-0 py-4  md:my-0 hover:bg-garnet-300 md:hover:bg-garnet-500"
               onClick={closeBurger}
             >
               Roster
@@ -74,7 +74,7 @@ const Navbar = () => {
           <div className="border-t border-b border-garnet-700 md:border-none -mx-5 md:mx-0">
             <Link
               to="/"
-              className="block md:text-base lg:text-xl md:mx-2 lg:ml-4 lg:inline-block lg:mt-0 text-white md:bg-gold-500 font-semibold md:px-4 md:py-3 md:rounded nav-link-special md:border-gold-900 md:border md:hover:text-dark-700 text-center my-4 md:my-0"
+              className="block md:text-base lg:text-xl md:mx-2 lg:ml-4 lg:inline-block lg:mt-0 text-white md:bg-gold-500 font-semibold md:px-4 md:py-3 md:rounded nav-link-special md:border-gold-900 md:border md:hover:text-dark-700 text-center my-0 py-4  md:my-0 hover:bg-garnet-300 md:hover:bg-garnet-500"
               onClick={closeBurger}
             >
               Did We Win?
