@@ -66,4 +66,6 @@ Fixed Navbar (and creating of UnderNavbar Component) - https://www.w3schools.com
 
 Hamburger Menu on click - https://github.com/justalever/tailwind-navbar/blob/master/public/index.html and https://reactjs.org/docs/forms.html and https://stackoverflow.com/questions/12133791/css-overlapping-borders
 
+Setinterval with React Hooks to get current time updating - https://overreacted.io/making-setinterval-declarative-with-react-hooks/ and https://reactjs.org/docs/state-and-lifecycle.html
+
 ### This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
