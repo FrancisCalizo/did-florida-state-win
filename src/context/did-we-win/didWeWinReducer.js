@@ -1,4 +1,8 @@
-import { SET_CURRENT_DATE, FETCH_CURRENT_SCHEDULE } from '../types';
+import {
+  SET_CURRENT_DATE,
+  FETCH_CURRENT_SCHEDULE,
+  FETCH_TIME_UNTIL_NEXT_GAME
+} from '../types';
 
 export default (state, action) => {
   switch (action.type) {
@@ -10,7 +14,13 @@ export default (state, action) => {
     case FETCH_CURRENT_SCHEDULE:
       return {
         ...state,
-        currentSchedule: action.payload
+        currentSchedule: action.payload.currentSchedule,
+        lastGame: action.payload.lastGame,
+        nextGame: action.payload.nextGame
+      };
+    case FETCH_TIME_UNTIL_NEXT_GAME:
+      return {
+        ...state
       };
     default:
       return state;

@@ -68,4 +68,6 @@ Hamburger Menu on click - https://github.com/justalever/tailwind-navbar/blob/mas
 
 Setinterval with React Hooks to get current time updating - https://overreacted.io/making-setinterval-declarative-with-react-hooks/ and https://reactjs.org/docs/state-and-lifecycle.html
 
+Using moment to subract and sort an array of times - https://stackoverflow.com/questions/37505117/find-the-next-closest-date-in-mm-dd-yyy-format-javascript and https://momentjs.com/docs/#/displaying/difference/
+
 ### This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
