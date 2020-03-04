@@ -10,11 +10,41 @@ const Countdown = () => {
   } else {
     return (
       <div>
-        <h1>{`${parseInt(countdown.asDays())} Days ${
-          countdown._data.hours
-        } Hours ${countdown._data.minutes} Mins ${
-          countdown._data.seconds
-        } Sec`}</h1>
+        <div className="flex justify-center text-center">
+          <div>
+            <div className="lg:text-6xl lg:px-4 lg:h-20">
+              {parseInt(countdown.asDays())}
+            </div>
+            <div>Days</div>
+          </div>
+          <div>
+            <div className="lg:text-6xl lg:px-4 lg:h-20">:</div>
+          </div>
+          <div>
+            <div className="lg:text-6xl lg:px-4 lg:h-20">
+              {countdown._data.hours}
+            </div>
+            <div>Hours</div>
+          </div>
+          <div>
+            <div className="lg:text-6xl lg:px-4 lg:h-20">:</div>
+          </div>
+          <div>
+            <div className="lg:text-6xl lg:px-4 lg:h-20">
+              {countdown._data.minutes}
+            </div>
+            <div>Minutes</div>
+          </div>
+          <div>
+            <div className="lg:text-6xl lg:px-4 lg:h-20">:</div>
+          </div>
+          <div>
+            <div className="lg:text-6xl lg:px-4 lg:h-20">
+              {countdown._data.seconds}
+            </div>
+            <div>Seconds</div>
+          </div>
+        </div>
       </div>
     );
   }
