@@ -10676,7 +10676,6 @@ body {
   }
 
   .nav-link-special:hover {
-    background-color: #dac9a4;
     animation: shake 0.8s;
     animation-iteration-count: infinite;
   }

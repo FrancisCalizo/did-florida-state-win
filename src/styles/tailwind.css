@@ -20,7 +20,6 @@ body {
     @apply border-b-4 border-gold-500;
   }
   .nav-link-special:hover {
-    @apply bg-gold-400;
     animation: shake 0.8s;
     animation-iteration-count: infinite;
   }
