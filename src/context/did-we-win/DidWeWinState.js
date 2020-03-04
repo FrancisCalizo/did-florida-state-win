@@ -4,7 +4,6 @@ import moment from 'moment';
 import DidWeWinContext from './didWeWinContext';
 import DidWeWinReducer from './didWeWinReducer';
 import {
-  SET_CURRENT_DATE,
   FETCH_CURRENT_SCHEDULE,
   FETCH_CURRENT_GAME,
   FETCH_NEXT_GAME,
@@ -34,19 +33,24 @@ function useInterval(callback, delay) {
 
 const DidWeWinState = props => {
   const initialState = {
-    currentDate: moment().format('MMMM Do YYYY, h:mm:ss a'),
     currentGame: null,
     nextGame: null,
     lastGame: null,
-    currentSchedule: null
+    countdown: null,
+    currentSchedule: null,
+    loading: true
   };
 
   const [state, dispatch] = useReducer(DidWeWinReducer, initialState);
 
   useInterval(() => {
+    // Get Time until next game (Countdown)
+    let now = moment();
+    let next = moment(state.nextGame.start_date);
+    let diff = moment.duration(next.diff(now));
     dispatch({
-      type: SET_CURRENT_DATE,
-      payload: moment().format('MMMM Do YYYY, h:mm:ss a')
+      type: FETCH_TIME_UNTIL_NEXT_GAME,
+      payload: diff
     });
   }, 1000);
 
@@ -119,8 +123,9 @@ const DidWeWinState = props => {
   return (
     <DidWeWinContext.Provider
       value={{
-        currentDate: state.currentDate,
         currentSchedule: state.currentSchedule,
+        countdown: state.countdown,
+        loading: state.loading,
         fetchCurrentSchedule: fetchCurrentSchedule
       }}
     >

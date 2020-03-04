@@ -72,4 +72,6 @@ Using moment to subract and sort an array of times - https://stackoverflow.com/q
 
 Dispatch multiple Actions (redux example, but same concept) - https://github.com/jeffbski/redux-logic/issues/88
 
+Countdown to next game with Momentjs - https://momentjs.com/docs/#/durations/as/ and https://momentjs.com/docs/#/displaying/difference/ and https://momentjs.com/docs/#/durations/ and https://stackoverflow.com/questions/42901048/momentjs-convert-milliseconds-to-days
+
 ### This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
