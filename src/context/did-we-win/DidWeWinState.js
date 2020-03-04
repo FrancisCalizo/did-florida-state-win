@@ -6,6 +6,9 @@ import DidWeWinReducer from './didWeWinReducer';
 import {
   SET_CURRENT_DATE,
   FETCH_CURRENT_SCHEDULE,
+  FETCH_CURRENT_GAME,
+  FETCH_NEXT_GAME,
+  FETCH_LAST_GAME,
   FETCH_TIME_UNTIL_NEXT_GAME
 } from '../types';
 
@@ -32,6 +35,7 @@ function useInterval(callback, delay) {
 const DidWeWinState = props => {
   const initialState = {
     currentDate: moment().format('MMMM Do YYYY, h:mm:ss a'),
+    currentGame: null,
     nextGame: null,
     lastGame: null,
     currentSchedule: null
@@ -47,6 +51,8 @@ const DidWeWinState = props => {
   }, 1000);
 
   const fetchCurrentSchedule = async year => {
+    const SECONDS_IN_A_DAY = 86400;
+
     try {
       let res = await axios.get(
         `https://api.collegefootballdata.com/games?year=${year}&team=Florida%20State`
@@ -55,7 +61,7 @@ const DidWeWinState = props => {
       // Get Future Games of Season
       let futureGames = res.data
         .filter(game => {
-          return moment(game.start_date) - moment() > 0;
+          return moment(game.start_date) - moment() > SECONDS_IN_A_DAY;
         })
         .sort((a, b) => {
           return (
@@ -66,7 +72,7 @@ const DidWeWinState = props => {
       // Get Past Games of Season
       let pastGames = res.data
         .filter(game => {
-          return moment(game.start_date) - moment() < 0;
+          return moment(game.start_date) - moment() < -SECONDS_IN_A_DAY;
         })
         .sort((a, b) => {
           return (
@@ -74,15 +80,37 @@ const DidWeWinState = props => {
           );
         });
 
-      let scheduleData = {};
-      scheduleData.currentSchedule = res.data;
-      if (futureGames.length > 0) scheduleData.nextGame = futureGames[0];
-      if (pastGames.length > 0) scheduleData.lastGame = pastGames[0];
+      // Get Game Currently Being Played
+      let currentGame = res.data.filter(game => {
+        return (
+          moment(game.start_date) - moment() > -SECONDS_IN_A_DAY &&
+          moment(game.start_date) - moment() < SECONDS_IN_A_DAY
+        );
+      });
 
+      // Dispatch for Current Schedule, next game, last game
       dispatch({
         type: FETCH_CURRENT_SCHEDULE,
-        payload: scheduleData
+        payload: res.data
       });
+      if (currentGame.length > 0) {
+        dispatch({
+          type: FETCH_CURRENT_GAME,
+          payload: currentGame[0]
+        });
+      }
+      if (futureGames.length > 0) {
+        dispatch({
+          type: FETCH_NEXT_GAME,
+          payload: futureGames[0]
+        });
+      }
+      if (pastGames.length > 0) {
+        dispatch({
+          type: FETCH_LAST_GAME,
+          payload: pastGames[pastGames.length - 1]
+        });
+      }
     } catch (err) {
       console.error(err);
     }
