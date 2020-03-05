@@ -60,6 +60,7 @@ const DidWeWinState = props => {
     const SECONDS_IN_A_DAY = 86400;
 
     try {
+      // FSU Current Schedule
       let res = await axios.get(
         `https://api.collegefootballdata.com/games?year=${year}&team=Florida%20State`
       );
@@ -94,7 +95,7 @@ const DidWeWinState = props => {
         );
       });
 
-      // Dispatch for Current Schedule, next game, last game
+      // Dispatch for Current Schedule, next game, last game, game information
       dispatch({
         type: FETCH_CURRENT_SCHEDULE,
         payload: res.data
