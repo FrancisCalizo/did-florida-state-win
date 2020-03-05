@@ -45,13 +45,15 @@ const DidWeWinState = props => {
 
   useInterval(() => {
     // Get Time until next game (Countdown)
-    let now = moment();
-    let next = moment(state.nextGame.start_date);
-    let diff = moment.duration(next.diff(now));
-    dispatch({
-      type: FETCH_TIME_UNTIL_NEXT_GAME,
-      payload: diff
-    });
+    if (state.nextGame !== null) {
+      let now = moment();
+      let next = moment(state.nextGame.start_date);
+      let diff = moment.duration(next.diff(now));
+      dispatch({
+        type: FETCH_TIME_UNTIL_NEXT_GAME,
+        payload: diff
+      });
+    }
   }, 1000);
 
   const fetchCurrentSchedule = async year => {
