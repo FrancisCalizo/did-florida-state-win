@@ -162,7 +162,7 @@ const DidWeWinState = props => {
         if (currentGame.length > 0) {
           dispatch({
             type: FETCH_CURRENT_GAME_OPPONENT,
-            payload: currentOpponent
+            payload: currentOpponent[0]
           });
         }
 
@@ -176,7 +176,7 @@ const DidWeWinState = props => {
         if (futureGames.length > 0) {
           dispatch({
             type: FETCH_NEXT_GAME_OPPONENT,
-            payload: futureOpponent
+            payload: futureOpponent[0]
           });
         }
 
@@ -190,7 +190,7 @@ const DidWeWinState = props => {
         if (pastGames.length > 0) {
           dispatch({
             type: FETCH_LAST_GAME_OPPONENT,
-            payload: lastOpponent
+            payload: lastOpponent[0]
           });
         }
 
@@ -210,8 +210,11 @@ const DidWeWinState = props => {
     <DidWeWinContext.Provider
       value={{
         currentSchedule: state.currentSchedule,
+        fsuInfo: state.fsuInfo,
         countdown: state.countdown,
         loading: state.loading,
+        nextGame: state.nextGame,
+        nextGameOpponent: state.nextGameOpponent,
         fetchCurrentSchedule: fetchCurrentSchedule
       }}
     >
