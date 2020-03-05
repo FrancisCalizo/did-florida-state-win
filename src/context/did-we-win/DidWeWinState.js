@@ -37,6 +37,7 @@ function useInterval(callback, delay) {
 
 const DidWeWinState = props => {
   const initialState = {
+    now: moment('2019-10-10 12:30:23', 'YYYY-MM-DD HH:mm:ss'), //Convert state.now back to moment () and delete this line
     currentGame: null,
     currentGameOpponent: null,
     fsuInfo: null,
@@ -54,7 +55,7 @@ const DidWeWinState = props => {
   useInterval(() => {
     // Get Time until next game (Countdown)
     if (state.nextGame !== null) {
-      let now = moment();
+      let now = state.now;
       let next = moment(state.nextGame.start_date);
       let diff = moment.duration(next.diff(now));
       dispatch({
@@ -85,13 +86,13 @@ const DidWeWinState = props => {
         // Get Future Games of Season
         let futureGames = res.data
           .filter(game => {
-            return moment(game.start_date) - moment() > SECONDS_IN_A_DAY;
+            return moment(game.start_date) - state.now > SECONDS_IN_A_DAY;
           })
           .sort((a, b) => {
             return (
               moment(a.start_date) -
-              moment() -
-              (moment(b.start_date) - moment())
+              state.now -
+              (moment(b.start_date) - state.now)
             );
           });
 
@@ -108,13 +109,13 @@ const DidWeWinState = props => {
         // Get Past Games of Season
         let pastGames = res.data
           .filter(game => {
-            return moment(game.start_date) - moment() < -SECONDS_IN_A_DAY;
+            return moment(game.start_date) - state.now < -SECONDS_IN_A_DAY;
           })
           .sort((a, b) => {
             return (
               moment(a.start_date) -
-              moment() -
-              (moment(b.start_date) - moment())
+              state.now -
+              (moment(b.start_date) - state.now)
             );
           });
 
@@ -131,8 +132,8 @@ const DidWeWinState = props => {
         // Get Game Currently Being Played
         let currentGame = res.data.filter(game => {
           return (
-            moment(game.start_date) - moment() > -SECONDS_IN_A_DAY &&
-            moment(game.start_date) - moment() < SECONDS_IN_A_DAY
+            moment(game.start_date) - state.now > -SECONDS_IN_A_DAY &&
+            moment(game.start_date) - state.now < SECONDS_IN_A_DAY
           );
         });
 
@@ -213,6 +214,8 @@ const DidWeWinState = props => {
         fsuInfo: state.fsuInfo,
         countdown: state.countdown,
         loading: state.loading,
+        lastGame: state.lastGame,
+        lastGameOpponent: state.lastGameOpponent,
         nextGame: state.nextGame,
         nextGameOpponent: state.nextGameOpponent,
         fetchCurrentSchedule: fetchCurrentSchedule

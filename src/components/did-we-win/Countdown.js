@@ -12,7 +12,7 @@ const Countdown = () => {
   } = didWeWinContext;
 
   if (loading || !nextGame || !nextGameOpponent) {
-    return <Loading />;
+    return null;
   } else {
     return (
       <div>
