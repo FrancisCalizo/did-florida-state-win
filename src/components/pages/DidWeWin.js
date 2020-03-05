@@ -1,6 +1,7 @@
 import React, { useEffect, useContext } from 'react';
 import moment from 'moment';
 import Countdown from '../did-we-win/Countdown';
+import LastGame from '../did-we-win/LastGame';
 
 import DidWeWinContext from '../../context/did-we-win/didWeWinContext';
 
@@ -15,7 +16,8 @@ const DidWeWin = () => {
 
   return (
     <div>
-      <Countdown />
+      {/* <Countdown /> */}
+      <LastGame />
     </div>
   );
 };
