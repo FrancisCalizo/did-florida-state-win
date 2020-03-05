@@ -5,9 +5,13 @@ import DidWeWinContext from './didWeWinContext';
 import DidWeWinReducer from './didWeWinReducer';
 import {
   FETCH_CURRENT_SCHEDULE,
+  FETCH_FSU_INFO,
   FETCH_CURRENT_GAME,
+  FETCH_CURRENT_GAME_OPPONENT,
   FETCH_NEXT_GAME,
+  FETCH_NEXT_GAME_OPPONENT,
   FETCH_LAST_GAME,
+  FETCH_LAST_GAME_OPPONENT,
   FETCH_TIME_UNTIL_NEXT_GAME
 } from '../types';
 
@@ -34,8 +38,12 @@ function useInterval(callback, delay) {
 const DidWeWinState = props => {
   const initialState = {
     currentGame: null,
+    currentGameOpponent: null,
+    fsuInfo: null,
     nextGame: null,
+    nextGameOpponent: null,
     lastGame: null,
+    lastGameOpponent: null,
     countdown: null,
     currentSchedule: null,
     loading: true
@@ -56,71 +64,146 @@ const DidWeWinState = props => {
     }
   }, 1000);
 
-  const fetchCurrentSchedule = async year => {
+  const fetchCurrentSchedule = year => {
     const SECONDS_IN_A_DAY = 86400;
 
-    try {
-      // FSU Current Schedule
-      let res = await axios.get(
-        `https://api.collegefootballdata.com/games?year=${year}&team=Florida%20State`
-      );
+    // FSU Current Schedule
+    let res = axios.get(
+      `https://api.collegefootballdata.com/games?year=${year}&team=Florida%20State`
+    );
 
-      // Get Future Games of Season
-      let futureGames = res.data
-        .filter(game => {
-          return moment(game.start_date) - moment() > SECONDS_IN_A_DAY;
-        })
-        .sort((a, b) => {
+    // Get Team Information
+    let res2 = axios.get(`https://api.collegefootballdata.com/teams`);
+
+    Promise.all([res, res2])
+      .then(data => {
+        const [res, res2] = data;
+
+        // Get FSU Info
+        let fsuInfo = res2.data.filter(team => team.school === 'Florida State');
+
+        // Get Future Games of Season
+        let futureGames = res.data
+          .filter(game => {
+            return moment(game.start_date) - moment() > SECONDS_IN_A_DAY;
+          })
+          .sort((a, b) => {
+            return (
+              moment(a.start_date) -
+              moment() -
+              (moment(b.start_date) - moment())
+            );
+          });
+
+        // Get Future Game Opponent
+        let futureOpponent;
+        if (futureGames.length > 0) {
+          futureOpponent = res2.data.filter(team => {
+            return futureGames[0].home_team !== 'Florida State'
+              ? team.school === futureGames[0].home_team
+              : team.school === futureGames[0].away_team;
+          });
+        }
+
+        // Get Past Games of Season
+        let pastGames = res.data
+          .filter(game => {
+            return moment(game.start_date) - moment() < -SECONDS_IN_A_DAY;
+          })
+          .sort((a, b) => {
+            return (
+              moment(a.start_date) -
+              moment() -
+              (moment(b.start_date) - moment())
+            );
+          });
+
+        // Get Last Game Opponent
+        let lastOpponent;
+        if (pastGames.length > 0) {
+          lastOpponent = res2.data.filter(team => {
+            return pastGames[0].home_team !== 'Florida State'
+              ? team.school === pastGames[0].home_team
+              : team.school === pastGames[0].away_team;
+          });
+        }
+
+        // Get Game Currently Being Played
+        let currentGame = res.data.filter(game => {
           return (
-            moment(a.start_date) - moment() - (moment(b.start_date) - moment())
+            moment(game.start_date) - moment() > -SECONDS_IN_A_DAY &&
+            moment(game.start_date) - moment() < SECONDS_IN_A_DAY
           );
         });
 
-      // Get Past Games of Season
-      let pastGames = res.data
-        .filter(game => {
-          return moment(game.start_date) - moment() < -SECONDS_IN_A_DAY;
-        })
-        .sort((a, b) => {
-          return (
-            moment(a.start_date) - moment() - (moment(b.start_date) - moment())
-          );
+        // Get Last Game Opponent
+        let currentOpponent;
+        if (currentGame.length > 0) {
+          currentOpponent = res2.data.filter(team => {
+            return currentGame[0].home_team !== 'Florida State'
+              ? team.school === currentGame[0].home_team
+              : team.school === currentGame[0].away_team;
+          });
+        }
+
+        // Dispatch All
+        dispatch({
+          type: FETCH_CURRENT_SCHEDULE,
+          payload: res.data
         });
 
-      // Get Game Currently Being Played
-      let currentGame = res.data.filter(game => {
-        return (
-          moment(game.start_date) - moment() > -SECONDS_IN_A_DAY &&
-          moment(game.start_date) - moment() < SECONDS_IN_A_DAY
-        );
-      });
+        if (currentGame.length > 0) {
+          dispatch({
+            type: FETCH_CURRENT_GAME,
+            payload: currentGame[0]
+          });
+        }
 
-      // Dispatch for Current Schedule, next game, last game, game information
-      dispatch({
-        type: FETCH_CURRENT_SCHEDULE,
-        payload: res.data
+        if (currentGame.length > 0) {
+          dispatch({
+            type: FETCH_CURRENT_GAME_OPPONENT,
+            payload: currentOpponent
+          });
+        }
+
+        if (futureGames.length > 0) {
+          dispatch({
+            type: FETCH_NEXT_GAME,
+            payload: futureGames[0]
+          });
+        }
+
+        if (futureGames.length > 0) {
+          dispatch({
+            type: FETCH_NEXT_GAME_OPPONENT,
+            payload: futureOpponent
+          });
+        }
+
+        if (pastGames.length > 0) {
+          dispatch({
+            type: FETCH_LAST_GAME,
+            payload: pastGames[pastGames.length - 1]
+          });
+        }
+
+        if (pastGames.length > 0) {
+          dispatch({
+            type: FETCH_LAST_GAME_OPPONENT,
+            payload: lastOpponent
+          });
+        }
+
+        if (fsuInfo.length > 0) {
+          dispatch({
+            type: FETCH_FSU_INFO,
+            payload: fsuInfo[0]
+          });
+        }
+      })
+      .catch(error => {
+        console.error(error.message);
       });
-      if (currentGame.length > 0) {
-        dispatch({
-          type: FETCH_CURRENT_GAME,
-          payload: currentGame[0]
-        });
-      }
-      if (futureGames.length > 0) {
-        dispatch({
-          type: FETCH_NEXT_GAME,
-          payload: futureGames[0]
-        });
-      }
-      if (pastGames.length > 0) {
-        dispatch({
-          type: FETCH_LAST_GAME,
-          payload: pastGames[pastGames.length - 1]
-        });
-      }
-    } catch (err) {
-      console.error(err);
-    }
   };
 
   return (
