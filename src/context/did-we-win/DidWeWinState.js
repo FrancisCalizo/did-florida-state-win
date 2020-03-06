@@ -37,7 +37,7 @@ function useInterval(callback, delay) {
 
 const DidWeWinState = props => {
   const initialState = {
-    now: moment('2019-10-10 12:30:23', 'YYYY-MM-DD HH:mm:ss'), //Convert state.now back to moment () and delete this line
+    now: moment('2019-10-12 12:30:23', 'YYYY-MM-DD HH:mm:ss'), //Convert state.now back to moment () and delete this line
     currentGame: null,
     currentGameOpponent: null,
     fsuInfo: null,
@@ -216,6 +216,8 @@ const DidWeWinState = props => {
         loading: state.loading,
         lastGame: state.lastGame,
         lastGameOpponent: state.lastGameOpponent,
+        currentGame: state.currentGame,
+        currentGameOpponent: state.currentGameOpponent,
         nextGame: state.nextGame,
         nextGameOpponent: state.nextGameOpponent,
         fetchCurrentSchedule: fetchCurrentSchedule

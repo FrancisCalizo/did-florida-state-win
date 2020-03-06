@@ -2,6 +2,7 @@ import React, { useEffect, useContext } from 'react';
 import moment from 'moment';
 import Countdown from '../did-we-win/Countdown';
 import LastGame from '../did-we-win/LastGame';
+import CurrentGame from '../did-we-win/CurrentGame';
 import Loading from '../layout/Loading';
 
 import DidWeWinContext from '../../context/did-we-win/didWeWinContext';
@@ -23,6 +24,7 @@ const DidWeWin = () => {
       <div>
         <Countdown />
         <LastGame />
+        <CurrentGame />
       </div>
     );
   }
