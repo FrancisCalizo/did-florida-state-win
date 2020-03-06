@@ -21,9 +21,11 @@ const Navbar = () => {
       <div className="max-w-container flex items-center justify-between flex-wrap py-4 px-5 mx-auto">
         <div className="flex items-center flex-shrink-0 text-white">
           <img className="w-20 mr-5" src={logo} alt="fsu-logo" />
-          <span className="font-semibold text-xl tracking-tight md:text-3xl xl:text-4xl">
-            Florida State Football
-          </span>
+          <Link to="/">
+            <span className="font-semibold text-xl tracking-tight md:text-3xl xl:text-4xl">
+              Florida State Football
+            </span>
+          </Link>
         </div>
         <div className="block md:hidden">
           <label className="flex items-center px-4 py-2 border rounded text-white-200 border-white hover:text-white hover:border-white hover:cursor-pointer">

@@ -16,7 +16,7 @@ const CurrentGame = () => {
   } else {
     return (
       <div>
-        <h1>Current Game</h1>
+        <h1 className="text-4xl">Current Game</h1>
         <h2>
           {currentGame.away_team} vs. {currentGame.home_team}
         </h2>

@@ -9,7 +9,15 @@ import DidWeWinContext from '../../context/did-we-win/didWeWinContext';
 
 const DidWeWin = () => {
   const didWeWinContext = useContext(DidWeWinContext);
-  const { fetchCurrentSchedule, loading } = didWeWinContext;
+  const {
+    fetchCurrentSchedule,
+    currentGame,
+    currentSchedule,
+    lastGame,
+    nextGame,
+    loading,
+    now
+  } = didWeWinContext;
 
   useEffect(() => {
     // fetchCurrentSchedule(moment().format('YYYY'));
@@ -17,16 +25,28 @@ const DidWeWin = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  const renderComponents = () => {
+    // REPLACE 'NOW' STATE WITH MOMENT();
+    switch (true) {
+      case currentGame !== null && currentGame !== undefined:
+        return <CurrentGame />;
+      case parseInt(
+        moment.duration(now.diff(moment(lastGame.start_date))).as('days')
+      ) <= 2:
+        return <LastGame />;
+      case parseInt(
+        moment.duration(now.diff(moment(lastGame.start_date))).as('days')
+      ) >= 3 && currentGame === null:
+        return <Countdown />;
+      default:
+        return 'PAST GAME OR CHECK BACK LATER PAGE HERE???';
+    }
+  };
+
   if (loading) {
     return <Loading />;
   } else {
-    return (
-      <div>
-        <Countdown />
-        <LastGame />
-        <CurrentGame />
-      </div>
-    );
+    return <div>{renderComponents()}</div>;
   }
 };
 

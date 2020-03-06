@@ -37,7 +37,7 @@ function useInterval(callback, delay) {
 
 const DidWeWinState = props => {
   const initialState = {
-    now: moment('2019-10-12 17:00:23', 'YYYY-MM-DD HH:mm:ss'), //Convert state.now back to moment () and delete this line
+    now: moment('2019-10-11 17:00:23', 'YYYY-MM-DD HH:mm:ss'), //Convert state.now back to moment () and DELETE THIS LINE LATER
     currentGame: null,
     currentGameOpponent: null,
     fsuInfo: null,
@@ -66,8 +66,6 @@ const DidWeWinState = props => {
   }, 1000);
 
   const fetchCurrentSchedule = year => {
-    const MILLISECONDS_IN_A_DAY = 86400000;
-
     // FSU Current Schedule
     let res = axios.get(
       `https://api.collegefootballdata.com/games?year=${year}&team=Florida%20State`
@@ -86,7 +84,7 @@ const DidWeWinState = props => {
         // Get Future Games of Season
         let futureGames = res.data
           .filter(game => {
-            return moment(game.start_date) - state.now > MILLISECONDS_IN_A_DAY;
+            return moment.duration(moment(game.start_date).diff(state.now)) > 0;
           })
           .sort((a, b) => {
             return (
@@ -109,7 +107,7 @@ const DidWeWinState = props => {
         // Get Past Games of Season
         let pastGames = res.data
           .filter(game => {
-            return moment(game.start_date) - state.now < -MILLISECONDS_IN_A_DAY;
+            return moment.duration(moment(game.start_date).diff(state.now)) < 0;
           })
           .sort((a, b) => {
             return (
@@ -206,6 +204,7 @@ const DidWeWinState = props => {
   return (
     <DidWeWinContext.Provider
       value={{
+        now: state.now, // DELETE LATER
         currentSchedule: state.currentSchedule,
         fsuInfo: state.fsuInfo,
         countdown: state.countdown,
