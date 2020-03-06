@@ -37,7 +37,7 @@ function useInterval(callback, delay) {
 
 const DidWeWinState = props => {
   const initialState = {
-    now: moment('2019-10-12 12:30:23', 'YYYY-MM-DD HH:mm:ss'), //Convert state.now back to moment () and delete this line
+    now: moment('2019-10-12 17:00:23', 'YYYY-MM-DD HH:mm:ss'), //Convert state.now back to moment () and delete this line
     currentGame: null,
     currentGameOpponent: null,
     fsuInfo: null,
@@ -66,7 +66,7 @@ const DidWeWinState = props => {
   }, 1000);
 
   const fetchCurrentSchedule = year => {
-    const SECONDS_IN_A_DAY = 86400;
+    const MILLISECONDS_IN_A_DAY = 86400000;
 
     // FSU Current Schedule
     let res = axios.get(
@@ -86,7 +86,7 @@ const DidWeWinState = props => {
         // Get Future Games of Season
         let futureGames = res.data
           .filter(game => {
-            return moment(game.start_date) - state.now > SECONDS_IN_A_DAY;
+            return moment(game.start_date) - state.now > MILLISECONDS_IN_A_DAY;
           })
           .sort((a, b) => {
             return (
@@ -109,7 +109,7 @@ const DidWeWinState = props => {
         // Get Past Games of Season
         let pastGames = res.data
           .filter(game => {
-            return moment(game.start_date) - state.now < -SECONDS_IN_A_DAY;
+            return moment(game.start_date) - state.now < -MILLISECONDS_IN_A_DAY;
           })
           .sort((a, b) => {
             return (
@@ -129,12 +129,11 @@ const DidWeWinState = props => {
           });
         }
 
-        // Get Game Currently Being Played
+        // Get Game Currently Being Played (Just Check if same Day)
         let currentGame = res.data.filter(game => {
-          return (
-            moment(game.start_date) - state.now > -SECONDS_IN_A_DAY &&
-            moment(game.start_date) - state.now < SECONDS_IN_A_DAY
-          );
+          return moment(game.start_date).diff(state.now, 'days') === 0;
+          // moment(game.start_date) - state.now > -MILLISECONDS_IN_A_DAY &&
+          // moment(game.start_date) - state.now < MILLISECONDS_IN_A_DAY
         });
 
         // Get Last Game Opponent
