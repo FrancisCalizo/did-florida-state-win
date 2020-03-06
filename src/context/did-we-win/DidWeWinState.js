@@ -129,11 +129,8 @@ const DidWeWinState = props => {
           });
         }
 
-        // Get Game Currently Being Played (Just Check if same Day)
         let currentGame = res.data.filter(game => {
-          return moment(game.start_date).diff(state.now, 'days') === 0;
-          // moment(game.start_date) - state.now > -MILLISECONDS_IN_A_DAY &&
-          // moment(game.start_date) - state.now < MILLISECONDS_IN_A_DAY
+          return moment(game.start_date).isSame(state.now, 'day');
         });
 
         // Get Last Game Opponent
