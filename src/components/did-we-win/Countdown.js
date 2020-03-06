@@ -8,7 +8,9 @@ const Countdown = () => {
     loading,
     fsuInfo,
     nextGame,
-    nextGameOpponent
+    nextGameOpponent,
+    lastGame,
+    lastGameOpponent
   } = didWeWinContext;
 
   if (loading || !nextGame || !nextGameOpponent) {
@@ -18,7 +20,9 @@ const Countdown = () => {
       <div>
         {/* Teams */}
         <div>
-          <h1 className="text-7xl text-center uppercase">Gameday is upon us</h1>
+          <h1 className="text-7xl text-center uppercase font-bold">
+            Gameday is upon us
+          </h1>
         </div>
         <div className="flex justify-center my-4">
           <div className="text-center">
@@ -104,6 +108,9 @@ const Countdown = () => {
             </div>
           </div>
         </div>
+        {lastGame !== null && lastGame !== undefined && (
+          <h1>PAST GAME: {lastGameOpponent.school}</h1>
+        )}
       </div>
     );
   }
