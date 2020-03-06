@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import moment from 'moment';
 import DidWeWinContext from '../../context/did-we-win/didWeWinContext';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import 'react-lazy-load-image-component/src/effects/blur.css';
@@ -31,7 +32,13 @@ const Countdown = () => {
             <span className="gl gl-second"></span>
           </h1>
         </div>
-        <div className="flex justify-center my-10">
+        {/* Date */}
+        <div className="flex justify-center">
+          <div className="inline-block bg-gold-500 text-white border-2 border-gold-600 rounded text-center py-2 mt-6 text-xl px-2 md:px-4 md:text-2xl md:px-6 lg:text-3xl lg:px-8 ">
+            {moment(nextGame.start_date).format('LL')}
+          </div>
+        </div>
+        <div className="flex justify-center mt-4 mb-10">
           <div className="text-center">
             {nextGame.away_team === 'Florida State' ? (
               <LazyLoadImage
@@ -51,13 +58,11 @@ const Countdown = () => {
               />
             )}
             <div
-              className="bg-black text-white font-bold py-2 px-2"
+              className="bg-black text-white font-bold sm:text-xl md:text-2xl lg:text-3xl py-1 lg:py-2 px-2"
               style={skew('-10deg')}
             >
-              <h2 className="text-3xl" style={skew('10deg')}>
-                {nextGame.away_team}
-              </h2>
-              <h2 className="text-3xl" style={skew('10deg')}>
+              <h2 style={skew('10deg')}>{nextGame.away_team}</h2>
+              <h2 style={skew('10deg')}>
                 {nextGame.awayTeam === 'Florida State'
                   ? fsuInfo.mascot
                   : nextGameOpponent.mascot}
@@ -65,7 +70,7 @@ const Countdown = () => {
             </div>
           </div>
           <div className="flex items-center">
-            <div className="uppercase text-center font-bold bg-white rounded-full border-2 border-black text-4xl px-3 py-1 mx-12">
+            <div className="uppercase text-center font-bold bg-white rounded-full border-2 border-black text-xl sm:text-2xl lg:text-4xl px-3 py-1 mx-4 sm:mx-8 lg:mx-12">
               vs
             </div>
           </div>
@@ -89,13 +94,11 @@ const Countdown = () => {
               />
             )}
             <div
-              className="bg-black text-white font-bold py-2 px-2"
+              className="bg-black text-white font-bold sm:text-xl md:text-2xl lg:text-3xl py-1 lg:py-2 px-2"
               style={skew('-10deg')}
             >
-              <h2 className="text-3xl" style={skew('10deg')}>
-                {nextGame.home_team}
-              </h2>
-              <h2 className="text-3xl" style={skew('10deg')}>
+              <h2 style={skew('10deg')}>{nextGame.home_team}</h2>
+              <h2 style={skew('10deg')}>
                 {nextGame.home_team === 'Florida State'
                   ? fsuInfo.mascot
                   : nextGameOpponent.mascot}
@@ -104,9 +107,9 @@ const Countdown = () => {
           </div>
         </div>
         {/* Counter */}
-        <div className="flex justify-center">
+        <div className="flex justify-center mt-4">
           <div
-            className="inline-block border-8 border-gold-500 bg-white mt-4 mb-12"
+            className="inline-block border-8 border-gold-500 bg-white mb-12"
             style={{ boxShadow: `0 0 0 4px black` }}
           >
             <div className="flex justify-center text-center px-8 sm:pb-2 lg:pb-4">
