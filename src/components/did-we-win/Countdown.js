@@ -17,6 +17,9 @@ const Countdown = () => {
     return (
       <div>
         {/* Teams */}
+        <div>
+          <h1 className="text-7xl text-center uppercase">Gameday is upon us</h1>
+        </div>
         <div className="flex justify-center my-4">
           <div className="text-center">
             {nextGame.away_team === 'Florida State' ? (

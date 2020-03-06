@@ -30,13 +30,25 @@ const DidWeWin = () => {
     switch (true) {
       case currentGame !== null && currentGame !== undefined:
         return <CurrentGame />;
-      case parseInt(
-        moment.duration(now.diff(moment(lastGame.start_date))).as('days')
-      ) <= 2:
-        return <LastGame />;
-      case parseInt(
-        moment.duration(now.diff(moment(lastGame.start_date))).as('days')
-      ) >= 3 && currentGame === null:
+      case lastGame !== null && lastGame !== undefined:
+        console.log('here');
+        if (
+          parseInt(
+            moment.duration(now.diff(moment(lastGame.start_date))).as('days')
+          ) <= 2
+        ) {
+          return <LastGame />;
+        }
+        if (
+          parseInt(
+            moment.duration(now.diff(moment(lastGame.start_date))).as('days')
+          ) >= 3 &&
+          currentGame === null
+        ) {
+          return <Countdown />;
+        }
+        break;
+      case nextGame !== null && nextGame !== undefined:
         return <Countdown />;
       default:
         return 'PAST GAME OR CHECK BACK LATER PAGE HERE???';
