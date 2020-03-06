@@ -20,8 +20,13 @@ const Countdown = () => {
       <div>
         {/* Teams */}
         <div>
-          <h1 className="text-7xl text-center uppercase font-bold">
-            Gameday is upon us
+          <h1 className="text-7xl text-center uppercase font-bold glitch">
+            <span class="gc gc-red">Gameday is upon us</span>
+            <span class="gc gc-blue">Gameday is upon us</span>
+            <span class="gc gc-green">Gameday is upon us</span>
+            <span class="glitch__main">Gameday is upon us</span>
+            <span class="gl gl-first"></span>
+            <span class="gl gl-second"></span>
           </h1>
         </div>
         <div className="flex justify-center my-4">
