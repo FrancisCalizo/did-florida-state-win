@@ -99,9 +99,6 @@ const GameItem = ({ games, teamInfo }) => {
                         </h2>
                       </div>
                       <h2 className="text-4xl text-white" style={skew('10deg')}>
-                        {/* {game.home_team === 'Florida State'
-                          ? `${game.home_points} - ${game.away_points}`
-                          : `${game.away_points} - ${game.home_points}`} */}
                         {checkTBAGame(game)}
                       </h2>
                     </div>

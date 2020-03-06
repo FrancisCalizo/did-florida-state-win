@@ -1,6 +1,8 @@
 import React, { useContext } from 'react';
 import DidWeWinContext from '../../context/did-we-win/didWeWinContext';
-import Loading from '../layout/Loading';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import 'react-lazy-load-image-component/src/effects/blur.css';
+
 const Countdown = () => {
   const didWeWinContext = useContext(DidWeWinContext);
   const {
@@ -20,7 +22,7 @@ const Countdown = () => {
       <div>
         {/* Teams */}
         <div>
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl text-center uppercase font-bold glitch">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl text-center uppercase font-bold glitch mt-4">
             <span className="gc gc-garnet">Gameday is upon us</span>
             <span className="gc gc-gold">Gameday is upon us</span>
             <span className="gc gc-black">Gameday is upon us</span>
@@ -29,83 +31,120 @@ const Countdown = () => {
             <span className="gl gl-second"></span>
           </h1>
         </div>
-        <div className="flex justify-center my-4">
+        <div className="flex justify-center my-10">
           <div className="text-center">
             {nextGame.away_team === 'Florida State' ? (
-              <img
-                className="w-24 sm:w-40 lg:w-48"
+              <LazyLoadImage
+                className="w-24 sm:w-40 lg:w-48 rounded-full my-4"
                 src={fsuInfo.logos[0]}
                 alt="away-team-logo"
+                effect="blur"
+                style={profileImgBorder(fsuInfo)}
               />
             ) : (
-              <img
-                className="w-24 sm:w-40 lg:w-48"
+              <LazyLoadImage
+                className="w-24 sm:w-40 lg:w-48 rounded-full my-4"
                 src={nextGameOpponent.logos[0]}
                 alt="away-team-logo"
+                effect="blur"
+                style={profileImgBorder(nextGameOpponent)}
               />
             )}
-            {nextGame.away_team}
+            <div
+              className="bg-black text-white font-bold py-2 px-2"
+              style={skew('-10deg')}
+            >
+              <h2 className="text-3xl" style={skew('10deg')}>
+                {nextGame.away_team}
+              </h2>
+              <h2 className="text-3xl" style={skew('10deg')}>
+                {nextGame.awayTeam === 'Florida State'
+                  ? fsuInfo.mascot
+                  : nextGameOpponent.mascot}
+              </h2>
+            </div>
           </div>
           <div className="flex items-center">
-            <div className="text-center text-4xl px-6">vs</div>
+            <div className="uppercase text-center font-bold bg-white rounded-full border-2 border-black text-4xl px-3 py-1 mx-12">
+              vs
+            </div>
           </div>
           <div className="text-center">
             {' '}
             {nextGame.home_team === 'Florida State' ? (
-              <img
-                className="w-24 sm:w-40 lg:w-48"
+              <LazyLoadImage
+                className="w-24 sm:w-40 lg:w-48 rounded-full my-4"
                 src={fsuInfo.logos[0]}
                 alt="home-team-logo"
+                effect="blur"
+                style={profileImgBorder(fsuInfo)}
               />
             ) : (
-              <img
-                className="w-24 sm:w-40 lg:w-48"
+              <LazyLoadImage
+                className="w-24 sm:w-40 lg:w-48 rounded-full my-4"
                 src={nextGameOpponent.logos[0]}
                 alt="away-team-logo"
+                effect="blur"
+                style={profileImgBorder(nextGameOpponent)}
               />
             )}
-            {nextGame.home_team}
+            <div
+              className="bg-black text-white font-bold py-2 px-2"
+              style={skew('-10deg')}
+            >
+              <h2 className="text-3xl" style={skew('10deg')}>
+                {nextGame.home_team}
+              </h2>
+              <h2 className="text-3xl" style={skew('10deg')}>
+                {nextGame.home_team === 'Florida State'
+                  ? fsuInfo.mascot
+                  : nextGameOpponent.mascot}
+              </h2>
+            </div>
           </div>
         </div>
         {/* Counter */}
         <div className="flex justify-center">
-          <div className="inline-block border-2 border-dark-500 bg-white">
+          <div
+            className="inline-block border-8 border-gold-500 bg-white mt-4 mb-12"
+            style={{ boxShadow: `0 0 0 4px black` }}
+          >
             <div className="flex justify-center text-center px-8 sm:pb-2 lg:pb-4">
               <div>
-                <div className="text-4xl sm:text-5xl lg:text-7xl px-2 sm:px-3 lg:px-4 h-12 sm:h-16 lg:h-24">
+                <div className="font-semibold text-4xl sm:text-5xl lg:text-7xl px-2 sm:px-3 lg:px-4 h-12 sm:h-16 lg:h-24">
                   {parseInt(countdown.asDays())}
                 </div>
                 <div>Days</div>
               </div>
               <div>
-                <div className="text-4xl sm:text-5xl lg:text-7xl px-2 sm:px-3 lg:px-4 h-12 sm:h-16 lg:h-24">
+                <div className="font-semibold text-4xl sm:text-5xl lg:text-7xl px-2 sm:px-3 lg:px-4 h-12 sm:h-16 lg:h-24">
                   :
                 </div>
               </div>
               <div>
-                <div className="text-4xl sm:text-5xl lg:text-7xl px-2 sm:px-3 lg:px-4 h-12 sm:h-16 lg:h-24">
+                <div className="font-semibold text-4xl sm:text-5xl lg:text-7xl px-2 sm:px-3 lg:px-4 h-12 sm:h-16 lg:h-24">
                   {countdown._data.hours}
                 </div>
                 <div>Hours</div>
               </div>
               <div>
-                <div className="text-4xl sm:text-5xl lg:text-7xl px-2 sm:px-3 lg:px-4 h-12 sm:h-16 lg:h-24">
+                <div className="font-semibold text-4xl sm:text-5xl lg:text-7xl px-2 sm:px-3 lg:px-4 h-12 sm:h-16 lg:h-24">
                   :
                 </div>
               </div>
               <div>
-                <div className="text-4xl sm:text-5xl lg:text-7xl px-2 sm:px-3 lg:px-4 h-12 sm:h-16 lg:h-24">
+                <div className="font-semibold text-4xl sm:text-5xl lg:text-7xl px-2 sm:px-3 lg:px-4 h-12 sm:h-16 lg:h-24">
                   {countdown._data.minutes}
                 </div>
                 <div>Minutes</div>
               </div>
               <div>
-                <div className="text-4xl sm:text-5xl lg:text-7xl px-2 sm:px-3 lg:px-4 h-12 sm:h-16 lg:h-24">
+                <div className="font-semibold text-4xl sm:text-5xl lg:text-7xl px-2 sm:px-3 lg:px-4 h-12 sm:h-16 lg:h-24">
                   :
                 </div>
               </div>
               <div>
-                <div className="text-4xl sm:text-5xl lg:text-7xl px-2 sm:px-3 lg:px-4 h-12 sm:h-16 lg:h-24">
+                <div className="font-semibold text-4xl sm:text-5xl lg:text-7xl px-2 sm:px-3 lg:px-4 h-12 sm:h-16 lg:h-24">
                   {countdown._data.seconds}
                 </div>
                 <div>Seconds</div>
@@ -119,6 +158,18 @@ const Countdown = () => {
       </div>
     );
   }
+};
+
+// Inline Styles
+const profileImgBorder = e => {
+  return {
+    border: `4px solid ${e.alt_color}`,
+    boxShadow: `0 0 0 4px ${e.color}`
+  };
+};
+
+const skew = amount => {
+  return { transform: `skew(${amount})` };
 };
 
 export default Countdown;
