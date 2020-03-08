@@ -8,6 +8,7 @@ import Schedule from './components/pages/Schedule';
 import GameDetails from './components/pages/GameDetails';
 import Navbar from './components/layout/Navbar';
 import UnderNav from './components/layout/UnderNav';
+import Footer from './components/layout/Footer';
 
 import DidWeWinState from './context/did-we-win/DidWeWinState';
 import GamesState from './context/games/GamesState';
@@ -41,6 +42,7 @@ function App() {
                       <Route exact path="/Roster" component={Roster} />
                       <Route component={NotFound} />
                     </Switch>
+                    <Footer />
                   </UnderNav>
                 </div>
               </Router>
