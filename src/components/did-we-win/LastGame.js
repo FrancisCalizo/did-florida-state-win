@@ -31,7 +31,7 @@ const LastGame = () => {
     return null;
   } else {
     return (
-      <div>
+      <div className="sm:mb-32">
         {/* Teams */}
         <div>
           <h1 className="text-4xl sm:text-5xl md:text-6xl text-center uppercase font-bold glitch mt-8 max-w-95 mx-auto">
