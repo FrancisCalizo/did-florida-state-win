@@ -12,7 +12,7 @@ const LastGame = () => {
     switch (true) {
       case game.home_team === 'Florida State' &&
         game.home_points > game.away_points:
-        return 'Win';
+        return 'WE WON!';
       case game.home_team === 'Florida State' &&
         game.home_points < game.away_points:
         return 'Loss';
@@ -21,9 +21,9 @@ const LastGame = () => {
         return 'Loss';
       case game.away_team === 'Florida State' &&
         game.home_points < game.away_points:
-        return 'Win';
+        return 'WE WON!';
       default:
-        return null;
+        return "We played! But our scores haven't been updated yet";
     }
   };
 
@@ -68,6 +68,13 @@ const LastGame = () => {
                 style={profileImgBorder(lastGameOpponent)}
               />
             )}
+            {lastGame.away_points && (
+              <div className="mb-4">
+                <h2 className="inline-block border-2 border-dark-700 font-bold bg-white text-4xl px-3">
+                  {lastGame.away_points}
+                </h2>
+              </div>
+            )}
             <div
               className="bg-black text-white font-bold sm:text-xl md:text-2xl lg:text-3xl py-1 lg:py-2 px-2"
               style={skew('-10deg')}
@@ -104,8 +111,16 @@ const LastGame = () => {
                 style={profileImgBorder(lastGameOpponent)}
               />
             )}
+            {lastGame.home_points && (
+              <div className="mb-4">
+                <h2 className="inline-block border-2 border-dark-700 font-bold bg-white text-4xl px-3">
+                  {lastGame.home_points}
+                </h2>
+              </div>
+            )}
             <div
-              className="bg-black text-white font-bold sm:text-xl md:text-2xl lg:text-3xl py-1 lg:py-2 px-2"
+              className="bg-black text-white font-bold sm:text-xl md:text-2xl
+              lg:text-3xl py-1 lg:py-2 px-2"
               style={skew('-10deg')}
             >
               <h2 style={skew('10deg')}>{lastGame.home_team}</h2>

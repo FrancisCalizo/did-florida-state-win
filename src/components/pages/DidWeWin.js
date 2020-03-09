@@ -21,7 +21,7 @@ const DidWeWin = () => {
 
   useEffect(() => {
     // fetchCurrentSchedule(moment().format('YYYY'));
-    fetchCurrentSchedule(2019); // DELETE LATER
+    fetchCurrentSchedule(2020); // DELETE LATER
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -31,7 +31,6 @@ const DidWeWin = () => {
       case currentGame !== null && currentGame !== undefined:
         return <CurrentGame />;
       case lastGame !== null && lastGame !== undefined:
-        console.log('here');
         if (
           parseInt(
             moment.duration(now.diff(moment(lastGame.start_date))).as('days')
