@@ -20,10 +20,10 @@ const Countdown = () => {
     return null;
   } else {
     return (
-      <div>
+      <div className="mb-20">
         {/* Teams */}
         <div>
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl text-center uppercase font-bold glitch mt-4">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl text-center uppercase font-bold glitch mt-8">
             <span className="gc gc-garnet">Gameday is upon us</span>
             <span className="gc gc-gold">Gameday is upon us</span>
             <span className="gc gc-black">Gameday is upon us</span>

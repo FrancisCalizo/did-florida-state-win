@@ -24,7 +24,7 @@ const CurrentGame = () => {
       <div>
         {/* Teams */}
         <div>
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-6xl text-center uppercase font-bold glitch mt-4 max-w-95 mx-auto">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl text-center uppercase font-bold glitch mt-8 max-w-95 mx-auto">
             <span className="gc gc-garnet">Wake Up, It's Gameday!</span>
             <span className="gc gc-gold">Wake Up, It's Gameday!</span>
             <span className="gc gc-black">Wake Up, It's Gameday!</span>

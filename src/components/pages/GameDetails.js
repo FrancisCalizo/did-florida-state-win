@@ -78,7 +78,7 @@ const GameDetails = ({ match }) => {
     return <NoInfoAvailable />;
   } else {
     return (
-      <div className="mt-10 mb-32">
+      <div className="mt-10 mb-20">
         <ul className="flex border-b justify-center">
           <li className="-mb-px mr-1 text-lg">
             <button

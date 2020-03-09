@@ -31,7 +31,7 @@ const BoxScore = ({
     return <Loading />;
   } else {
     return (
-      <div className="mx-10">
+      <div className="mx-10 pb-16">
         <div className="flex flex-wrap justify-center py-4 max-w-container mx-auto">
           <div className="w-full md:w-1/2 flex justify-center">
             <div className="w-1/3 my-auto">

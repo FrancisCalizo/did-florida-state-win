@@ -2,7 +2,7 @@ import React from 'react';
 
 const Footer = () => {
   return (
-    <div className="absolute bottom-0 w-full bg-dark-800 mt-16 pt-8 pb-4 border-t-8 border-gold-600">
+    <div className="absolute bottom-0 w-full bg-dark-800 mt-16 pt-10 pb-4 border-t-8 border-gold-600">
       <img
         className="mx-auto w-24 md:w-32"
         src={require('../../images/spear.png')}

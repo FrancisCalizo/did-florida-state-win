@@ -76,4 +76,6 @@ Countdown to next game with Momentjs - https://momentjs.com/docs/#/durations/as/
 
 Glitch Text - https://codepen.io/franciscalizo/pen/VwLrjjb
 
+Keep Footer at Bottom - https://www.freecodecamp.org/news/how-to-keep-your-footer-where-it-belongs-59c6aa05c59c/ and https://medium.com/@zerox/keep-that-damn-footer-at-the-bottom-c7a921cb9551
+
 ### This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
