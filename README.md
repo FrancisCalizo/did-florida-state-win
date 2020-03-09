@@ -80,4 +80,6 @@ Keep Footer at Bottom - https://www.freecodecamp.org/news/how-to-keep-your-foote
 
 Button inside Link to work in Firefox - https://stackoverflow.com/questions/51665178/link-of-react-router-dom-is-not-working-in-firefox
 
+github Corner and HTML to JSX - http://tholman.com/github-corners/ and https://magic.reactjs.net/htmltojsx.htm
+
 ### This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

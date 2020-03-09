@@ -9,7 +9,15 @@ const Footer = () => {
         alt="Spear"
       />
       <h1 className="text-white text-center text-xs sm:text-sm lg:text-base my-4">
-        Designed & Built By Francis Calizo
+        Designed & Built By{' '}
+        <a
+          href="https://www.franciscalizo.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hover:underline"
+        >
+          Francis Calizo
+        </a>
       </h1>
     </div>
   );
