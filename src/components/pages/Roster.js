@@ -20,7 +20,7 @@ const Roster = () => {
   }, [year]);
 
   return (
-    <div className="container">
+    <div className="container mb-24">
       <RosterDropdown />
       {noRosterInfoAvailable ? (
         <NoRosterInfoAvailable />

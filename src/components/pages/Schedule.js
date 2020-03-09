@@ -23,7 +23,7 @@ const Schedule = () => {
     return <Loading />;
   } else {
     return (
-      <div className="container">
+      <div className="container mb-16">
         <SeasonDropdown />
         <SeasonStats />
         <Games />
