@@ -84,4 +84,6 @@ github Corner and HTML to JSX - http://tholman.com/github-corners/ and https://m
 
 Merge Conflict - https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/resolving-a-merge-conflict-using-the-command-line
 
+Scroll to Top on react-router page change - https://github.com/ReactTraining/react-router/blob/master/packages/react-router-dom/docs/guides/scroll-restoration.md and https://zeph.co/react-router-scroll-to-top
+
 ### This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

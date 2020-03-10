@@ -9,6 +9,7 @@ import GameDetails from './components/pages/GameDetails';
 import Navbar from './components/layout/Navbar';
 import UnderNav from './components/layout/UnderNav';
 import Footer from './components/layout/Footer';
+import ScrollToTop from './components/layout/ScrollToTop';
 
 import DidWeWinState from './context/did-we-win/DidWeWinState';
 import GamesState from './context/games/GamesState';
@@ -31,6 +32,7 @@ function App() {
                   className="bg-gray-200 relative min-h-screen"
                   style={footerPad}
                 >
+                  <ScrollToTop />
                   <Navbar />
                   <UnderNav>
                     <Switch>
