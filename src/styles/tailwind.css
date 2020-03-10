@@ -31,8 +31,9 @@ body {
   }
 }
 
+/* Height = 100VW - headerHeight - footerHeight (To keep gray background) */
 .height-minus-header {
-  height: calc(100vh - 130px);
+  height: calc(100vh - 130px -83px);
 }
 
 @keyframes shake {

@@ -37,7 +37,7 @@ function useInterval(callback, delay) {
 
 const DidWeWinState = props => {
   const initialState = {
-    now: moment('2019-08-31 17:00:23', 'YYYY-MM-DD HH:mm:ss'), //Convert state.now back to moment () and DELETE THIS LINE LATER
+    now: moment('2019-09-08 17:00:23', 'YYYY-MM-DD HH:mm:ss'), //Convert state.now back to moment () and DELETE THIS LINE LATER
     currentGame: null,
     currentGameOpponent: null,
     fsuInfo: null,
@@ -121,9 +121,9 @@ const DidWeWinState = props => {
         let lastOpponent;
         if (pastGames.length > 0) {
           lastOpponent = res2.data.filter(team => {
-            return pastGames[0].home_team !== 'Florida State'
-              ? team.school === pastGames[0].home_team
-              : team.school === pastGames[0].away_team;
+            return pastGames[pastGames.length - 1].home_team !== 'Florida State'
+              ? team.school === pastGames[pastGames.length - 1].home_team
+              : team.school === pastGames[pastGames.length - 1].away_team;
           });
         }
 

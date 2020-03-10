@@ -6,7 +6,7 @@ const TeamStats = ({ gameStatsHome, gameStatsAway, loading }) => {
     return <Loading />;
   } else {
     return (
-      <div className="mx-12">
+      <div className="mx-12 pb-12">
         <div className="max-w-container py-4 mx-auto">
           <h2 className="text-3xl font-bold border-b-4 border-gray-700 py-4">
             Team Statistics

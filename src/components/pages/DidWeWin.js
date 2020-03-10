@@ -31,7 +31,6 @@ const DidWeWin = () => {
       case currentGame !== null && currentGame !== undefined:
         return <CurrentGame />;
       case lastGame !== null && lastGame !== undefined:
-        console.log('here');
         if (
           parseInt(
             moment.duration(now.diff(moment(lastGame.start_date))).as('days')

@@ -27,7 +27,10 @@ function App() {
           <GameDetailsState>
             <RosterState>
               <Router>
-                <div className="bg-gray-200">
+                <div
+                  className="bg-gray-200 relative min-h-screen"
+                  style={footerPad}
+                >
                   <Navbar />
                   <UnderNav>
                     <Switch>
@@ -53,5 +56,9 @@ function App() {
     </DidWeWinState>
   );
 }
+
+const footerPad = {
+  paddingBottom: '83px'
+};
 
 export default App;
