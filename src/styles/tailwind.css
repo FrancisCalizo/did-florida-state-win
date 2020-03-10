@@ -232,3 +232,10 @@ body {
     top: 100%;
   }
 }
+
+/*----------------------About Background Styling---------------------- */
+.bg-chief {
+  background-image: url('../images/chief.jpg');
+  background-size: cover;
+  opacity: 0.9;
+}

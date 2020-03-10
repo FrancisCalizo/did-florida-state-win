@@ -10935,6 +10935,14 @@ body {
   }
 }
 
+/*----------------------About Background Styling---------------------- */
+
+.bg-chief {
+  background-image: url('../images/chief.jpg');
+  background-size: cover;
+  opacity: 0.9;
+}
+
 @media (min-width: 640px){
   .sm\:sr-only{
     position: absolute;

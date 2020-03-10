@@ -82,4 +82,6 @@ Button inside Link to work in Firefox - https://stackoverflow.com/questions/5166
 
 github Corner and HTML to JSX - http://tholman.com/github-corners/ and https://magic.reactjs.net/htmltojsx.htm
 
+Merge Conflict - https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/resolving-a-merge-conflict-using-the-command-line
+
 ### This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
