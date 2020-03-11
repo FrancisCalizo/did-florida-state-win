@@ -10940,6 +10940,9 @@ body {
 .bg-chief {
   background-image: url('../images/chief.jpg');
   background-size: cover;
+  background-position: center;
+  /* background-size: 100% auto; */
+  /* background-repeat: no-repeat; */
   opacity: 0.9;
 }
 
