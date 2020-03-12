@@ -11047,7 +11047,7 @@ body {
 .about-card:nth-child(1) > div > div:first-child {
   background-image: url('../images//cards/dalvin.jpg');
   background-size: cover;
-  background-position: center;
+  background-position: top;
   filter: grayscale(100%);
 }
 
@@ -11075,7 +11075,7 @@ body {
 .about-card:nth-child(5) > div > div:first-child {
   background-image: url('../images//cards/helmets-up.jpg');
   background-size: cover;
-  background-position: center;
+  background-position: top;
   filter: grayscale(100%);
 }
 

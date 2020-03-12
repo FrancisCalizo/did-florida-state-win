@@ -15,10 +15,50 @@ const LastGame = () => {
         return 'WE WON!';
       case game.home_team === 'Florida State' &&
         game.home_points < game.away_points:
-        return 'Loss';
+        return (
+          <div className="font-bold text-4xl sm:text-6xl lg:text-8xl my-4 uppercase">
+            <h1
+              className="inline-block"
+              style={{ transform: 'translateY(30px)' }}
+            >
+              They
+            </h1>{' '}
+            <img
+              src={require('../../images/sad-corgi.gif')}
+              alt="sad-corgi"
+              className="w-24 md:w-32 inline"
+            />{' '}
+            <h1
+              className="inline-block"
+              style={{ transform: 'translateY(30px)' }}
+            >
+              Lost
+            </h1>
+          </div>
+        );
       case game.away_team === 'Florida State' &&
         game.home_points > game.away_points:
-        return 'Loss';
+        return (
+          <div className="font-bold text-4xl sm:text-6xl lg:text-8xl my-4 uppercase">
+            <h1
+              className="inline-block"
+              style={{ transform: 'translateY(30px)' }}
+            >
+              They
+            </h1>{' '}
+            <img
+              src={require('../../images/sad-corgi.gif')}
+              alt="sad-corgi"
+              className="w-24 md:w-32 inline"
+            />{' '}
+            <h1
+              className="inline-block"
+              style={{ transform: 'translateY(30px)' }}
+            >
+              Lost
+            </h1>
+          </div>
+        );
       case game.away_team === 'Florida State' &&
         game.home_points < game.away_points:
         return 'WE WON!';
@@ -32,23 +72,15 @@ const LastGame = () => {
   } else {
     return (
       <div className="sm:mb-32">
-        {/* Teams */}
-        <div>
-          <h1 className="text-4xl sm:text-5xl md:text-6xl text-center uppercase font-bold glitch mt-8 max-w-95 mx-auto">
-            <span className="gc gc-garnet">{renderWinLoss(lastGame)}</span>
-            <span className="gc gc-gold">{renderWinLoss(lastGame)}</span>
-            <span className="gc gc-black">{renderWinLoss(lastGame)}</span>
-            <span className="glitch__main">{renderWinLoss(lastGame)}</span>
-            <span className="gl gl-first"></span>
-            <span className="gl gl-second"></span>
-          </h1>
-        </div>
+        {/* Outcomes*/}
+        <div className="flex justify-center">{renderWinLoss(lastGame)}</div>
         {/* Date */}
         <div className="flex justify-center">
           <div className="inline-block bg-gold-500 text-white border-2 border-gold-600 rounded text-center py-2 mt-6 text-xl px-2 md:px-4 md:text-2xl md:px-6 lg:text-3xl lg:px-8 ">
             {moment(lastGame.start_date).format('LL')}
           </div>
         </div>
+        {/* Teams */}
         <div className="flex justify-center mt-4 mb-10">
           <div className="text-center">
             {lastGame.away_team === 'Florida State' ? (
