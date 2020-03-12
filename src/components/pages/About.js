@@ -12,7 +12,7 @@ const About = () => {
     {
       id: 2,
       title: 'Schedules',
-      body: 'View schedules of years past and and present.'
+      body: 'View schedules of years past and present.'
     },
     {
       id: 3,
@@ -33,8 +33,7 @@ const About = () => {
     {
       id: 6,
       title: 'Countdown',
-      body:
-        'See when the next game is being played by your noles with an official gameday countdown.'
+      body: "See when the noles' game is with an official gameday countdown."
     }
   ]);
 
