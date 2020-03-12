@@ -5,12 +5,13 @@ const About = () => {
     {
       id: 1,
       title: 'Updates',
-      body: 'View current updates on if your beloved noles won lost miserably.'
+      body:
+        'View current updates on if your beloved noles were victorious or lost miserably.'
     },
     {
       id: 2,
       title: 'Schedules',
-      body: 'View schedules of years past and future.'
+      body: 'View schedules of years past and and present.'
     },
     {
       id: 3,
@@ -19,19 +20,20 @@ const About = () => {
     },
     {
       id: 4,
-      title: 'Roster',
-      body: 'View team rosters by year with various info provided per player.'
+      title: 'Play-By-Play',
+      body: 'View play-by-play information for each game from start to finish.'
     },
     {
       id: 5,
-      title: 'Countdown',
+      title: 'Roster',
       body:
-        'See when the next game is being played by your noles with an official gameday countdown.'
+        'View team rosters by year with various player information provided.'
     },
     {
       id: 6,
-      title: 'Play-By-Play',
-      body: 'View play-by-play information for each game from start to finish.'
+      title: 'Countdown',
+      body:
+        'See when the next game is being played by your noles with an official gameday countdown.'
     }
   ]);
 

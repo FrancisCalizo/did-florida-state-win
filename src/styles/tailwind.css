@@ -256,19 +256,19 @@ body {
   filter: grayscale(100%);
 }
 .about-card:nth-child(3) > div > div:first-child {
-  background-image: url('../images//cards/jump.jpg');
+  background-image: url('../images//cards/winston.jpg');
   background-size: cover;
   background-position: top;
   filter: grayscale(100%);
 }
 .about-card:nth-child(4) > div > div:first-child {
-  background-image: url('../images//cards/helmets-up.jpg');
+  background-image: url('../images//cards/jump.jpg');
   background-size: cover;
   background-position: center;
   filter: grayscale(100%);
 }
 .about-card:nth-child(5) > div > div:first-child {
-  background-image: url('../images//cards/winston.jpg');
+  background-image: url('../images//cards/helmets-up.jpg');
   background-size: cover;
   background-position: center;
   filter: grayscale(100%);
