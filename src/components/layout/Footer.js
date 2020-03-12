@@ -57,9 +57,19 @@ const Footer = () => {
           href="https://www.franciscalizo.com"
           target="_blank"
           rel="noopener noreferrer"
-          className="hover:underline"
+          className="hover:underline text-gold-500"
         >
           Francis Calizo
+        </a>
+        <br />
+        Data provided by{' '}
+        <a
+          href="https://collegefootballdata.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hover:underline text-garnet-500"
+        >
+          CollegeFootballData
         </a>
       </h1>
     </div>

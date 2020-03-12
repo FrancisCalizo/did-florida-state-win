@@ -10946,6 +10946,53 @@ body {
   opacity: 0.9;
 }
 
+.about-card:nth-child(1) > div > div:first-child {
+  background-image: url('../images//cards/dalvin.jpg');
+  background-size: cover;
+  background-position: center;
+  filter: grayscale(100%);
+}
+
+.about-card:nth-child(2) > div > div:first-child {
+  background-image: url('../images//cards/osceola.jpg');
+  background-size: cover;
+  background-position: center;
+  filter: grayscale(100%);
+}
+
+.about-card:nth-child(3) > div > div:first-child {
+  background-image: url('../images//cards/jump.jpg');
+  background-size: cover;
+  background-position: top;
+  filter: grayscale(100%);
+}
+
+.about-card:nth-child(4) > div > div:first-child {
+  background-image: url('../images//cards/helmets-up.jpg');
+  background-size: cover;
+  background-position: center;
+  filter: grayscale(100%);
+}
+
+.about-card:nth-child(5) > div > div:first-child {
+  background-image: url('../images//cards/winston.jpg');
+  background-size: cover;
+  background-position: center;
+  filter: grayscale(100%);
+}
+
+.about-card:nth-child(6) > div > div:first-child {
+  background-image: url('../images//cards/close-up.jpg');
+  background-size: cover;
+  background-position: top;
+  filter: grayscale(100%);
+}
+
+.about-card > div > div:first-child:hover {
+  transition-duration: 0.5s;
+  filter: none;
+}
+
 @media (min-width: 640px){
   .sm\:sr-only{
     position: absolute;
