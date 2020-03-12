@@ -5,23 +5,22 @@ const About = () => {
     {
       id: 1,
       title: 'Updates',
-      body: 'Get updates on if your beloved noles won or miserably lost.'
+      body: 'View current updates on if your beloved noles won lost miserably.'
     },
     {
       id: 2,
       title: 'Schedules',
-      body: 'View future and past schedules by year.'
+      body: 'View schedules of years past and future.'
     },
     {
       id: 3,
       title: 'Game Details',
-      body:
-        'Box scores, team stats, and play-by-play information for each game.'
+      body: 'Analyze box scores and team stats for each game.'
     },
     {
       id: 4,
       title: 'Roster',
-      body: 'View rosters by year.'
+      body: 'View team rosters by year with various info provided per player.'
     },
     {
       id: 5,
@@ -31,9 +30,8 @@ const About = () => {
     },
     {
       id: 6,
-      title: 'Code',
-      body:
-        'See the code for this website by checking out the GitHub Icon on the top right of the footer.'
+      title: 'Play-By-Play',
+      body: 'View play-by-play information for each game from start to finish.'
     }
   ]);
 
@@ -52,8 +50,8 @@ const About = () => {
         </div>
       </div>
       <div className="max-w-container mb-32 mx-auto">
-        <div className="flex justify-center">
-          <h2 className="uppercase inline-block text-center font-bold mt-8 mb-6 bg-gold-500 px-8 py-1 rounded text-lg sm:text-2xl md:text-4xl border-2 border-black">
+        <div className="px-12">
+          <h2 className="uppercase text-center font-bold mt-8 mb-6 bg-gold-500 px-8 py-1 rounded text-lg sm:text-xl md:text-3xl lg:text-4xl border-2 border-black">
             For the fans of Florida State Football
           </h2>
         </div>
@@ -61,18 +59,18 @@ const About = () => {
           {card.map(info => {
             return (
               <div
-                className="about-card w-full sm:w-1/2 lg:w-1/3 h-80 my-4"
+                className="about-card w-full md:w-1/2 lg:w-1/3 h-72 md:h-80 my-4"
                 key={info.id}
               >
                 <div
                   className="text-center rounded border border-dark-200
               shadow-2xl bg-white h-full mx-6"
                 >
-                  <div className="h-40 bg-gold-300"></div>
-                  <h3 className="font-bold text-xl border border-black bg-gold-500 box-border">
+                  <div className="h-40"></div>
+                  <h3 className="font-bold uppercase text-lg bg-gold-500 box-border py-1">
                     {info.title}
                   </h3>
-                  <div className="text-lg px-8 my-2">
+                  <div className="text-base sm:text-lg md:text-base px-8 my-3 text-center md:text-left">
                     <p>{info.body}</p>
                   </div>
                 </div>

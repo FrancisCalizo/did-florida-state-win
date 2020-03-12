@@ -4954,6 +4954,10 @@ video {
   height: 16rem;
 }
 
+.h-72{
+  height: 18rem;
+}
+
 .h-80{
   height: 20rem;
 }
@@ -5110,6 +5114,10 @@ video {
   margin: 16rem;
 }
 
+.m-72{
+  margin: 18rem;
+}
+
 .m-80{
   margin: 20rem;
 }
@@ -5208,6 +5216,10 @@ video {
 
 .-m-64{
   margin: -16rem;
+}
+
+.-m-72{
+  margin: -18rem;
 }
 
 .-m-80{
@@ -5422,6 +5434,16 @@ video {
 .mx-64{
   margin-left: 16rem;
   margin-right: 16rem;
+}
+
+.my-72{
+  margin-top: 18rem;
+  margin-bottom: 18rem;
+}
+
+.mx-72{
+  margin-left: 18rem;
+  margin-right: 18rem;
 }
 
 .my-80{
@@ -5672,6 +5694,16 @@ video {
 .-mx-64{
   margin-left: -16rem;
   margin-right: -16rem;
+}
+
+.-my-72{
+  margin-top: -18rem;
+  margin-bottom: -18rem;
+}
+
+.-mx-72{
+  margin-left: -18rem;
+  margin-right: -18rem;
 }
 
 .-my-80{
@@ -6036,6 +6068,22 @@ video {
 
 .ml-64{
   margin-left: 16rem;
+}
+
+.mt-72{
+  margin-top: 18rem;
+}
+
+.mr-72{
+  margin-right: 18rem;
+}
+
+.mb-72{
+  margin-bottom: 18rem;
+}
+
+.ml-72{
+  margin-left: 18rem;
 }
 
 .mt-80{
@@ -6436,6 +6484,22 @@ video {
 
 .-ml-64{
   margin-left: -16rem;
+}
+
+.-mt-72{
+  margin-top: -18rem;
+}
+
+.-mr-72{
+  margin-right: -18rem;
+}
+
+.-mb-72{
+  margin-bottom: -18rem;
+}
+
+.-ml-72{
+  margin-left: -18rem;
 }
 
 .-mt-80{
@@ -6870,6 +6934,10 @@ video {
   padding: 16rem;
 }
 
+.p-72{
+  padding: 18rem;
+}
+
 .p-80{
   padding: 20rem;
 }
@@ -7082,6 +7150,16 @@ video {
 .px-64{
   padding-left: 16rem;
   padding-right: 16rem;
+}
+
+.py-72{
+  padding-top: 18rem;
+  padding-bottom: 18rem;
+}
+
+.px-72{
+  padding-left: 18rem;
+  padding-right: 18rem;
 }
 
 .py-80{
@@ -7446,6 +7524,22 @@ video {
 
 .pl-64{
   padding-left: 16rem;
+}
+
+.pt-72{
+  padding-top: 18rem;
+}
+
+.pr-72{
+  padding-right: 18rem;
+}
+
+.pb-72{
+  padding-bottom: 18rem;
+}
+
+.pl-72{
+  padding-left: 18rem;
 }
 
 .pt-80{
@@ -10502,6 +10596,10 @@ video {
 
 .w-64{
   width: 16rem;
+}
+
+.w-72{
+  width: 18rem;
 }
 
 .w-80{
@@ -15328,6 +15426,10 @@ body {
     height: 16rem;
   }
 
+  .sm\:h-72{
+    height: 18rem;
+  }
+
   .sm\:h-80{
     height: 20rem;
   }
@@ -15484,6 +15586,10 @@ body {
     margin: 16rem;
   }
 
+  .sm\:m-72{
+    margin: 18rem;
+  }
+
   .sm\:m-80{
     margin: 20rem;
   }
@@ -15582,6 +15688,10 @@ body {
 
   .sm\:-m-64{
     margin: -16rem;
+  }
+
+  .sm\:-m-72{
+    margin: -18rem;
   }
 
   .sm\:-m-80{
@@ -15796,6 +15906,16 @@ body {
   .sm\:mx-64{
     margin-left: 16rem;
     margin-right: 16rem;
+  }
+
+  .sm\:my-72{
+    margin-top: 18rem;
+    margin-bottom: 18rem;
+  }
+
+  .sm\:mx-72{
+    margin-left: 18rem;
+    margin-right: 18rem;
   }
 
   .sm\:my-80{
@@ -16046,6 +16166,16 @@ body {
   .sm\:-mx-64{
     margin-left: -16rem;
     margin-right: -16rem;
+  }
+
+  .sm\:-my-72{
+    margin-top: -18rem;
+    margin-bottom: -18rem;
+  }
+
+  .sm\:-mx-72{
+    margin-left: -18rem;
+    margin-right: -18rem;
   }
 
   .sm\:-my-80{
@@ -16410,6 +16540,22 @@ body {
 
   .sm\:ml-64{
     margin-left: 16rem;
+  }
+
+  .sm\:mt-72{
+    margin-top: 18rem;
+  }
+
+  .sm\:mr-72{
+    margin-right: 18rem;
+  }
+
+  .sm\:mb-72{
+    margin-bottom: 18rem;
+  }
+
+  .sm\:ml-72{
+    margin-left: 18rem;
   }
 
   .sm\:mt-80{
@@ -16810,6 +16956,22 @@ body {
 
   .sm\:-ml-64{
     margin-left: -16rem;
+  }
+
+  .sm\:-mt-72{
+    margin-top: -18rem;
+  }
+
+  .sm\:-mr-72{
+    margin-right: -18rem;
+  }
+
+  .sm\:-mb-72{
+    margin-bottom: -18rem;
+  }
+
+  .sm\:-ml-72{
+    margin-left: -18rem;
   }
 
   .sm\:-mt-80{
@@ -17244,6 +17406,10 @@ body {
     padding: 16rem;
   }
 
+  .sm\:p-72{
+    padding: 18rem;
+  }
+
   .sm\:p-80{
     padding: 20rem;
   }
@@ -17456,6 +17622,16 @@ body {
   .sm\:px-64{
     padding-left: 16rem;
     padding-right: 16rem;
+  }
+
+  .sm\:py-72{
+    padding-top: 18rem;
+    padding-bottom: 18rem;
+  }
+
+  .sm\:px-72{
+    padding-left: 18rem;
+    padding-right: 18rem;
   }
 
   .sm\:py-80{
@@ -17820,6 +17996,22 @@ body {
 
   .sm\:pl-64{
     padding-left: 16rem;
+  }
+
+  .sm\:pt-72{
+    padding-top: 18rem;
+  }
+
+  .sm\:pr-72{
+    padding-right: 18rem;
+  }
+
+  .sm\:pb-72{
+    padding-bottom: 18rem;
+  }
+
+  .sm\:pl-72{
+    padding-left: 18rem;
   }
 
   .sm\:pt-80{
@@ -20876,6 +21068,10 @@ body {
 
   .sm\:w-64{
     width: 16rem;
+  }
+
+  .sm\:w-72{
+    width: 18rem;
   }
 
   .sm\:w-80{
@@ -25382,6 +25578,10 @@ body {
     height: 16rem;
   }
 
+  .md\:h-72{
+    height: 18rem;
+  }
+
   .md\:h-80{
     height: 20rem;
   }
@@ -25538,6 +25738,10 @@ body {
     margin: 16rem;
   }
 
+  .md\:m-72{
+    margin: 18rem;
+  }
+
   .md\:m-80{
     margin: 20rem;
   }
@@ -25636,6 +25840,10 @@ body {
 
   .md\:-m-64{
     margin: -16rem;
+  }
+
+  .md\:-m-72{
+    margin: -18rem;
   }
 
   .md\:-m-80{
@@ -25850,6 +26058,16 @@ body {
   .md\:mx-64{
     margin-left: 16rem;
     margin-right: 16rem;
+  }
+
+  .md\:my-72{
+    margin-top: 18rem;
+    margin-bottom: 18rem;
+  }
+
+  .md\:mx-72{
+    margin-left: 18rem;
+    margin-right: 18rem;
   }
 
   .md\:my-80{
@@ -26100,6 +26318,16 @@ body {
   .md\:-mx-64{
     margin-left: -16rem;
     margin-right: -16rem;
+  }
+
+  .md\:-my-72{
+    margin-top: -18rem;
+    margin-bottom: -18rem;
+  }
+
+  .md\:-mx-72{
+    margin-left: -18rem;
+    margin-right: -18rem;
   }
 
   .md\:-my-80{
@@ -26464,6 +26692,22 @@ body {
 
   .md\:ml-64{
     margin-left: 16rem;
+  }
+
+  .md\:mt-72{
+    margin-top: 18rem;
+  }
+
+  .md\:mr-72{
+    margin-right: 18rem;
+  }
+
+  .md\:mb-72{
+    margin-bottom: 18rem;
+  }
+
+  .md\:ml-72{
+    margin-left: 18rem;
   }
 
   .md\:mt-80{
@@ -26864,6 +27108,22 @@ body {
 
   .md\:-ml-64{
     margin-left: -16rem;
+  }
+
+  .md\:-mt-72{
+    margin-top: -18rem;
+  }
+
+  .md\:-mr-72{
+    margin-right: -18rem;
+  }
+
+  .md\:-mb-72{
+    margin-bottom: -18rem;
+  }
+
+  .md\:-ml-72{
+    margin-left: -18rem;
   }
 
   .md\:-mt-80{
@@ -27298,6 +27558,10 @@ body {
     padding: 16rem;
   }
 
+  .md\:p-72{
+    padding: 18rem;
+  }
+
   .md\:p-80{
     padding: 20rem;
   }
@@ -27510,6 +27774,16 @@ body {
   .md\:px-64{
     padding-left: 16rem;
     padding-right: 16rem;
+  }
+
+  .md\:py-72{
+    padding-top: 18rem;
+    padding-bottom: 18rem;
+  }
+
+  .md\:px-72{
+    padding-left: 18rem;
+    padding-right: 18rem;
   }
 
   .md\:py-80{
@@ -27874,6 +28148,22 @@ body {
 
   .md\:pl-64{
     padding-left: 16rem;
+  }
+
+  .md\:pt-72{
+    padding-top: 18rem;
+  }
+
+  .md\:pr-72{
+    padding-right: 18rem;
+  }
+
+  .md\:pb-72{
+    padding-bottom: 18rem;
+  }
+
+  .md\:pl-72{
+    padding-left: 18rem;
   }
 
   .md\:pt-80{
@@ -30930,6 +31220,10 @@ body {
 
   .md\:w-64{
     width: 16rem;
+  }
+
+  .md\:w-72{
+    width: 18rem;
   }
 
   .md\:w-80{
@@ -35436,6 +35730,10 @@ body {
     height: 16rem;
   }
 
+  .lg\:h-72{
+    height: 18rem;
+  }
+
   .lg\:h-80{
     height: 20rem;
   }
@@ -35592,6 +35890,10 @@ body {
     margin: 16rem;
   }
 
+  .lg\:m-72{
+    margin: 18rem;
+  }
+
   .lg\:m-80{
     margin: 20rem;
   }
@@ -35690,6 +35992,10 @@ body {
 
   .lg\:-m-64{
     margin: -16rem;
+  }
+
+  .lg\:-m-72{
+    margin: -18rem;
   }
 
   .lg\:-m-80{
@@ -35904,6 +36210,16 @@ body {
   .lg\:mx-64{
     margin-left: 16rem;
     margin-right: 16rem;
+  }
+
+  .lg\:my-72{
+    margin-top: 18rem;
+    margin-bottom: 18rem;
+  }
+
+  .lg\:mx-72{
+    margin-left: 18rem;
+    margin-right: 18rem;
   }
 
   .lg\:my-80{
@@ -36154,6 +36470,16 @@ body {
   .lg\:-mx-64{
     margin-left: -16rem;
     margin-right: -16rem;
+  }
+
+  .lg\:-my-72{
+    margin-top: -18rem;
+    margin-bottom: -18rem;
+  }
+
+  .lg\:-mx-72{
+    margin-left: -18rem;
+    margin-right: -18rem;
   }
 
   .lg\:-my-80{
@@ -36518,6 +36844,22 @@ body {
 
   .lg\:ml-64{
     margin-left: 16rem;
+  }
+
+  .lg\:mt-72{
+    margin-top: 18rem;
+  }
+
+  .lg\:mr-72{
+    margin-right: 18rem;
+  }
+
+  .lg\:mb-72{
+    margin-bottom: 18rem;
+  }
+
+  .lg\:ml-72{
+    margin-left: 18rem;
   }
 
   .lg\:mt-80{
@@ -36918,6 +37260,22 @@ body {
 
   .lg\:-ml-64{
     margin-left: -16rem;
+  }
+
+  .lg\:-mt-72{
+    margin-top: -18rem;
+  }
+
+  .lg\:-mr-72{
+    margin-right: -18rem;
+  }
+
+  .lg\:-mb-72{
+    margin-bottom: -18rem;
+  }
+
+  .lg\:-ml-72{
+    margin-left: -18rem;
   }
 
   .lg\:-mt-80{
@@ -37352,6 +37710,10 @@ body {
     padding: 16rem;
   }
 
+  .lg\:p-72{
+    padding: 18rem;
+  }
+
   .lg\:p-80{
     padding: 20rem;
   }
@@ -37564,6 +37926,16 @@ body {
   .lg\:px-64{
     padding-left: 16rem;
     padding-right: 16rem;
+  }
+
+  .lg\:py-72{
+    padding-top: 18rem;
+    padding-bottom: 18rem;
+  }
+
+  .lg\:px-72{
+    padding-left: 18rem;
+    padding-right: 18rem;
   }
 
   .lg\:py-80{
@@ -37928,6 +38300,22 @@ body {
 
   .lg\:pl-64{
     padding-left: 16rem;
+  }
+
+  .lg\:pt-72{
+    padding-top: 18rem;
+  }
+
+  .lg\:pr-72{
+    padding-right: 18rem;
+  }
+
+  .lg\:pb-72{
+    padding-bottom: 18rem;
+  }
+
+  .lg\:pl-72{
+    padding-left: 18rem;
   }
 
   .lg\:pt-80{
@@ -40984,6 +41372,10 @@ body {
 
   .lg\:w-64{
     width: 16rem;
+  }
+
+  .lg\:w-72{
+    width: 18rem;
   }
 
   .lg\:w-80{
@@ -45490,6 +45882,10 @@ body {
     height: 16rem;
   }
 
+  .xl\:h-72{
+    height: 18rem;
+  }
+
   .xl\:h-80{
     height: 20rem;
   }
@@ -45646,6 +46042,10 @@ body {
     margin: 16rem;
   }
 
+  .xl\:m-72{
+    margin: 18rem;
+  }
+
   .xl\:m-80{
     margin: 20rem;
   }
@@ -45744,6 +46144,10 @@ body {
 
   .xl\:-m-64{
     margin: -16rem;
+  }
+
+  .xl\:-m-72{
+    margin: -18rem;
   }
 
   .xl\:-m-80{
@@ -45958,6 +46362,16 @@ body {
   .xl\:mx-64{
     margin-left: 16rem;
     margin-right: 16rem;
+  }
+
+  .xl\:my-72{
+    margin-top: 18rem;
+    margin-bottom: 18rem;
+  }
+
+  .xl\:mx-72{
+    margin-left: 18rem;
+    margin-right: 18rem;
   }
 
   .xl\:my-80{
@@ -46208,6 +46622,16 @@ body {
   .xl\:-mx-64{
     margin-left: -16rem;
     margin-right: -16rem;
+  }
+
+  .xl\:-my-72{
+    margin-top: -18rem;
+    margin-bottom: -18rem;
+  }
+
+  .xl\:-mx-72{
+    margin-left: -18rem;
+    margin-right: -18rem;
   }
 
   .xl\:-my-80{
@@ -46572,6 +46996,22 @@ body {
 
   .xl\:ml-64{
     margin-left: 16rem;
+  }
+
+  .xl\:mt-72{
+    margin-top: 18rem;
+  }
+
+  .xl\:mr-72{
+    margin-right: 18rem;
+  }
+
+  .xl\:mb-72{
+    margin-bottom: 18rem;
+  }
+
+  .xl\:ml-72{
+    margin-left: 18rem;
   }
 
   .xl\:mt-80{
@@ -46972,6 +47412,22 @@ body {
 
   .xl\:-ml-64{
     margin-left: -16rem;
+  }
+
+  .xl\:-mt-72{
+    margin-top: -18rem;
+  }
+
+  .xl\:-mr-72{
+    margin-right: -18rem;
+  }
+
+  .xl\:-mb-72{
+    margin-bottom: -18rem;
+  }
+
+  .xl\:-ml-72{
+    margin-left: -18rem;
   }
 
   .xl\:-mt-80{
@@ -47406,6 +47862,10 @@ body {
     padding: 16rem;
   }
 
+  .xl\:p-72{
+    padding: 18rem;
+  }
+
   .xl\:p-80{
     padding: 20rem;
   }
@@ -47618,6 +48078,16 @@ body {
   .xl\:px-64{
     padding-left: 16rem;
     padding-right: 16rem;
+  }
+
+  .xl\:py-72{
+    padding-top: 18rem;
+    padding-bottom: 18rem;
+  }
+
+  .xl\:px-72{
+    padding-left: 18rem;
+    padding-right: 18rem;
   }
 
   .xl\:py-80{
@@ -47982,6 +48452,22 @@ body {
 
   .xl\:pl-64{
     padding-left: 16rem;
+  }
+
+  .xl\:pt-72{
+    padding-top: 18rem;
+  }
+
+  .xl\:pr-72{
+    padding-right: 18rem;
+  }
+
+  .xl\:pb-72{
+    padding-bottom: 18rem;
+  }
+
+  .xl\:pl-72{
+    padding-left: 18rem;
   }
 
   .xl\:pt-80{
@@ -51038,6 +51524,10 @@ body {
 
   .xl\:w-64{
     width: 16rem;
+  }
+
+  .xl\:w-72{
+    width: 18rem;
   }
 
   .xl\:w-80{

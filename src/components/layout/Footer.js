@@ -62,12 +62,12 @@ const Footer = () => {
           Francis Calizo
         </a>
         <br />
-        Data provided by{' '}
+        Data Provided By{' '}
         <a
           href="https://collegefootballdata.com/"
           target="_blank"
           rel="noopener noreferrer"
-          className="hover:underline text-garnet-500"
+          className="hover:underline text-garnet-200"
         >
           CollegeFootballData
         </a>
