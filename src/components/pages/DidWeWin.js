@@ -50,7 +50,9 @@ const DidWeWin = () => {
       case nextGame !== null && nextGame !== undefined:
         return <Countdown />;
       default:
-        return 'PAST GAME OR CHECK BACK LATER PAGE HERE???';
+        return (
+          <h1 className="text-6xl">Something went wrong..really wrong.</h1>
+        );
     }
   };
 

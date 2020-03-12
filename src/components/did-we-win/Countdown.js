@@ -11,9 +11,7 @@ const Countdown = () => {
     loading,
     fsuInfo,
     nextGame,
-    nextGameOpponent,
-    lastGame,
-    lastGameOpponent
+    nextGameOpponent
   } = didWeWinContext;
 
   if (loading || !nextGame || !nextGameOpponent) {
@@ -155,9 +153,6 @@ const Countdown = () => {
             </div>
           </div>
         </div>
-        {lastGame !== null && lastGame !== undefined && (
-          <h1>PAST GAME: {lastGameOpponent.school}</h1>
-        )}
       </div>
     );
   }
