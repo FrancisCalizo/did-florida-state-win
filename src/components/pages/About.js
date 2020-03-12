@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Spring } from 'react-spring/renderprops';
 
 const About = () => {
   const [card, setCard] = useState([
@@ -58,25 +59,35 @@ const About = () => {
           </h2>
         </div>
         <div className="flex flex-wrap justify-center mx-6">
-          {card.map(info => {
+          {card.map((info, idx) => {
             return (
-              <div
-                className="about-card w-full md:w-1/2 lg:w-1/3 h-72 md:h-80 my-4"
+              <Spring
+                from={{ opacity: 0 }}
+                to={{ opacity: 1 }}
+                config={{ delay: 300 * idx, duration: 1000 }}
                 key={info.id}
               >
-                <div
-                  className="text-center rounded border border-dark-200
+                {props => (
+                  <div
+                    className="about-card w-full md:w-1/2 lg:w-1/3 h-72 md:h-80 my-4"
+                    key={info.id}
+                    style={props}
+                  >
+                    <div
+                      className="text-center rounded border border-dark-200
               shadow-2xl bg-white h-full mx-6"
-                >
-                  <div className="h-40"></div>
-                  <h3 className="font-bold uppercase text-lg bg-gold-500 box-border py-1">
-                    {info.title}
-                  </h3>
-                  <div className="text-base sm:text-lg md:text-base px-8 my-3 text-center md:text-left">
-                    <p>{info.body}</p>
+                    >
+                      <div className="h-40"></div>
+                      <h3 className="font-bold uppercase text-lg bg-gold-500 box-border py-1">
+                        {info.title}
+                      </h3>
+                      <div className="text-base sm:text-lg md:text-base px-8 my-3 text-center md:text-left">
+                        <p>{info.body}</p>
+                      </div>
+                    </div>
                   </div>
-                </div>
-              </div>
+                )}
+              </Spring>
             );
           })}
         </div>
