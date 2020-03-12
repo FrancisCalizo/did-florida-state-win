@@ -10,11 +10,7 @@ const CurrentGame = () => {
     loading,
     fsuInfo,
     currentGame,
-    currentGameOpponent,
-    lastGame,
-    lastGameOpponent,
-    nextGame,
-    nextGameOpponent
+    currentGameOpponent
   } = didWeWinContext;
 
   if (loading || !currentGame || !currentGameOpponent) {

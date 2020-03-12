@@ -37,7 +37,7 @@ function useInterval(callback, delay) {
 
 const DidWeWinState = props => {
   const initialState = {
-    now: moment('2020-12-15 17:00:23', 'YYYY-MM-DD HH:mm:ss'), //Convert state.now back to moment () and DELETE THIS LINE LATER
+    // now: moment('2020-12-15 17:00:23', 'YYYY-MM-DD HH:mm:ss'), //Convert state.now back to moment () and DELETE THIS LINE LATER
     currentGame: null,
     currentGameOpponent: null,
     fsuInfo: null,
@@ -55,7 +55,7 @@ const DidWeWinState = props => {
   useInterval(() => {
     // Get Time until next game (Countdown)
     if (state.nextGame !== null) {
-      let now = state.now;
+      let now = moment();
       let next = moment(state.nextGame.start_date);
       let diff = moment.duration(next.diff(now));
       dispatch({
@@ -84,13 +84,13 @@ const DidWeWinState = props => {
         // Get Future Games of Season
         let futureGames = res.data
           .filter(game => {
-            return moment.duration(moment(game.start_date).diff(state.now)) > 0;
+            return moment.duration(moment(game.start_date).diff(moment())) > 0;
           })
           .sort((a, b) => {
             return (
               moment(a.start_date) -
-              state.now -
-              (moment(b.start_date) - state.now)
+              moment() -
+              (moment(b.start_date) - moment())
             );
           });
 
@@ -107,13 +107,13 @@ const DidWeWinState = props => {
         // Get Past Games of Season
         let pastGames = res.data
           .filter(game => {
-            return moment.duration(moment(game.start_date).diff(state.now)) < 0;
+            return moment.duration(moment(game.start_date).diff(moment())) < 0;
           })
           .sort((a, b) => {
             return (
               moment(a.start_date) -
-              state.now -
-              (moment(b.start_date) - state.now)
+              moment() -
+              (moment(b.start_date) - moment())
             );
           });
 
@@ -128,7 +128,7 @@ const DidWeWinState = props => {
         }
 
         let currentGame = res.data.filter(game => {
-          return moment(game.start_date).isSame(state.now, 'day');
+          return moment(game.start_date).isSame(moment(), 'day');
         });
 
         // Get Last Game Opponent

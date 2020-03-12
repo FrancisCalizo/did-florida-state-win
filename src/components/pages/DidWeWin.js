@@ -12,7 +12,6 @@ const DidWeWin = () => {
   const {
     fetchCurrentSchedule,
     currentGame,
-    currentSchedule,
     lastGame,
     nextGame,
     loading,
@@ -20,8 +19,8 @@ const DidWeWin = () => {
   } = didWeWinContext;
 
   useEffect(() => {
-    // fetchCurrentSchedule(moment().format('YYYY'));
-    fetchCurrentSchedule(2020); // DELETE LATER
+    fetchCurrentSchedule(moment().format('YYYY'));
+    // fetchCurrentSchedule(2020); // DELETE LATER
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
