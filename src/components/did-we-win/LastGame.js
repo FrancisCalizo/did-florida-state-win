@@ -12,11 +12,31 @@ const LastGame = () => {
     switch (true) {
       case game.home_team === 'Florida State' &&
         game.home_points > game.away_points:
-        return 'WE WON!';
+        return (
+          <div className="font-bold text-4xl sm:text-6xl lg:text-8xl my-4 uppercase border-b-8 border-black">
+            <h1
+              className="inline-block"
+              style={{ transform: 'translateY(30px)' }}
+            >
+              We
+            </h1>{' '}
+            <img
+              src={require('../../images/dance-corgi.gif')}
+              alt="sad-corgi"
+              className="w-24 md:w-32 inline"
+            />{' '}
+            <h1
+              className="inline-block"
+              style={{ transform: 'translateY(30px)' }}
+            >
+              Won!
+            </h1>
+          </div>
+        );
       case game.home_team === 'Florida State' &&
         game.home_points < game.away_points:
         return (
-          <div className="font-bold text-4xl sm:text-6xl lg:text-8xl my-4 uppercase">
+          <div className="font-bold text-4xl sm:text-6xl lg:text-8xl my-4 uppercase border-b-8 border-black">
             <h1
               className="inline-block"
               style={{ transform: 'translateY(30px)' }}
@@ -39,7 +59,7 @@ const LastGame = () => {
       case game.away_team === 'Florida State' &&
         game.home_points > game.away_points:
         return (
-          <div className="font-bold text-4xl sm:text-6xl lg:text-8xl my-4 uppercase">
+          <div className="font-bold text-4xl sm:text-6xl lg:text-8xl my-4 uppercase border-b-8 border-black">
             <h1
               className="inline-block"
               style={{ transform: 'translateY(30px)' }}
@@ -61,9 +81,47 @@ const LastGame = () => {
         );
       case game.away_team === 'Florida State' &&
         game.home_points < game.away_points:
-        return 'WE WON!';
+        return (
+          <div className="font-bold text-4xl sm:text-6xl lg:text-8xl my-4 uppercase border-b-8 border-black">
+            <h1
+              className="inline-block"
+              style={{ transform: 'translateY(30px)' }}
+            >
+              We
+            </h1>{' '}
+            <img
+              src={require('../../images/dance-corgi.gif')}
+              alt="sad-corgi"
+              className="w-24 md:w-32 inline"
+            />{' '}
+            <h1
+              className="inline-block"
+              style={{ transform: 'translateY(30px)' }}
+            >
+              Won!
+            </h1>
+          </div>
+        );
       default:
-        return "We played! But our scores haven't been updated yet";
+        return (
+          <div className="font-bold text-5xl sm:text-6xl lg:text-8xl mb-4 -mt-12 uppercase border-b-8 border-black">
+            <h1
+              className="text-center"
+              style={{ transform: 'translateY(50px)' }}
+            >
+              We Played
+            </h1>
+
+            <img
+              src={require('../../images/bored-corgi.gif')}
+              alt="sad-corgi"
+              className="w-24 md:w-32 inline"
+            />
+            <span className="inline-block text-xl lowercase">
+              ..But our scores haven't updated yet.
+            </span>
+          </div>
+        );
     }
   };
 

@@ -21,7 +21,7 @@ const DidWeWin = () => {
 
   useEffect(() => {
     // fetchCurrentSchedule(moment().format('YYYY'));
-    fetchCurrentSchedule(2019); // DELETE LATER
+    fetchCurrentSchedule(2020); // DELETE LATER
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
