@@ -51,7 +51,7 @@ const About = () => {
           </div>
         </div>
       </div>
-      <div className=" mb-24">
+      <div className="max-w-container mb-24 mx-auto">
         <div className="flex justify-center">
           <h2 className="uppercase inline-block text-center font-bold mt-8 mb-6 bg-gold-500 px-8 py-1 rounded text-lg sm:text-2xl md:text-4xl border-2 border-black">
             For the fans of Florida State Football
@@ -60,13 +60,16 @@ const About = () => {
         <div className="flex flex-wrap justify-center mx-6">
           {card.map(info => {
             return (
-              <div className="w-full sm:w-1/2 lg:w-1/3 h-48 my-4" key={info.id}>
+              <div className="w-full sm:w-1/2 lg:w-1/3 h-80 my-4" key={info.id}>
                 <div
                   className="text-center rounded border border-dark-200
-              shadow-2xl bg-white h-full px-10 mx-6"
+              shadow-2xl bg-white h-full mx-6"
                 >
+                  <div className="h-32 bg-gold-300"></div>
                   <h3>{info.title}</h3>
-                  <p>{info.body}</p>
+                  <div>
+                    <p>{info.body}</p>
+                  </div>
                 </div>
               </div>
             );
