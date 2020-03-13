@@ -90,4 +90,6 @@ View localhost on phone - https://medium.com/@claire.ristow/how-to-test-your-loc
 
 Position relative for z-index + transoform - https://coder-coder.com/z-index-isnt-working/
 
+SSL , HTTPS, Secure Site and Mixed Content - https://www.globalsign.com/en/blog/how-to-fix-mixed-content-warnings-on-your-ssl-site
+
 ### This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
