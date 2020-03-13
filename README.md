@@ -92,4 +92,6 @@ Position relative for z-index + transoform - https://coder-coder.com/z-index-isn
 
 SSL , HTTPS, Secure Site and Mixed Content - https://www.globalsign.com/en/blog/how-to-fix-mixed-content-warnings-on-your-ssl-site
 
+Page not found fix on Netlify with react Router - https://medium.com/@rexben/how-to-fix-page-not-found-on-netlify-with-react-router-dom-e0520692be5
+
 ### This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
