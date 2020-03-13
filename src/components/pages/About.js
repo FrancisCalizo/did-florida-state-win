@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
+import { LazyLoadComponent } from 'react-lazy-load-image-component';
 import { Spring } from 'react-spring/renderprops';
 
 const About = () => {
-  const [card, setCard] = useState([
+  const [card] = useState([
     {
       id: 1,
       title: 'Updates',
@@ -39,18 +40,20 @@ const About = () => {
 
   return (
     <div className="-mt-2">
-      <div className="sm:bg-fixed bg-chief border-b-8 border-black bg-black">
-        <div className="flex justify-center items-center h-full">
-          <div className="py-48">
-            <h1 className="text-white font-bold text-4xl md:text-5xl">
-              Did Florida State Win?
-            </h1>
-            <h3 className="text-white text-lg md:text-xl text-center">
-              Scores | Updates | Roster
-            </h3>
+      <LazyLoadComponent>
+        <div className="sm:bg-fixed bg-chief border-b-8 border-black bg-black">
+          <div className="flex justify-center items-center h-full">
+            <div className="py-48">
+              <h1 className="text-white font-bold text-4xl md:text-5xl">
+                Did Florida State Win?
+              </h1>
+              <h3 className="text-white text-lg md:text-xl text-center">
+                Scores | Updates | Roster
+              </h3>
+            </div>
           </div>
         </div>
-      </div>
+      </LazyLoadComponent>
       <div className="max-w-container mb-32 mx-auto">
         <div className="px-12">
           <h2 className="uppercase text-center font-bold mt-8 mb-6 bg-gold-500 px-8 py-1 rounded text-lg sm:text-xl md:text-3xl lg:text-4xl border-2 border-black">
