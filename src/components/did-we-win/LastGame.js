@@ -144,7 +144,10 @@ const LastGame = () => {
             {lastGame.away_team === 'Florida State' ? (
               <LazyLoadImage
                 className="w-24 sm:w-40 lg:w-48 rounded-full my-4"
-                src={fsuInfo.logos[0]}
+                src={
+                  fsuInfo.logos[0].includes('http') &&
+                  fsuInfo.logos[0].replace('http:', 'https:')
+                }
                 alt="away-team-logo"
                 effect="blur"
                 style={profileImgBorder(fsuInfo)}
@@ -152,7 +155,10 @@ const LastGame = () => {
             ) : (
               <LazyLoadImage
                 className="w-24 sm:w-40 lg:w-48 rounded-full my-4"
-                src={lastGameOpponent.logos[0]}
+                src={
+                  lastGameOpponent.logos[0].includes('http') &&
+                  fsuInfo.logos[0].replace('http:', 'https:')
+                }
                 alt="away-team-logo"
                 effect="blur"
                 style={profileImgBorder(lastGameOpponent)}
@@ -187,7 +193,10 @@ const LastGame = () => {
             {lastGame.home_team === 'Florida State' ? (
               <LazyLoadImage
                 className="w-24 sm:w-40 lg:w-48 rounded-full my-4"
-                src={fsuInfo.logos[0]}
+                src={
+                  fsuInfo.logos[0].includes('http') &&
+                  fsuInfo.logos[0].replace('http:', 'https:')
+                }
                 alt="home-team-logo"
                 effect="blur"
                 style={profileImgBorder(fsuInfo)}
@@ -195,7 +204,10 @@ const LastGame = () => {
             ) : (
               <LazyLoadImage
                 className="w-24 sm:w-40 lg:w-48 rounded-full my-4"
-                src={lastGameOpponent.logos[0]}
+                src={
+                  lastGameOpponent.logos[0].includes('http') &&
+                  lastGameOpponent.logos[0].replace('http:', 'https:')
+                }
                 alt="away-team-logo"
                 effect="blur"
                 style={profileImgBorder(lastGameOpponent)}

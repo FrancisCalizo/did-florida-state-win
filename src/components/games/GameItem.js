@@ -69,7 +69,8 @@ const GameItem = ({ games, teamInfo }) => {
                         className={`w-48 rounded-full p-3 mx-auto z-10 -mb-20 bg-gray-300`}
                         src={
                           team.logos !== null
-                            ? team.logos[0]
+                            ? team.logos[0].includes('http') &&
+                              team.logos[0].replace('http:', 'https:')
                             : require('../../images/avatar.png')
                         }
                         alt={`${team.school}-logo`}

@@ -40,7 +40,10 @@ const CurrentGame = () => {
             {currentGame.away_team === 'Florida State' ? (
               <LazyLoadImage
                 className="w-24 sm:w-40 lg:w-48 rounded-full my-4"
-                src={fsuInfo.logos[0]}
+                src={
+                  fsuInfo.logos[0].includes('http') &&
+                  fsuInfo.logos[0].replace('http:', 'https:')
+                }
                 alt="away-team-logo"
                 effect="blur"
                 style={profileImgBorder(fsuInfo)}
@@ -48,7 +51,10 @@ const CurrentGame = () => {
             ) : (
               <LazyLoadImage
                 className="w-24 sm:w-40 lg:w-48 rounded-full my-4"
-                src={currentGameOpponent.logos[0]}
+                src={
+                  currentGameOpponent.logos[0].includes('http') &&
+                  currentGameOpponent.logos[0].replace('http:', 'https:')
+                }
                 alt="away-team-logo"
                 effect="blur"
                 style={profileImgBorder(currentGameOpponent)}
@@ -76,7 +82,10 @@ const CurrentGame = () => {
             {currentGame.home_team === 'Florida State' ? (
               <LazyLoadImage
                 className="w-24 sm:w-40 lg:w-48 rounded-full my-4"
-                src={fsuInfo.logos[0]}
+                src={
+                  fsuInfo.logos[0].includes('http') &&
+                  fsuInfo.logos[0].replace('http:', 'https:')
+                }
                 alt="home-team-logo"
                 effect="blur"
                 style={profileImgBorder(fsuInfo)}
@@ -84,7 +93,10 @@ const CurrentGame = () => {
             ) : (
               <LazyLoadImage
                 className="w-24 sm:w-40 lg:w-48 rounded-full my-4"
-                src={currentGameOpponent.logos[0]}
+                src={
+                  currentGameOpponent.logos[0].includes('http') &&
+                  currentGameOpponent.logos[0].replace('http:', 'https:')
+                }
                 alt="away-team-logo"
                 effect="blur"
                 style={profileImgBorder(currentGameOpponent)}

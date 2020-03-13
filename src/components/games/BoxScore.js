@@ -40,8 +40,10 @@ const BoxScore = ({
                   className="w-32 mx-auto"
                   src={
                     isFsuHomeTeam
-                      ? opposingTeamInfo.logos[0]
-                      : fsuTeamInfo.logos[0]
+                      ? opposingTeamInfo.logos[0].includes('http') &&
+                        opposingTeamInfo.logos[0].replace('http:', 'https:')
+                      : fsuTeamInfo.logos[0].includes('http') &&
+                        fsuTeamInfo.logos[0].replace('http:', 'https:')
                   }
                   alt={fsuTeamInfo.school}
                 />
@@ -63,8 +65,10 @@ const BoxScore = ({
                   className="w-32 mx-auto"
                   src={
                     isFsuHomeTeam
-                      ? fsuTeamInfo.logos[0]
-                      : opposingTeamInfo.logos[0]
+                      ? fsuTeamInfo.logos[0].includes('http') &&
+                        fsuTeamInfo.logos[0].replace('http:', 'https:')
+                      : opposingTeamInfo.logos[0].includes('http') &&
+                        opposingTeamInfo.logos[0].replace('http:', 'https:')
                   }
                   alt={fsuTeamInfo.school}
                 />
