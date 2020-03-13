@@ -37,7 +37,7 @@ const RosterItem = ({ roster }) => {
                 <div className="my-1 lg:mx-1 py-4 border border-dark-200 rounded bg-white">
                   <div className="flex">
                     <img
-                      className="w-32 inline-block mx-4"
+                      className="w-32 h-32 inline-block mx-4"
                       src={require('../../images/avatar.png')}
                       alt="avatar"
                     />

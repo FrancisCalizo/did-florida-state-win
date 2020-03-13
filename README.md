@@ -86,4 +86,8 @@ Merge Conflict - https://help.github.com/en/github/collaborating-with-issues-and
 
 Scroll to Top on react-router page change - https://github.com/ReactTraining/react-router/blob/master/packages/react-router-dom/docs/guides/scroll-restoration.md and https://zeph.co/react-router-scroll-to-top
 
+View localhost on phone - https://medium.com/@claire.ristow/how-to-test-your-localhost-on-an-iphone-54e7b11439b7
+
+Position relative for z-index + transoform - https://coder-coder.com/z-index-isnt-working/
+
 ### This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

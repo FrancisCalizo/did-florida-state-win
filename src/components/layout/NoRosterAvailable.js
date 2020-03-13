@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const NoRosterAvailable = () => {
   return (
-    <div className="flex flex-wrap flex-col-reverse justify-end md:flex-row max-w-container mx-16 xl:mx-auto height-minus-header md:pt-20">
+    <div className="flex flex-wrap flex-col-reverse justify-end md:flex-row max-w-container mx-16 xl:mx-auto height-minus-header md:pt-20 mb-32">
       <div className="w-full md:w-1/2 text-center flex justify-center pt-4">
         <div className="text-center md:text-left">
           <h1 className="text-6xl md:text-5xl lg:text-6xl font-bold">Welp.</h1>

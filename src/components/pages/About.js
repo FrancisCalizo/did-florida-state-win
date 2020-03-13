@@ -39,7 +39,7 @@ const About = () => {
 
   return (
     <div className="-mt-2">
-      <div className="bg-fixed bg-chief border-b-8 border-black bg-black">
+      <div className="sm:bg-fixed bg-chief border-b-8 border-black bg-black">
         <div className="flex justify-center items-center h-full">
           <div className="py-48">
             <h1 className="text-white font-bold text-4xl md:text-5xl">

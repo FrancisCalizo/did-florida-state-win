@@ -61,7 +61,7 @@ const Countdown = () => {
             >
               <h2 style={skew('10deg')}>{nextGame.away_team}</h2>
               <h2 style={skew('10deg')}>
-                {nextGame.awayTeam === 'Florida State'
+                {nextGame.away_team === 'Florida State'
                   ? fsuInfo.mascot
                   : nextGameOpponent.mascot}
               </h2>

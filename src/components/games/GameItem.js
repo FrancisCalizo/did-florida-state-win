@@ -52,7 +52,7 @@ const GameItem = ({ games, teamInfo }) => {
               >
                 <div className="sm:mx-2 md:mx-6 lg:mx-4 xl:mx-10 my-16 text-center rounded border border-dark-200 shadow-2xl bg-white">
                   <div
-                    className="rounded font-bold py-1 text-md bg-black text-white w-32 shadow-2xl"
+                    className="rounded font-bold py-1 text-md bg-black text-white w-32 shadow-2xl relative z-20"
                     style={cardDateDiagonal}
                   >
                     {new Date(game.start_date)
@@ -67,7 +67,11 @@ const GameItem = ({ games, teamInfo }) => {
                       <LazyLoadImage
                         key={team.id}
                         className={`w-48 rounded-full p-3 mx-auto z-10 -mb-20 bg-gray-300`}
-                        src={team.logos[0]}
+                        src={
+                          team.logos !== null
+                            ? team.logos[0]
+                            : require('../../images/avatar.png')
+                        }
                         alt={`${team.school}-logo`}
                         style={profileImgBorder(team)}
                       />
