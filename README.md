@@ -1,3 +1,20 @@
+### https://www.didfsu.win 
+
+# Did Florida State Win?
+A website built by an FSU Alum to display data regarding the FSU Football Team. This data includes:
+* Countdown to the next game played by your Noles
+* Recent game updates
+* Schedule by year
+* Box Scores
+* Game Stats for both teams playing
+* Play by Play information by game
+* Roster information by year
+
+## Technologies
+* Reactjs
+* Tailwindscss
+* Netlify
+
 ## Helpful Articles
 
 Promise.all() - https://stackoverflow.com/questions/38180080/when-to-use-promise-all
