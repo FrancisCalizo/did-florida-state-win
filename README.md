@@ -14,6 +14,7 @@ A website built to display data regarding the FSU Football Team; built by an FSU
 * Reactjs
 * Tailwindscss
 * Netlify
+* CollegeFootballAPI
 <br/>
 <img src="./src/images/screenshots/home.png" width="100%"> 
 <br/>
