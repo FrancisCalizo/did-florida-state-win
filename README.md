@@ -1,7 +1,7 @@
 ### https://www.didfsu.win 
 
 # Did Florida State Win?
-A website built by an FSU Alum to display data regarding the FSU Football Team. This data includes:
+A website built to display data regarding the FSU Football Team; built by an FSU alum brought through an emotional rollercoaster, aka the FSU Football Team's performance from 2010-2020. This websites data includes:
 * Countdown to the next game played by your Noles
 * Recent game updates
 * Schedule by year
@@ -14,6 +14,19 @@ A website built by an FSU Alum to display data regarding the FSU Football Team. 
 * Reactjs
 * Tailwindscss
 * Netlify
+<br/>
+<img src="./src/images/screenshots/home.png" width="100%"> 
+<br/>
+<br/>
+<img src="./src/images/screenshots/schedule.png" width="100%">
+<br/>
+<br/>
+<img src="./src/images/screenshots/box-score.png" width="100%">
+<br/>
+<br/>
+<img src="./src/images/screenshots/about.png" width="100%">
+<br/>
+<br/>
 
 ## Helpful Articles
 
