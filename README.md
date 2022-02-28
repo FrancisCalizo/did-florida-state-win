@@ -1,4 +1,4 @@
-### https://www.didfsu.win 
+### https://didfloridastatewin.netlify.app/about
 
 # Did Florida State Win?
 A website built to display data regarding the FSU Football Team; built by an FSU alum brought through an emotional rollercoaster, aka the FSU Football Team's performance from 2010-2020. This websites data includes:
